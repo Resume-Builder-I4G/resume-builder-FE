@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../../components/navbar/Navbar";
 import "./About.css";
 import about from "../../assets/images/about.jfif";
 import emmanuel from "../../assets/images/Olowookere-Emmanuel.jfif";
@@ -6,6 +7,9 @@ import ezike from "../../assets/images/Ifedubem-Ezike.jfif";
 import job from "../../assets/images/Job-Oaikhenah.jfif";
 import raffia from "../../assets/images/Raffia-city-hub.jfif";
 import Footer from "../../components/Footer/Footer";
+import styled from "styled-components";
+
+const StyledTitle = styled.h1``;
 
 function About() {
   const teamProfile = [
@@ -17,6 +21,7 @@ function About() {
 
   return (
     <div>
+      <Navbar />
       <div className="container">
         <div className="row">
           <div className="col about_content mr-4">

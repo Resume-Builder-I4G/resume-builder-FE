@@ -9,23 +9,31 @@ const StyledImg = styled.img`
   height: 380px;
 `;
 
-const StyleTitle = styled.h1`
+const StyleTitle = styled.h2`
   font-size: 40px;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: 0em;
-  text-align: left;
 `;
 
-const StyledButton = styled.button`
+const StyledDiv = styled.div`
+  marging-top: 50px;
+`;
+
+const StyledButton = styled.a`
   outline: none;
   font-size: 24px;
   font-weight: 500;
   line-height: 29px;
-  letter-spacing: 0em;
-  text-align: left;
   background: #216de0;
   border-radius: 6px;
+  padding: 20px 70px;
+  color: #ffffff;
+
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
 `;
 
 function Error404() {
@@ -33,17 +41,16 @@ function Error404() {
     <div id="error404" className="text-center">
       <div className="container">
         <StyledImg src={error_message} alt="" />
-        <h2>Oooops!!!</h2>
-        <p className="text-center">
+        <StyleTitle>Oooops!!!</StyleTitle>
+        <p className="text-center mb-4">
           We can’t seem to find the page you’re looking for
         </p>
-        <div className="button_container">
-          {/* <Link to="/">
+        <StyledDiv className="button_container">
+          <Link to="/contact">
             {" "}
-            <button>Go Home</button>
-          </Link> */}
-          {/* <StyledButton>Go Home</StyledButton> */}
-        </div>
+            <StyledButton>Go Home</StyledButton>
+          </Link>
+        </StyledDiv>
       </div>
     </div>
   );
