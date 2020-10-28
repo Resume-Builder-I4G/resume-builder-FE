@@ -46,7 +46,7 @@ function Error404() {
           We can’t seem to find the page you’re looking for
         </p>
         <StyledDiv className="button_container">
-          <Link to="/contact">
+          <Link to="/">
             {" "}
             <StyledButton>Go Home</StyledButton>
           </Link>
