@@ -1,0 +1,40 @@
+.footer {
+    background-color: #216DE0;
+    color: #ffffff;
+    padding: 100px 0 50px;
+}
+
+.wrapper {
+    padding: 100px 100px 50px;
+    background-color: #216DE0;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin: 10px 0;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.moto {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}

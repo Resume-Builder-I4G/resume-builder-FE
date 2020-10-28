@@ -1,9 +1,41 @@
-form {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.form {
     font-family: 'Inter', sans-serif;
+    width: 100%;
 }
 
-label span {
+.form-group>label {
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
+    width: 100%;
+}
+
+/* input {
+    outline: none;
+    background: #ffffff;
+    border: 2px solid #216de0;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-top: 16px;
+} */
+
+/* textarea {
+    outline: none;
+    background: #ffffff;
+    border: 2px solid #216de0;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-top: 16px;
+    margin-bottom: 3.375rem;
+} */
+
+.btn {
+    background: #216de0;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 20px 95px;
 }
