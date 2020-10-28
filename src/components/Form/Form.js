@@ -11,6 +11,9 @@ const StyledInput = styled.input`
   box-sizing: border-box;
   border-radius: 6px;
   margin-top: 16px;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
 `;
 
 const StyledTextarea = styled.textarea`
@@ -21,6 +24,9 @@ const StyledTextarea = styled.textarea`
   border-radius: 6px;
   margin-top: 16px;
   margin-bottom: 3.375rem;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
 `;
 
 const Form = () => {
@@ -68,15 +74,15 @@ const Form = () => {
       <form className="form" onSubmit={submitForm}>
         <div className="form-group">
           <label htmlFor="contact-name">
-            <span>Email Address</span>
+            <span>Full Name</span>
             <StyledInput
               className="form-control"
-              id="contact-email"
-              type="email"
-              name="email"
-              value={email}
+              id="contact-name"
+              type="text"
+              name="name"
+              value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="awojidedaniel@gmail.com"
+              placeholder="Enter full name"
               required
             />
           </label>
@@ -88,12 +94,12 @@ const Form = () => {
             <StyledInput
               required
               className="form-control"
-              id="contact-name"
-              type="text"
-              name="name"
-              value={name}
+              id="contact-email"
+              type="email"
+              name="email"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="awojide daniel"
+              placeholder="Enter email address"
             />
           </label>
         </div>
