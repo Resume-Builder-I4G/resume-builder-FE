@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import "./About.css";
-import about from "../../assets/images/about.jfif";
+import about from "../../assets/images/about.png";
 import emmanuel from "../../assets/images/Olowookere-Emmanuel.jfif";
 import ezike from "../../assets/images/Ifedubem-Ezike.jfif";
 import job from "../../assets/images/Job-Oaikhenah.jfif";
