@@ -9,7 +9,21 @@ import raffia from "../../assets/images/Raffia-city-hub.jfif";
 import Footer from "../../components/Footer/Footer";
 import styled from "styled-components";
 
-const StyledTitle = styled.h1``;
+const StyledTitle = styled.h1`
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #216de0;
+`;
+
+const StyledPara = styled.p`
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+`;
 
 function About() {
   const teamProfile = [
@@ -24,10 +38,10 @@ function About() {
       <Navbar />
       <div className="container">
         <div className="row">
-          <div className="col about_content mr-4">
-            <h1>About Us</h1>
+          <div className="col about_content">
+            <StyledTitle>About Us</StyledTitle>
             <h2>Who We Are</h2>
-            <p>
+            <StyledPara>
               We create functional resume structure that allows for the
               candidate to focus heavily on the skills and abilities that he or
               she can bring to the new role. <br />
@@ -35,9 +49,9 @@ function About() {
               It is a highly useful tool for jobseekers looking to change
               careers or those who have little or no work experience such as
               students or even for some entry-level
-            </p>
+            </StyledPara>
             <h2>Why Choose Us</h2>
-            <p>
+            <StyledPara>
               We create functional resume structure that allows for the
               candidate to focus heavily on the skills and abilities that he or
               she can bring to the new role. <br />
@@ -45,7 +59,7 @@ function About() {
               It is a highly useful tool for jobseekers looking to change
               careers or those who have little or no work experience such as
               students or even for some entry-level
-            </p>
+            </StyledPara>
           </div>
           <div className="col about_image">
             <img src={about} alt="" />

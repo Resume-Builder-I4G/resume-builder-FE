@@ -2,17 +2,31 @@
     font-family: 'Inter', sans-serif;
 }
 
-h1 {
+/* h1 {
     font-size: 18px;
     font-weight: 500;
     line-height: 22px;
     color: #216DE0;
-}
+} */
 
 h2 {
     font-size: 40px;
     font-weight: 600;
     line-height: 48px;
+}
+
+/* p {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+
+} */
+
+.about_content {
+    margin-right: 80px;
 }
 
 .about_image img {
