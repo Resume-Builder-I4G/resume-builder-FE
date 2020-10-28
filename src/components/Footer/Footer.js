@@ -35,7 +35,7 @@ function Footer() {
                 <p>Contact Us</p>
                 <ul className="footer-list">
                   <li className="list-item">
-                    Office Address: 24 Lekki Street Lagos, Nigeria
+                    Office Address: <br /> 24 Lekki Street Lagos, Nigeria
                   </li>
                   <li className="list-item">Call: 090 - 000 - 0000</li>
                   <li className="list-item">Email: hello@resumebuilder.com</li>
