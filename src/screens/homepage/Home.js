@@ -40,7 +40,7 @@ function Home() {
           <div className="col1">
             <img src={phonebook} alt="easy to use" />
             <p className="head text-center">Easy to Use</p>
-            <p className="text-center">
+            <p className="text-center body font-weight-normal">
               You can choose a theme & update informations in our inout fields.
               Save and your resume will be ready.
             </p>
@@ -48,7 +48,7 @@ function Home() {
           <div className="col1">
             <img src={templates} alt="easy to use" />
             <p className="head text-center">Access to Templates</p>
-            <p className="text-center">
+            <p className="text-center body font-weight-normal">
               You can choose a theme & update informations in our inout fields.
               Save and your resume will be ready.
             </p>
@@ -56,7 +56,7 @@ function Home() {
           <div className="col1">
             <img src={support} alt="easy to use" />
             <p className="head text-center">Support & Feedbck</p>
-            <p className="text-center">
+            <p className="text-center body font-weight-normal">
               You can choose a theme & update informations in our inout fields.
               Save and your resume will be ready.
             </p>

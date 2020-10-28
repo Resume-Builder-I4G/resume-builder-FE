@@ -14,15 +14,11 @@ h2 {
 }
 
 .about-wrapper {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .about_content {
-<<<<<<< HEAD
-    margin-right: 60px;
-=======
   margin-right: 80px;
->>>>>>> 04a4fff2a1ef1bc3773c9acef7254d6fd7cfb6dd
 }
 
 .about_image img {
