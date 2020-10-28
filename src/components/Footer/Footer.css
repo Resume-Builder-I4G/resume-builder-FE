@@ -9,12 +9,13 @@
     background-color: #216DE0;
 }
 
-h1 {
+/* h1 {
     font-size: 30px;
     font-weight: 500;
     line-height: 36px;
     text-align: left;
-}
+    color: #ffffff;
+} */
 
 ul {
     list-style: none;

@@ -1,5 +1,14 @@
 import React from "react";
 import "./Footer.css";
+import styled from "styled-components";
+
+const StyledTitle = styled.h1`
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  color: #ffffff;
+`;
 
 function Footer() {
   return (
@@ -7,7 +16,7 @@ function Footer() {
       <div className="container">
         <div className="row footer-wrap">
           <div className="col-md-4">
-            <h1>Resume builder</h1>
+            <StyledTitle>Resume builder</StyledTitle>
             <p className="moto">
               Design and build a unique CV that your dream job will notice.
             </p>
