@@ -17,12 +17,12 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledPara = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0em;
-  text-align: left;
+  color: #474747;
 `;
 
 function About() {
@@ -36,6 +36,7 @@ function About() {
   return (
     <div>
       <Navbar />
+      <div className="mt-4" />
       <div className="container">
         <div className="row">
           <div className="col about_content">
@@ -50,18 +51,20 @@ function About() {
               careers or those who have little or no work experience such as
               students or even for some entry-level
             </StyledPara>
-            <h2>Why Choose Us</h2>
-            <StyledPara>
-              We create functional resume structure that allows for the
-              candidate to focus heavily on the skills and abilities that he or
-              she can bring to the new role. <br />
-              <br />
-              It is a highly useful tool for jobseekers looking to change
-              careers or those who have little or no work experience such as
-              students or even for some entry-level
-            </StyledPara>
+            <div className="upper">
+              <h2>Why Choose Us</h2>
+              <StyledPara>
+                We create functional resume structure that allows for the
+                candidate to focus heavily on the skills and abilities that he
+                or she can bring to the new role. <br />
+                <br />
+                It is a highly useful tool for jobseekers looking to change
+                careers or those who have little or no work experience such as
+                students or even for some entry-level
+              </StyledPara>
+            </div>
           </div>
-          <div className="col about_image">
+          <div className="col about_image mt-4">
             <img src={about} alt="" />
           </div>
         </div>
@@ -72,8 +75,8 @@ function About() {
               return (
                 <div className="col profile text-center">
                   <img src={profile.picture} alt="" />
-                  <br />
-                  {profile.name}
+                  <div className="mt-4" />
+                  <p className="profile-name text-center">{profile.name}</p>
                 </div>
               );
             })}
