@@ -1,39 +1,66 @@
 import React from "react";
-import styled from "styled-components";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-// import logo from "../../assets/svgs/Resume-Builder.svg";
-const StyledNavbar = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  padding: 43px 100px;
-`;
+
 const Navbar = () => {
   return (
-    <StyledNavbar>
-      <div className="logo">
-        Resume builder
-        {/* <img src={logo} alt="logo"> */}
-      </div>
-      <div className="nav-list">
+    <nav className="navbar navbar-css navbar-expand-lg navbar-light bg-white sticky-top">
+      <div className="container">
         <Link to="/">
-          <a href="#" id="blueNav">
-            Home
+          <a className="navbar-brand logo">
+            Resume<span className="sub-logo">Builder</span>
           </a>
         </Link>
-        <Link to="/about">
-          <a href="#">About</a>
-        </Link>
-        <Link to="/contact">
-          <a href="#">Contact</a>
-        </Link>
-        <Link to="/choose_color">
-          <button>
-            <p>Get Started</p>
-          </button>
-        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+          <img className="img-fluid" src="./assets/images/navicon.png" alt="" />
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link to="/">
+                <a className="nav-link" href="#">
+                  Home <span className="sr-only">(current)</span>
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/">
+                <a className="nav-link" href="">
+                  About
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/">
+                <a className="nav-link" href="">
+                  Contact
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/">
+                <a
+                  type="button"
+                  className="nav-link btn btn-primary text-white"
+                  href="#"
+                >
+                  Get Started
+                </a>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
-    </StyledNavbar>
+    </nav>
   );
 };
 
