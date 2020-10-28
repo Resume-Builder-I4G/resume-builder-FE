@@ -6,6 +6,7 @@ import locationmarker from "../../assets/svgs/location-marker.svg";
 import phone from "../../assets/svgs/phone.svg";
 import email from "../../assets/svgs/email.svg";
 import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/navbar/Navbar";
 
 const Title = styled.h1`
   font-family: Inter;
@@ -19,6 +20,7 @@ class Contact extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <div className="wrapper">
           <div className="container">
             <div className="row">

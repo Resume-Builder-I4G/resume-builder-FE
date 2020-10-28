@@ -22,7 +22,7 @@ function Footer() {
             </p>
           </div>
           <div className="col-md-8">
-            <div className="row">
+            <div className="row d-flex justify-content-between">
               <div className="col-md-3">
                 <p>Quick links</p>
                 <ul className="footer-list">
