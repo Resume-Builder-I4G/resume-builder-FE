@@ -7,6 +7,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+h1 {
+    margin-bottom: 20px;
+}
+
 .contact-info {
     margin-bottom: 90px;
 }

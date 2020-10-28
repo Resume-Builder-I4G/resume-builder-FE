@@ -1,11 +1,3 @@
-/* .App {} */
-
-@font-face {
-  font-family: 'Inter-regular';
-  src: url('./assets/fonts/Inter-Regular-slnt=0.ttf') format('truetype');
-  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 html,

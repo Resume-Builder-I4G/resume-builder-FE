@@ -17,9 +17,6 @@ export class Success extends Component {
             possible. You can always to our FAQ & Help section here for instant
             help.{" "}
           </p>
-          {/* <div className="go_button_container" style={{ display: "flex" }}>
-            <button onClick={this.props.display.bind()}>Thanks</button>
-          </div> */}
         </div>
       </div>
     );
