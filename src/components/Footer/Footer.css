@@ -4,14 +4,6 @@
     padding: 100px 0 50px;
 }
 
-/* h1 {
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 36px;
-    text-align: left;
-    color: #ffffff;
-} */
-
 ul {
     list-style: none;
     padding: 0;
@@ -30,7 +22,8 @@ p {
 }
 
 .moto {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: normal;
     line-height: 30px;
+    font-style: normal;
 }

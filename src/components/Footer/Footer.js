@@ -3,10 +3,10 @@ import "./Footer.css";
 import styled from "styled-components";
 
 const StyledTitle = styled.h1`
-  font-size: 30px;
+  font-size: 30px !important;
+  font-style: normal;
   font-weight: 500;
   line-height: 36px;
-  text-align: left;
   color: #ffffff;
 `;
 
@@ -43,11 +43,11 @@ function Footer() {
               </div>
               <div className="col-md-3">
                 <p>Follow Us</p>
-                <ul>
-                  <li>Twitter</li>
-                  <li>Instagram</li>
-                  <li>Facebook</li>
-                  <li>LinkedIn</li>
+                <ul className="footer-list">
+                  <li className="list-item">Twitter</li>
+                  <li className="list-item">Instagram</li>
+                  <li className="list-item">Facebook</li>
+                  <li className="list-item">LinkedIn</li>
                 </ul>
               </div>
             </div>
