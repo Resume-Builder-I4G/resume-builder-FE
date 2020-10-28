@@ -35,6 +35,8 @@
 .btn-primary {
   background-color: #216de0 !important;
   border: none;
+  width: 200px;
+  height: 40px;
   border-radius: 15px;
 }
 
