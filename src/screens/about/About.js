@@ -37,7 +37,7 @@ function About() {
     <div>
       <Navbar />
       <div className="container">
-        <div className="row">
+        <div className="row about-wrapper">
           <div className="col about_content">
             <StyledTitle>About Us</StyledTitle>
             <h2>Who We Are</h2>
