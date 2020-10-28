@@ -1,55 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
 * {
-    font-family: 'Inter';
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none !important;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.navbar-css {
+  background-color: #000 !important;
+  color: #fff !important;
 }
-
-/* nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 43px 100px;
-} */
 
 .logo {
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 36px;
-    color: #216DE0;
+  font-family: "Salsa", cursive;
+  font-size: 26px !important;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
 }
 
-nav .nav-list {
-    display: flex;
-    justify-content: space-between;
+.sub-logo {
+  color: #216de0 !important;
 }
 
-nav .nav-list a {
-    padding-right: 35px;
-    font-size: 20px;
-    line-height: 24px;
-    color: #2E2E2E;
-    text-decoration: none;
+.nav-link {
+  color: #000 !important;
+  font-size: 16px;
+  line-height: 29px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
 }
 
-nav .nav-list button {
-    margin: -15px 0px;
-    background: #216DE0;
-    border-radius: 6px;
-    border: none;
-    outline: none;
+.btn-primary {
+  background-color: #216de0 !important;
+  border: none;
+  border-radius: 15px;
 }
 
-nav .nav-list button p {
-    margin: 0px;
-    color: white;
-    padding: 20px 58px 21px 58px;
+.nav-link {
+  margin-left: 50px;
 }
 
-#blueNav {
-    color: #216DE0;
+.nav-link:hover {
+  color: #216de0 !important;
+}
+
+a[type="button"]:hover {
+  background-color: #fff !important;
+  color: #216de0 !important;
+  border: 1px solid#216DE0;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
 }
