@@ -1,0 +1,39 @@
+.container {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #216DE0;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+}
+
+.about_image img {
+    width: 602px;
+    height: 604px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px
+}
+
+.our-team {
+    padding: 121px 102px;
+}
+
+.our-team h2 {
+    margin-bottom: 70px;
+}
+
+.profile {}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
