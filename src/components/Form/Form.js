@@ -3,7 +3,6 @@ import "./Form.css";
 import axios from "axios";
 import Success from "../../screens/contact-us/Success";
 import styled from "styled-components";
-// import "/bootstrap/dist/css/bootstrap.min.css";
 
 const StyledInput = styled.input`
   outline: none;
@@ -69,15 +68,15 @@ const Form = () => {
       <form className="form" onSubmit={submitForm}>
         <div className="form-group">
           <label htmlFor="contact-name">
-            <span>Full Name</span>
+            <span>Email Address</span>
             <StyledInput
               className="form-control"
-              id="contact-name"
-              type="text"
-              name="name"
-              value={name}
+              id="contact-email"
+              type="email"
+              name="email"
+              value={email}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Awojide Daniel"
+              placeholder="awojidedaniel@gmail.com"
               required
             />
           </label>
@@ -89,12 +88,12 @@ const Form = () => {
             <StyledInput
               required
               className="form-control"
-              id="contact-email"
-              type="email"
-              name="email"
-              value={email}
+              id="contact-name"
+              type="text"
+              name="name"
+              value={name}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="awojidedaniel@gmail.com"
+              placeholder="awojide daniel"
             />
           </label>
         </div>

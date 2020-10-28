@@ -9,9 +9,9 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 
 const Title = styled.h1`
-  font-family: Inter;
-  font-size: 40px;
+  font-style: normal;
   font-weight: 600;
+  font-size: 36px;
   line-height: 48px;
   color: #2e2e2e;
 `;
@@ -27,8 +27,8 @@ class Contact extends Component {
               <div className="col">
                 <div className="contact-content">
                   <Title>Contact Us</Title>
-                  <p>
-                    Feel free to reach out to us with your questions and
+                  <p className="contact__text">
+                    Feel free to reach out to us with your questions <br /> and
                     complaints
                   </p>
                   <div>
@@ -39,7 +39,7 @@ class Contact extends Component {
                         Nigeria
                       </div>
                     </div>
-                    <div className="d-flex contact-info">
+                    <div className="d-flex contact-info mt-0">
                       <img className="mr-4" src={phone} alt="" />
                       090 - 000 - 0000
                     </div>
