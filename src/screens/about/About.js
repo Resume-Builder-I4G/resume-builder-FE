@@ -5,6 +5,7 @@ import emmanuel from "../../assets/images/Olowookere-Emmanuel.jfif";
 import ezike from "../../assets/images/Ifedubem-Ezike.jfif";
 import job from "../../assets/images/Job-Oaikhenah.jfif";
 import raffia from "../../assets/images/Raffia-city-hub.jfif";
+import Footer from "../../components/Footer/Footer";
 
 function About() {
   const teamProfile = [
@@ -60,6 +61,7 @@ function About() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

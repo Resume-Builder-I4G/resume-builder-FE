@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import error_message from "../../assets/svgs/404-Error-pana.svg";
-import "./Error404.css";
 
 const StyledImg = styled.img`
   margin-bottom: 60px;
@@ -31,7 +30,7 @@ const StyledButton = styled.button`
 
 function Error404() {
   return (
-    <div id="error404">
+    <div id="error404" className="text-center">
       <div className="container">
         <StyledImg src={error_message} alt="" />
         <h2>Oooops!!!</h2>
