@@ -1,0 +1,28 @@
+.navbar-css {
+    color: white;
+}
+
+.container .navbar-brand {
+    color: white;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+.nav-item a {
+    color: white;
+}
+
+.nav-link,
+.nav-item {
+    align-self: center;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.nav-link img {
+    padding-right: 10px;
+}
