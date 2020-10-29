@@ -1,10 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Home from "./screens/homepage/Home";
 import About from "./screens/about/About";
 import Contact from "./screens/contact-us/Contact";
 import Error404 from "./screens/error404/Error404";
 import Register from "./screens/sign_up/Signup";
+
+AOS.init();
 
 function App() {
   return (
