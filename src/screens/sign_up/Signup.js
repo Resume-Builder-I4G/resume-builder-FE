@@ -25,6 +25,16 @@ const StyledInput = styled.input`
   height: 100%;
 `;
 
+const Styledlabel = styled.label`
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 0;
+`;
+
 function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -82,7 +92,7 @@ function Signup() {
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
+            aria-Styledlabel="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
             <img
@@ -94,7 +104,7 @@ function Signup() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to="/login">
+                <Link to="/about">
                   <a className="nav-link" href="">
                     Already have an account?
                   </a>
@@ -115,14 +125,14 @@ function Signup() {
           </div>
         </div>
       </nav>
-      <div className="d-flex justify-content-between">
-        <div className="signup-content">
-          <div className="container">
+      <div className="row">
+        <div className="col-md-7 left-signup">
+          <div className="signup-content">
             <Title>Create Account</Title>
             <p className="signup__text">Register your account!</p>
             <form className="form" onSubmit={submitForm}>
               <div className="form-group">
-                <label htmlFor="contact-name">
+                <Styledlabel htmlFor="contact-name">
                   <span>Full Name</span>
                   <StyledInput
                     className="form-control"
@@ -133,11 +143,11 @@ function Signup() {
                     onChange={(e) => setName(e.target.value)}
                     required
                   />
-                </label>
+                </Styledlabel>
               </div>
 
               <div className="form-group">
-                <label htmlFor="signup-email">
+                <Styledlabel htmlFor="signup-email">
                   <span>Email</span>
                   <StyledInput
                     required
@@ -148,11 +158,11 @@ function Signup() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
-                </label>
+                </Styledlabel>
               </div>
 
               <div className="form-group">
-                <label htmlFor="signup-password">
+                <Styledlabel htmlFor="signup-password">
                   <span>Password</span>
                   <StyledInput
                     required
@@ -163,7 +173,7 @@ function Signup() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                </label>
+                </Styledlabel>
               </div>
 
               <div className="text-left">
@@ -179,7 +189,7 @@ function Signup() {
             </form>
           </div>
         </div>
-        <div className="right">
+        <div className="right-div col-md-5">
           <img src={illustration} alt="right illustration" />
         </div>
       </div>

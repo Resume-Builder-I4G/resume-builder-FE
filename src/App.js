@@ -20,12 +20,6 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route component={Error404} />
       </Switch>
-      {/* <About /> */}
-      {/* <Contact /> */}
-      {/* <Error404 /> */}
-      {/* <Footer /> */}
-      {/* <GlobalFonts /> */}
-      {/* <Success /> */}
     </div>
   );
 }
