@@ -199,11 +199,24 @@ header .left button p {
 /* Testimonials */
 
 #testimonials {
-    margin-top: 150px;
-    margin-bottom: 80px;
-    /* background: url(../../assets/svgs/background-bottom.svg);
+    /* margin-top: 150px;
+    margin-bottom: 80px; */
+    padding: 180px 0 100px;
+    background: url(../../assets/svgs/background-bottom.svg);
     background-repeat: no-repeat;
-    background-position: left; */
+    background-position: left;
+}
+
+#testimonials h2 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0em;
+}
+
+#testimonials .info .profile-info {
+    /* position: relative;
+    top: -40px; */
 }
 
 .card {
@@ -216,15 +229,16 @@ header .left button p {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    /* background-color: #fff; */
     background-clip: border-box;
     border-radius: 6px;
     outline: none;
     box-shadow: none;
+    background-color: transparent !important;
+    margin-bottom: 10px;
 }
 
 .comment {
-    padding: 20px;
     background: #216DE0;
     border-radius: 16px;
     color: #fff;
@@ -234,19 +248,71 @@ header .left button p {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     color: #474747;
-    margin-top: 0;
+    background-color: transparent;
+    height: auto;
+    margin-top: -30px;
 }
 
-.rounded-circle {
-    position: relative;
-    height: auto;
-    top: -50px !important
+.profile-info h4 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
 }
+
+/* .profile-info h5 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+} */
 
 .comment {
     padding: 52px 59px;
 }
 
 .carousel-inner {
-    margin: 20px;
+    /* margin: 20px; */
+    padding: 60px 250px 40px;
+}
+
+.carousel-item {
+    max-width: 958px;
+    margin: 0 auto;
+}
+
+.carousel-control {
+    padding: 0 100px;
+    margin-top: 100px;
+    width: min-content;
+    height: min-content;
+}
+
+.test-wrapper {
+    margin-bottom: 30px;
+}
+
+.carousel ol {
+    margin-bottom: 20;
+}
+
+.carousel-indicators li {
+    background: #B5CDF1 !important;
+}
+
+.carousel-indicators .active {
+    background: #216DE0 !important;
+}
+
+.carousel-indicators li {
+    margin-right: 10px !important;
+}
+
+.carousel-indicators li:nth-last-of-type(1) {
+    margin: 0;
+}
+
+.carousel-indicators li {
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 100% !important;
+    border: none !important;
 }
