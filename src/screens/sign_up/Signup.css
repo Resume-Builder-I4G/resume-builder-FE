@@ -106,3 +106,19 @@ a[type="button"]:hover {
     max-width: 605px;
     background: #F2F6FB;
 }
+
+.bottom-signup {
+    margin-top: 80px;
+    align-items: center;
+}
+
+.bottom-signup p {
+    margin-right: 30px;
+}
+
+.bottom-signup a img {
+    border-radius: 100%;
+    padding: 15px 14px;
+    border: 1px solid #2E2E2E;
+    margin-right: 30px;
+}

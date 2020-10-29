@@ -45,7 +45,11 @@ function Error404() {
   return (
     <div id="error404" className="text-center">
       <div className="container">
-        <StyledImg src={error_message} alt="" />
+        <StyledImg
+          src={error_message}
+          alt="Error image"
+          className="img-fluid"
+        />
         <StyleTitle>Oooops!!!</StyleTitle>
         <p className="text-center mb-4">
           We can’t seem to find the page you’re looking for

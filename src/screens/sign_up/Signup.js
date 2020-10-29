@@ -4,6 +4,9 @@ import "./Signup.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import illustration from "../../assets/svgs/Mobile login-pana.svg";
+import googleImg from "../../assets/svgs/signup-svg/Google.svg";
+import fbImg from "../../assets/svgs/signup-svg/Facebook.svg";
+import linkedinImg from "../../assets/svgs/signup-svg/LinkedIn.svg";
 
 const Title = styled.h1`
   font-style: normal;
@@ -187,10 +190,28 @@ function Signup() {
                 </button>
               </div>
             </form>
+            <div className="bottom-signup d-flex">
+              <p>Create account with: </p>
+              <div className="other-signup">
+                <a href="">
+                  <img src={googleImg} alt="" />
+                </a>
+                <a href="">
+                  <img src={fbImg} alt="" />
+                </a>
+                <a href="">
+                  <img src={linkedinImg} alt="" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div className="right-div col-md-5">
-          <img src={illustration} alt="right illustration" />
+          <img
+            src={illustration}
+            alt="right illustration"
+            className="img-fluid"
+          />
         </div>
       </div>
     </div>
