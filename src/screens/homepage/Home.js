@@ -67,7 +67,7 @@ function Home() {
     <div className="homepage">
       <Navbar />
       <header>
-        <div className="left">
+        <div className="left" data-aos="fade-right">
           <StyledTitle>Create a mind blowing resume.</StyledTitle>
           <p>Design and build a unique CV that your dream job will notice.</p>
           <StyledButton className="btn btn-primary">
@@ -81,7 +81,11 @@ function Home() {
       </header>
       <section id="section1">
         <h2>Some of our benefits</h2>
-        <div className="horizontal1 row">
+        <div
+          className="horizontal1 row"
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
           <div className="col-md-4">
             <img src={phonebook} alt="easy to use" />
             <p className="head text-center">Easy to Use</p>
@@ -117,7 +121,12 @@ function Home() {
         </div>
         <div className="right2">
           <h2>How it works</h2>
-          <div className="list2">
+          <div
+            className="list2"
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+          >
             <div className="contain2">
               <div className="number" id="blue">
                 <p>01</p>
