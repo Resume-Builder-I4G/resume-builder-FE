@@ -18,9 +18,11 @@ const StyleTitle = styled.h2`
 
 const StyledDiv = styled.div`
   marging-top: 50px;
+  justify-content: center;
 `;
 
 const StyledButton = styled.a`
+  text-decoration: none !important;
   outline: none;
   font-size: 24px;
   font-weight: 500;
@@ -31,8 +33,11 @@ const StyledButton = styled.a`
   color: #ffffff;
 
   &:hover {
-    text-decoration: none;
-    color: #fff;
+    background-color: #fff !important;
+    color: #216de0 !important;
+    border: 1px solid#216DE0;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
   }
 `;
 
@@ -45,10 +50,15 @@ function Error404() {
         <p className="text-center mb-4">
           We can’t seem to find the page you’re looking for
         </p>
-        <StyledDiv className="button_container">
+        <StyledDiv className="button_container text-center">
           <Link to="/">
-            {" "}
-            <StyledButton>Go Home</StyledButton>
+            <a
+              type="button"
+              className="btn btn-primary text-center text-white"
+              href="#"
+            >
+              Go Home
+            </a>
           </Link>
         </StyledDiv>
       </div>

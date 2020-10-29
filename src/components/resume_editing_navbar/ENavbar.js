@@ -1,9 +1,9 @@
 import React from "react";
 import "./ENavbar.css";
 import { Link } from "react-router-dom";
-import previewImg from "../../assets/svgs/Eye preview icon.svg";
-import downloadImg from "../../assets/svgs/Download icon.svg";
-import Daniel from "../../assets/images/Daniel.png";
+import previewImg from "../../assets/svgs/Editing-Navbar-Img-Svg/Eye preview icon.svg";
+import downloadImg from "../../assets/svgs/Editing-Navbar-Img-Svg/Download icon.svg";
+import Daniel from "../../assets/images/Editing-Navbar-Img/Daniel.png";
 
 function ENavbar() {
   return (
