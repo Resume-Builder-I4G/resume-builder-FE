@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Success.css";
 import success from "../../assets/svgs/success.svg";
+import close_button from "../../assets/svgs/close.svg";
 // import { Link } from 'react-router-dom'
 
 export class Success extends Component {
@@ -8,9 +9,13 @@ export class Success extends Component {
     return (
       <div id="success">
         <div className="container">
-          <h1>
-            <img src={success} alt="" />
-          </h1>
+          <img
+            onClick
+            src={close_button}
+            alt="close-button"
+            className="close_button"
+          />
+          <img src={success} alt="" />
           <h2>Your request has been received</h2>
           <p>
             One of customer service agents will get back to you as soon as
