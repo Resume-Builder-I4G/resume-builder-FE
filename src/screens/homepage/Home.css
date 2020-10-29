@@ -19,13 +19,13 @@ header {
     margin-left: 100px;
 }
 
-.left h1 {
+/* .left h1 {
     width: 674px;
     font-weight: 600;
     font-size: 60px;
     line-height: 90px;
     color: #2E2E2E;
-}
+} */
 
 .left p {
     font-size: 20px;
@@ -63,13 +63,13 @@ header .left button p {
     margin-top: 40px;
 }
 
-.horizontal1 .col1 {
+.horizontal1 div {
     text-align: center;
     width: 350px;
     padding-top: 30px;
 }
 
-.horizontal1 .col1 img {
+.horizontal1 img {
     margin-bottom: 13px;
 }
 
@@ -80,7 +80,7 @@ header .left button p {
     color: #2E2E2E;
 }
 
-.col1 .head p {
+.head p {
     font-weight: normal;
     font-size: 18px;
     line-height: 27px;
@@ -88,7 +88,7 @@ header .left button p {
     color: #474747;
 }
 
-.coll .body {
+.body {
     font-size: 16px;
     font-weight: 400;
     line-height: 27px;
@@ -116,9 +116,14 @@ header .left button p {
     margin-top: 50px;
 }
 
-#section1 button p {
+.btn {
+    background: #216de0;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 19px 27px;
     color: white;
-    padding: 5px;
 }
 
 #section2 {
@@ -189,4 +194,59 @@ header .left button p {
     color: #474747;
     margin: 0px;
     width: 335px;
+}
+
+/* Testimonials */
+
+#testimonials {
+    margin-top: 150px;
+    margin-bottom: 80px;
+    /* background: url(../../assets/svgs/background-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: left; */
+}
+
+.card {
+    border: none !important
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: none;
+}
+
+.comment {
+    padding: 20px;
+    background: #216DE0;
+    border-radius: 16px;
+    color: #fff;
+}
+
+.info {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: #474747;
+    margin-top: 0;
+}
+
+.rounded-circle {
+    position: relative;
+    height: auto;
+    top: -50px !important
+}
+
+.comment {
+    padding: 52px 59px;
+}
+
+.carousel-inner {
+    margin: 20px;
 }

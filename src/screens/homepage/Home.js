@@ -1,15 +1,32 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import "./Home.css";
+
 import resume_bro_1 from "../../assets/images/img-home/Resume-bro 1.svg";
 import bean_1 from "../../assets/images/img-home/bean-1.png";
 import phonebook from "../../assets/images/img-home/phonebook.png";
 import templates from "../../assets/images/img-home/template.png";
 import support from "../../assets/images/img-home/support.png";
 import resume_rafiki from "../../assets/images/img-home/Resume-rafiki.png";
+
+import test_1 from "../../assets/images/testimonials/test-1.png";
+import test_2 from "../../assets/images/testimonials/test-2.png";
+import test_3 from "../../assets/images/testimonials/test-3.png";
+
+import next from "../../assets/svgs/next-btn.svg";
+import prev from "../../assets/svgs/prev-btn.svg";
+import bottom_background from "../../assets/svgs/background-bottom.svg";
+
+import "./Home.css";
 import styled from "styled-components";
 
+const StyledTitle = styled.h1`
+  width: 674px;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 90px;
+  color: #2e2e2e;
+`;
 const StyledButton = styled.button`
   background: #216de0;
   border-radius: 6px;
@@ -19,14 +36,14 @@ const StyledButton = styled.button`
 
 function Home() {
   return (
-    <div classNameName="homepage">
+    <div className="homepage">
       <Navbar />
       <header>
         <div className="left">
-          <h1>Create a mind blowing resume.</h1>
+          <StyledTitle>Create a mind blowing resume.</StyledTitle>
           <p>Design and build a unique CV that your dream job will notice.</p>
-          <StyledButton>
-            <p> Build your resume</p>
+          <StyledButton className="btn btn-primary">
+            Build your resume
           </StyledButton>
         </div>
         <div className="right">
@@ -36,8 +53,8 @@ function Home() {
       </header>
       <section id="section1">
         <h2>Some of our benefits</h2>
-        <div className="horizontal1">
-          <div className="col1">
+        <div className="horizontal1 row">
+          <div className="col-md-4">
             <img src={phonebook} alt="easy to use" />
             <p className="head text-center">Easy to Use</p>
             <p className="text-center body font-weight-normal">
@@ -45,7 +62,7 @@ function Home() {
               Save and your resume will be ready.
             </p>
           </div>
-          <div className="col1">
+          <div className="col-md-4">
             <img src={templates} alt="easy to use" />
             <p className="head text-center">Access to Templates</p>
             <p className="text-center body font-weight-normal">
@@ -53,7 +70,7 @@ function Home() {
               Save and your resume will be ready.
             </p>
           </div>
-          <div className="col1">
+          <div className="col-md-4">
             <img src={support} alt="easy to use" />
             <p className="head text-center">Support & Feedbck</p>
             <p className="text-center body font-weight-normal">
@@ -62,9 +79,8 @@ function Home() {
             </p>
           </div>
         </div>
-        <StyledButton>
-          {" "}
-          <p>Build your resume</p>{" "}
+        <StyledButton className="btn btn-primary">
+          Build your resume
         </StyledButton>
       </section>
       <section id="section2">
@@ -123,6 +139,117 @@ function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section id="testimonials">
+        <h2 className="text-center">Some words from our awesome clients</h2>
+
+        <div className="co">
+          <div
+            id="carouselIndicators"
+            className="carousel slide"
+            data-ride="carousel"
+          >
+            <ol className="carousel-indicators">
+              <li
+                data-target="#carouselIndicators"
+                data-slide-to="0"
+                className="active"
+              ></li>
+              <li data-target="#carouselIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselIndicators" data-slide-to="2"></li>
+            </ol>
+            <div className="carousel-inner container">
+              <div className="carousel-item active">
+                <div className="card">
+                  <div className="comment mb-3">
+                    “It is very functional, has great templates and indeed has
+                    loads of interesting features that helps you create a unique
+                    CV. I am really satisfied and i definitely recommend their
+                    service.”
+                  </div>
+                  <div className="info text-center">
+                    <img
+                      src={test_1}
+                      width="70"
+                      className="rounded-circle mb-1"
+                    />
+                    <h4 className="mt-1">Micheal James</h4>
+                    <h5 className="mb-4">Product designer</h5>
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <div className="card mt-5">
+                  <div className="comment mb-3">
+                    “I created my CV with Resume Builder, and everything was
+                    perfect. It was easy to use, funtional and helped me get the
+                    job I wanted. Recommended it to few of my friends and they
+                    loved as much I did.”
+                  </div>
+                  <div className="info text-center">
+                    <img
+                      src={test_2}
+                      width="70"
+                      className="rounded-circle mb-1"
+                    />
+                    <h4 className="mt-1">James Oluwaseun</h4>
+                    <h5 className="mb-4">Brand Manager</h5>
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <div className="card mt-5">
+                  <div className="comment mb-3">
+                    “So many resume bulders out there, but none I’ve fount as
+                    funtional as Resume Builder. This has become my main go-to
+                    tool.”
+                  </div>
+                  <div className="info text-center">
+                    <img
+                      src={test_3}
+                      width="70"
+                      className="rounded-circle mb-1"
+                    />
+                    <h4 className="mt-1">Mary Jane</h4>
+                    <h5 className="mb-4">UI/UX Designer</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              className="carousel-control-prev"
+              href="#carouselIndicators"
+              role="button"
+              data-slide="prev"
+            >
+              {/* <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="sr-only">Previous</span> */}
+              <img src={prev} alt="" />
+            </a>
+            <a
+              className="carousel-control-next"
+              href="#carouselIndicators"
+              role="button"
+              data-slide="next"
+            >
+              {/* <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="sr-only">Next</span> */}
+              <img src={next} alt="" />
+            </a>
+          </div>
+        </div>
+        <img src={bottom_background} alt="" />
+        <div className="text-center">
+          <StyledButton className="btn btn-primary">
+            Build your resume
+          </StyledButton>
         </div>
       </section>
       <Footer />
