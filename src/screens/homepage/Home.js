@@ -40,6 +40,29 @@ const StyledRole = styled.h5`
   margin: 0px;
 `;
 function Home() {
+  const testimonialData = [
+    {
+      name: "Micheal James",
+      role: "Product designer",
+      comments:
+        "“It is very functional, has great templates and indeed has loads of interesting features that helps you create a unique CV. I am really satisfied and i definitely recommend their service.”",
+      avatar: test_1,
+    },
+    {
+      name: "James Oluwaseun",
+      role: "Brand Manager",
+      comments:
+        "“I created my CV with Resume Builder, and everything was perfect. It was easy to use, funtional and helped me get the job I wanted. Recommended it to few of my friends and they loved as much I did.”",
+      avatar: test_2,
+    },
+    {
+      name: "Mary Jane",
+      role: "UI/UX Designer",
+      comments:
+        "“So many resume bulders out there, but none I’ve fount as funtional as Resume Builder. This has become my main go-to tool.”",
+      avatar: test_3,
+    },
+  ];
   return (
     <div className="homepage">
       <Navbar />
@@ -165,52 +188,41 @@ function Home() {
               <li data-target="#carouselIndicators" data-slide-to="2"></li>
             </ol>
             <div className="carousel-inner test-wrapper">
-              <div className="carousel-item active">
-                <div className="card">
-                  <div className="comment">
-                    “It is very functional, has great templates and indeed has
-                    loads of interesting features that helps you create a unique
-                    CV. I am really satisfied and i definitely recommend their
-                    service.”
-                  </div>
-                  <div className="info text-center">
-                    <img src={test_1} width="70" className="rounded-circle" />
-                    <div className="profile-info">
-                      <h4>Micheal James</h4>
-                      <StyledRole>Product designer</StyledRole>
+              {testimonialData.map((testimonial) => {
+                return (
+                  <div className="carousel-item" key={testimonial.name}>
+                    <div className="card">
+                      <div className="comment">{testimonial.comments}</div>
+                      <div className="info text-center">
+                        <img
+                          src={testimonial.avatar}
+                          width="70"
+                          className="rounded-circle"
+                        />
+                        <div className="profile-info">
+                          <h4>{testimonial.name}</h4>
+                          <StyledRole>{testimonial.role}</StyledRole>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="carousel-item">
+                );
+              })}
+              <div
+                className="carousel-item active"
+                key={testimonialData[0].name}
+              >
                 <div className="card">
-                  <div className="comment">
-                    “I created my CV with Resume Builder, and everything was
-                    perfect. It was easy to use, funtional and helped me get the
-                    job I wanted. Recommended it to few of my friends and they
-                    loved as much I did.”
-                  </div>
+                  <div className="comment">{testimonialData[0].comments}</div>
                   <div className="info text-center">
-                    <img src={test_2} width="70" className="rounded-circle" />
+                    <img
+                      src={testimonialData[0].avatar}
+                      width="70"
+                      className="rounded-circle"
+                    />
                     <div className="profile-info">
-                      <h4>James Oluwaseun</h4>
-                      <StyledRole>Brand Manager</StyledRole>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="card">
-                  <div className="comment">
-                    “So many resume bulders out there, but none I’ve fount as
-                    funtional as Resume Builder. This has become my main go-to
-                    tool.”
-                  </div>
-                  <div className="info text-center">
-                    <img src={test_3} width="70" className="rounded-circle" />
-                    <div className="profile-info">
-                      <h4>Mary Jane</h4>
-                      <StyledRole>UI/UX Designer</StyledRole>
+                      <h4>{testimonialData[0].name}</h4>
+                      <StyledRole>{testimonialData[0].role}</StyledRole>
                     </div>
                   </div>
                 </div>
@@ -222,11 +234,6 @@ function Home() {
               role="button"
               data-slide="prev"
             >
-              {/* <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="sr-only">Previous</span> */}
               <img src={prev} alt="" />
             </a>
             <a
@@ -235,16 +242,10 @@ function Home() {
               role="button"
               data-slide="next"
             >
-              {/* <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="sr-only">Next</span> */}
               <img src={next} alt="" />
             </a>
           </div>
         </div>
-        {/* <img src={bottom_background} alt="" /> */}
         <div className="text-center">
           <StyledButton className="btn btn-primary">
             Build your resume
