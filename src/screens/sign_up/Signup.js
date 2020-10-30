@@ -22,7 +22,7 @@ const StyledInput = styled.input`
   border: 2px solid #216de0;
   box-sizing: border-box;
   border-radius: 6px;
-  margin-top: 16px;
+  margin-top: 10px;
   padding: 1em;
   width: 100%;
   height: 100%;
@@ -36,6 +36,14 @@ const Styledlabel = styled.label`
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 0;
+`;
+
+const StyledButton = styled.a`
+  background-color: #216de0 !important;
+  border: none;
+  width: 200px;
+  height: 40px;
+  border-radius: 15px;
 `;
 
 function Signup() {
@@ -81,55 +89,15 @@ function Signup() {
 
   return (
     <div>
-      <nav className="navbar navbar-css navbar-expand-lg navbar-light bg-white sticky-top">
-        <div className="container">
-          <Link to="/">
-            <a className="navbar-brand logo">
-              Resume<span className="sub-logo">Builder</span>
-            </a>
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-Styledlabel="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-            <img
-              className="img-fluid"
-              src="./assets/images/navicon.png"
-              alt=""
-            />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to="/about">
-                  <a className="nav-link" href="">
-                    Already have an account?
-                  </a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/">
-                  <a
-                    type="button"
-                    className="nav-link btn btn-primary text-white"
-                    href="#"
-                  >
-                    Log in
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div className="row">
+      <div className="row signup-body">
         <div className="col-md-7 left-signup">
+          <div className="logo">
+            <Link to="/">
+              <a className="" href="#">
+                Resume<span className="sub-logo">Builder</span>
+              </a>
+            </Link>
+          </div>
           <div className="signup-content">
             <Title>Create Account</Title>
             <p className="signup__text">Register your account!</p>
@@ -207,6 +175,16 @@ function Signup() {
           </div>
         </div>
         <div className="right-div col-md-5">
+          <div className="right-nav col-md-5">
+            <ul className="menu-items d-flex">
+              <li className="already__haveaccount">Already have an account?</li>
+              <li>
+                <a href="#" className="btn btn-primary">
+                  Log in
+                </a>
+              </li>
+            </ul>
+          </div>
           <img
             src={illustration}
             alt="right illustration"
