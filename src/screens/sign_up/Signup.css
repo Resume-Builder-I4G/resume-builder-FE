@@ -2,6 +2,9 @@ body {
     overflow-x: hidden;
 }
 
+.signup-body {
+    height: 100vh;
+}
 
 /* Navigation bar */
 * {
@@ -12,30 +15,26 @@ body {
     text-decoration: none !important;
 }
 
-.navbar-css {
-    background-color: #000 !important;
-    color: #fff !important;
+.right-nav {
+    background: #F2F6FB;
+    max-width: 605px !important;
 }
+
 
 .logo {
     font-family: "Salsa", cursive;
     font-size: 26px !important;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 36px;
+}
+
+.logo a {
+    color: black !important;
 }
 
 .sub-logo {
     color: #216de0 !important;
-}
-
-.nav-link {
-    color: #000 !important;
-    font-size: 16px;
-    line-height: 29px;
-    font-style: normal;
-    font-weight: 500;
-    text-decoration: none;
 }
 
 .btn-primary {
@@ -46,14 +45,6 @@ body {
     border-radius: 15px;
 }
 
-.nav-link {
-    margin-left: 50px;
-}
-
-.nav-link:hover {
-    color: #216de0 !important;
-}
-
 a[type="button"]:hover {
     background-color: #fff !important;
     color: #216de0 !important;
@@ -62,23 +53,13 @@ a[type="button"]:hover {
     text-decoration-line: none !important;
 }
 
-.navbar {
-    padding: 0;
-}
-
-.navbar .container {
-    margin: 0 5px 0 100px !important;
-    padding: 0;
-}
-
 .row .left-signup {
-    padding: 0 0 0 100px;
+    padding: 13px 0 60px 100px;
     background: url(../../assets/svgs/background-signup.svg);
     background-position: left;
-    background-position-x: 10px;
-    background-size: 350px;
-    background-position-y: 40px;
-    /* background-position-x: 50px 100px; */
+    background-position-x: 15px;
+    background-size: 390px;
+    background-position-y: 90px;
     background-repeat: no-repeat;
 
 }
@@ -89,20 +70,37 @@ a[type="button"]:hover {
 
 .form {
     width: 610px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
-
-/* .row .right {
-    background: #F2F6FB;
-    height: 100%;
-    padding-right: 100px !important;
-} */
 
 .right-div img {
     max-width: 100%;
 }
 
 .right-div {
-    max-width: 605px;
+    max-width: 605px !important;
     background: #F2F6FB;
+    padding-top: 10px;
+}
+
+.already__haveaccount {
+    margin-right: 68px;
+    align-self: center;
+}
+
+.bottom-signup {
+    margin-top: 50px;
+    align-items: center;
+}
+
+.bottom-signup p {
+    margin-right: 30px;
+    margin-bottom: 0;
+}
+
+.bottom-signup a img {
+    border-radius: 100%;
+    padding: 15px 14px;
+    border: 1px solid #2E2E2E;
+    margin-right: 30px;
 }

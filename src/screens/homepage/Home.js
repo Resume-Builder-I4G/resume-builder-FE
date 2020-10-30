@@ -184,7 +184,7 @@ function Home() {
         <div className="co">
           <div
             id="carouselIndicators"
-            className="carousel slide carousel-fade"
+            className="carousel slide"
             data-ride="carousel"
           >
             <ol className="carousel-indicators">
