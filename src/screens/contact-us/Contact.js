@@ -16,50 +16,47 @@ const Title = styled.h1`
   color: #2e2e2e;
 `;
 
-class Contact extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <div className="wrapper">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <div className="contact-content">
-                  <Title>Contact Us</Title>
-                  <p className="contact__text">
-                    Feel free to reach out to us with your questions <br /> and
-                    complaints
-                  </p>
-                  <div>
-                    <div className="d-flex contact-info">
-                      <img className="mr-4" src={locationmarker} alt="" />
-                      <div>
-                        Resume Builder Ltd. <br /> 24 Lekki Street Lagos,
-                        Nigeria
-                      </div>
+function Contact() {
+  return (
+    <div>
+      <Navbar />
+      <div className="wrapper">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div className="contact-content">
+                <Title>Contact Us</Title>
+                <p className="contact__text">
+                  Feel free to reach out to us with your questions <br /> and
+                  complaints
+                </p>
+                <div>
+                  <div className="d-flex contact-info">
+                    <img className="mr-4" src={locationmarker} alt="" />
+                    <div>
+                      Resume Builder Ltd. <br /> 24 Lekki Street Lagos, Nigeria
                     </div>
-                    <div className="d-flex contact-info mt-0">
-                      <img className="mr-4" src={phone} alt="" />
-                      090 - 000 - 0000
-                    </div>
-                    <div className="d-flex contact-info">
-                      <img className="mr-4" src={email} alt="" />
-                      support@resumebuilder.com
-                    </div>
+                  </div>
+                  <div className="d-flex contact-info mt-0">
+                    <img className="mr-4" src={phone} alt="" />
+                    090 - 000 - 0000
+                  </div>
+                  <div className="d-flex contact-info">
+                    <img className="mr-4" src={email} alt="" />
+                    support@resumebuilder.com
                   </div>
                 </div>
               </div>
-              <div className="col">
-                <Form />
-              </div>
+            </div>
+            <div className="col">
+              <Form />
             </div>
           </div>
         </div>
-        <Footer />
       </div>
-    );
-  }
+      <Footer />
+    </div>
+  );
 }
 
 export default Contact;

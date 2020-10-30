@@ -15,15 +15,15 @@ AOS.init();
 function App() {
   return (
     <div className="App">
-      <ENavbar />
-      <Create_resume />
-      {/* <Switch>
+      {/* <ENavbar />
+      <Create_resume /> */}
+      <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/register" component={Register} />
         <Route component={Error404} />
-      </Switch> */}
+      </Switch>
     </div>
   );
 }
