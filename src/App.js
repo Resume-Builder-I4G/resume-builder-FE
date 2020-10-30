@@ -7,6 +7,7 @@ import About from "./screens/about/About";
 import Contact from "./screens/contact-us/Contact";
 import Error404 from "./screens/error404/Error404";
 import Register from "./screens/sign_up/Signup";
+import Login from "./screens/login/Login";
 import ENavbar from "./components/resume_editing_navbar/ENavbar";
 import Create_resume from "./screens/create-resume-process/Create_resume";
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
         <Route component={Error404} />
       </Switch>
     </div>

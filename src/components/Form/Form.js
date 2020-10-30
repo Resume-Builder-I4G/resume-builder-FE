@@ -3,6 +3,7 @@ import "./Form.css";
 import axios from "axios";
 import Success from "../../screens/contact-us/Success";
 import styled from "styled-components";
+import Button from "../Button";
 
 const StyledInput = styled.input`
   outline: none;
@@ -129,14 +130,14 @@ const Form = () => {
         </div>
 
         <div className="text-right">
-          <button
+          <Button
             type="submit"
             className="btn btn-primary"
             style={{ background: loader ? "#ccc" : null }}
           >
             {" "}
             {!loader ? "Send" : <i className="fas fa-ellipsis-h"></i>}
-          </button>
+          </Button>
         </div>
       </form>
       {status === "SUCCESS" ? (

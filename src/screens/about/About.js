@@ -73,7 +73,7 @@ function About() {
           <div className="row team-images">
             {teamProfile.map((profile) => {
               return (
-                <div className="col profile text-center">
+                <div key={profile.picture} className="col profile text-center">
                   <img src={profile.picture} alt="" />
                   <div className="mt-4" />
                   <p className="profile-name text-center">{profile.name}</p>
