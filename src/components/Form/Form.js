@@ -35,6 +35,17 @@ const Form = () => {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
   const [loader, setLoader] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const openSuccess = () => {
+    setShow((prevState) => ({ show: !prevState.show }));
+    setStatus((status = ""));
+  };
+
+  const closeSuccess = () => {
+    setShow(false);
+    setStatus("");
+  };
 
   const submitForm = (event) => {
     event.preventDefault();
@@ -66,9 +77,6 @@ const Form = () => {
     setLoader(true);
   };
 
-  const updateStatus = () => {
-    setStatus((status = ""));
-  };
   return (
     <div>
       <form className="form" onSubmit={submitForm}>
@@ -131,7 +139,11 @@ const Form = () => {
           </button>
         </div>
       </form>
-      {status === "SUCCESS" ? <Success display={updateStatus} /> : ""}
+      {status === "SUCCESS" ? (
+        <Success close={closeSuccess} display={openSuccess} />
+      ) : (
+        ""
+      )}
       {status === "ERROR" && (
         <p style={{ textAlign: "center", color: "red" }}>
           {" "}
