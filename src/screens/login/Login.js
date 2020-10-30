@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Signup.css";
+import "./Login.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import illustration from "../../assets/svgs/Mobile login-pana.svg";
+import loginIlustration from "../../assets/svgs/login-svg/Login-pana 1.svg";
 import googleImg from "../../assets/svgs/signup-svg/Google.svg";
 import fbImg from "../../assets/svgs/signup-svg/Facebook.svg";
 import linkedinImg from "../../assets/svgs/signup-svg/LinkedIn.svg";
+import Button from "../../components/Button";
 
 const Title = styled.h1`
   font-style: normal;
@@ -46,8 +47,17 @@ const StyledButton = styled.a`
   border-radius: 15px;
 `;
 
+const StyledCheckbox = styled.input`
+  background: #fafafa;
+  border: 1.5px solid #216de0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin-right: 10px;
+`;
+
+const StyledCheckboxLabel = styled.label``;
+
 function Signup() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState("");
@@ -59,7 +69,6 @@ function Signup() {
 
     axios
       .post("https://jsonplaceholder.typicode.com/posts", {
-        name: name,
         email: email,
         password: password,
       })
@@ -99,24 +108,9 @@ function Signup() {
             </Link>
           </div>
           <div className="signup-content">
-            <Title>Create Account</Title>
-            <p className="signup__text">Register your account!</p>
+            <Title>Welcome back!</Title>
+            <p className="signup__text">Login to continue!</p>
             <form className="form" onSubmit={submitForm}>
-              <div className="form-group">
-                <Styledlabel htmlFor="contact-name">
-                  <span>Full Name</span>
-                  <StyledInput
-                    className="form-control"
-                    id="contact-name"
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                  />
-                </Styledlabel>
-              </div>
-
               <div className="form-group">
                 <Styledlabel htmlFor="signup-email">
                   <span>Email</span>
@@ -146,20 +140,33 @@ function Signup() {
                   />
                 </Styledlabel>
               </div>
+              <div className="form-check">
+                <StyledCheckbox
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                />
+                <StyledCheckboxLabel
+                  class="form-check-label"
+                  for="exampleCheck1"
+                >
+                  Remember me
+                </StyledCheckboxLabel>
+              </div>
 
               <div className="text-left">
-                <button
+                <Button
                   type="submit"
                   className="btn btn-primary"
                   style={{ background: loader ? "#ccc" : null }}
                 >
                   {" "}
-                  {!loader ? "Sign Up" : <i className="fas fa-ellipsis-h"></i>}
-                </button>
+                  {!loader ? "Log in" : <i className="fas fa-ellipsis-h"></i>}
+                </Button>
               </div>
             </form>
             <div className="bottom-signup d-flex">
-              <p>Create account with: </p>
+              <p>Log in with: </p>
               <div className="other-signup">
                 <a href="">
                   <img src={googleImg} alt="" />
@@ -177,19 +184,19 @@ function Signup() {
         <div className="right-div col-md-5">
           <div className="right-nav col-md-5">
             <ul className="menu-items d-flex">
-              <li className="already__haveaccount">Already have an account?</li>
-              <Link to="/login">
+              <li className="already__haveaccount">Don’t have an account?</li>
+              <Link to="/register">
                 <li>
-                  <a href="#" className="btn btn-primary">
-                    Log in
-                  </a>
+                  <Button href="#" className="btn btn-primary">
+                    Sign up
+                  </Button>
                 </li>
               </Link>
             </ul>
           </div>
           <img
-            src={illustration}
-            alt="right illustration"
+            src={loginIlustration}
+            alt="Login illustration"
             className="img-fluid"
           />
         </div>
