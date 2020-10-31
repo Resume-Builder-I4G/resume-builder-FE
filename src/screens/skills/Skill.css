@@ -90,12 +90,6 @@ body {
     text-decoration: underline #216DE0;
 }
 
-
-/* Languages */
-.input-form #inputSkills {
-    margin-bottom: 100px;
-}
-
 @media screen and (max-width: 590px) {
     .input-form label {
         font-size: 1rem;
