@@ -155,14 +155,14 @@ function Signup() {
               </div>
 
               <div className="text-left">
-                <Button
+                <button
                   type="submit"
                   className="btn btn-primary"
                   style={{ background: loader ? "#ccc" : null }}
                 >
                   {" "}
                   {!loader ? "Log in" : <i className="fas fa-ellipsis-h"></i>}
-                </Button>
+                </button>
               </div>
             </form>
             <div className="bottom-signup d-flex">

@@ -130,14 +130,14 @@ const Form = () => {
         </div>
 
         <div className="text-right">
-          <Button
+          <button
             type="submit"
             className="btn btn-primary"
             style={{ background: loader ? "#ccc" : null }}
           >
             {" "}
             {!loader ? "Send" : <i className="fas fa-ellipsis-h"></i>}
-          </Button>
+          </button>
         </div>
       </form>
       {status === "SUCCESS" ? (
