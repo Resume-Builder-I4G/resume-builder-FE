@@ -9,6 +9,7 @@ import Error404 from "./screens/error404/Error404";
 import Register from "./screens/sign_up/Signup";
 import Login from "./screens/login/Login";
 import Choose_color from "./screens/choose_colors/Choose_color";
+import Skills from "./screens/skills/Skill";
 
 AOS.init();
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/choose-color" component={Choose_color} />
+        <Route exact path="/skills" component={Skills} />
         <Route component={Error404} />
       </Switch>
     </div>
