@@ -8,6 +8,7 @@ import Contact from "./screens/contact-us/Contact";
 import Error404 from "./screens/error404/Error404";
 import Register from "./screens/sign_up/Signup";
 import ENavbar from "./components/resume_editing_navbar/ENavbar";
+import Experience from "./screens/experiences/Experience"
 
 AOS.init();
 
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/experience" component={Experience} />
         <Route component={Error404} />
       </Switch>
     </div>
