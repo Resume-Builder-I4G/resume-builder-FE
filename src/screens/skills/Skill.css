@@ -12,7 +12,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: #F8F8F8 !important;
+    background-color: #F8F8F8;
 }
 
 .content {
@@ -23,7 +23,7 @@ body {
     background-color: #FFF;
     margin: 30px 0;
     padding: 30px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 16px rgba(224, 178, 178, 0.1);
 }
 
 .input-form {
