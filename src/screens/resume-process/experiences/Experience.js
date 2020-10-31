@@ -1,11 +1,9 @@
 import React from "react";
 import "./Experience.css";
-import ENavbar from "../../components/resume_editing_navbar/ENavbar";
 
 function Experience() {
   return (
     <div className="housing">
-      <ENavbar />
       <div className="container-fluid content">
         <div className="row">
           <div className="col-12 main-content">
