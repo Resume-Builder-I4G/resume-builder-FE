@@ -1,8 +1,13 @@
 import React from "react";
-import "./Education.module.css";
+import {
+  StyledInputForm,
+  StyledInputInput,
+  StyledInputLabel,
+  StyledInputTextarea,
+} from "../StyledComponents";
+import "./Education.css";
 
 function Education({ menu, activeMenu }) {
-  activeMenu(1);
   return (
     <div>
       <div class="container-fluid content">
@@ -10,57 +15,69 @@ function Education({ menu, activeMenu }) {
           <div class="col-12 main-content">
             <form>
               <div class="form-row">
-                <div class="form-group col-xs-6 input-form">
-                  <label for="inputInstitutionName">Institution Name</label>
-                  <input
+                <StyledInputForm class="form-group col-xs-6">
+                  <StyledInputLabel for="inputInstitutionName">
+                    Institution Name
+                  </StyledInputLabel>
+                  <StyledInputInput
                     type="text"
                     class="form-control"
                     id="inputInstitutionName"
                     placeholder="e.g Lautech"
                   />
-                </div>
-                <div class="form-group col-xs-6 input-form">
-                  <label for="inputFieldName">Field of Study</label>
-                  <input type="text" class="form-control" id="inputFieldName" />
-                </div>
+                </StyledInputForm>
+                <StyledInputForm class="form-group col-xs-6">
+                  <StyledInputLabel for="inputFieldName">
+                    Field of Study
+                  </StyledInputLabel>
+                  <StyledInputInput
+                    type="text"
+                    class="form-control"
+                    id="inputFieldName"
+                  />
+                </StyledInputForm>
               </div>
 
               <div class="form-row">
-                <div class="form-group col-xs-6 input-form">
-                  <label for="inputCountry">Country</label>
-                  <input
+                <StyledInputForm class="form-group col-xs-6">
+                  <StyledInputLabel for="inputCountry">
+                    Country
+                  </StyledInputLabel>
+                  <StyledInputInput
                     type="text"
                     class="form-control"
                     id="inputCountry"
                     placeholder="e.g Nigeria"
                   />
-                </div>
+                </StyledInputForm>
 
-                <div class="form-group col-xs-6 input-form">
-                  <label for="inputCity">City</label>
-                  <input
+                <StyledInputForm class="form-group col-xs-6">
+                  <StyledInputLabel for="inputCity">City</StyledInputLabel>
+                  <StyledInputInput
                     type="text"
                     class="form-control"
                     id="inputCity"
                     placeholder="e.g Ogbomoso"
                   />
-                </div>
+                </StyledInputForm>
               </div>
 
-              <div class="form-group input-form check-input">
+              <StyledInputForm class="form-group check-input">
                 <input
                   type="checkbox"
                   class="form-check-input"
                   id="checkPresent"
                 />
-                <label class="form-check-label" for="checkPresent">
+                <StyledInputLabel class="form-check-label" for="checkPresent">
                   Currently study here
-                </label>
-              </div>
+                </StyledInputLabel>
+              </StyledInputForm>
 
               <div class="form-row">
-                <div class="form-group input-form col-xs-3">
-                  <label for="inputStartMonth">Time Period</label>
+                <StyledInputForm class="form-group col-xs-3">
+                  <StyledInputLabel for="inputStartMonth">
+                    Time Period
+                  </StyledInputLabel>
                   <select id="inputStartMonth" class="form-control">
                     <option selected>Month</option>
                     <option>January</option>
@@ -76,9 +93,9 @@ function Education({ menu, activeMenu }) {
                     <option>November</option>
                     <option>December</option>
                   </select>
-                </div>
-                <div class="form-group input-form col-xs-3">
-                  <label for="inputStartYear">.</label>
+                </StyledInputForm>
+                <StyledInputForm class="form-group col-xs-3">
+                  <StyledInputLabel for="inputStartYear">.</StyledInputLabel>
                   <select id="inputStartYear" class="form-control">
                     <option selected>Year</option>
                     <option>2020</option>
@@ -113,10 +130,10 @@ function Education({ menu, activeMenu }) {
                     <option>1991</option>
                     <option>1990</option>
                   </select>
-                </div>
+                </StyledInputForm>
 
-                <div class="form-group input-form col-xs-3">
-                  <label for="inputStartMonth">.</label>
+                <StyledInputForm class="form-group col-xs-3">
+                  <StyledInputLabel for="inputStartMonth">.</StyledInputLabel>
                   <select id="inputStartMonth" class="form-control">
                     <option selected>Month</option>
                     <option>January</option>
@@ -132,12 +149,9 @@ function Education({ menu, activeMenu }) {
                     <option>November</option>
                     <option>December</option>
                   </select>
-                </div>
-                <div
-                  class="form-group input-form
-                         col-xs-3"
-                >
-                  <label for="inputStartYear">.</label>
+                </StyledInputForm>
+                <StyledInputForm class="form-group col-xs-3">
+                  <StyledInputLabel for="inputStartYear">.</StyledInputLabel>
                   <select id="inputStartYear" class="form-control">
                     <option selected>Year</option>
                     <option>2020</option>
@@ -172,17 +186,19 @@ function Education({ menu, activeMenu }) {
                     <option>1991</option>
                     <option>1990</option>
                   </select>
-                </div>
+                </StyledInputForm>
               </div>
 
-              <div class="form-group input-form">
-                <label for="inputOtherInfo">Other Information</label>
-                <textarea
+              <StyledInputForm class="form-group">
+                <StyledInputLabel for="inputOtherInfo">
+                  Other Information
+                </StyledInputLabel>
+                <StyledInputTextarea
                   class="form-control"
                   id="inputOtherInfo"
                   rows="8"
-                ></textarea>
-              </div>
+                ></StyledInputTextarea>
+              </StyledInputForm>
             </form>
 
             <div class="add-item">

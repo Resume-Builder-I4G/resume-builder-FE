@@ -43,7 +43,14 @@ const StyledButton = styled.a`
   border: none;
   width: 200px;
   height: 40px;
-  border-radius: 15px;
+
+  &:hover {
+    background-color: #f2f6fb !important;
+    color: #216de0 !important;
+    border: 1px solid#216DE0;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+  }
 `;
 
 function Signup() {
@@ -180,9 +187,9 @@ function Signup() {
               <li className="already__haveaccount">Already have an account?</li>
               <Link to="/login">
                 <li>
-                  <a href="#" className="btn btn-primary">
+                  <StyledButton href="#" className="btn btn-primary">
                     Log in
-                  </a>
+                  </StyledButton>
                 </li>
               </Link>
             </ul>

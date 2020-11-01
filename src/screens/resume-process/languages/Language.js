@@ -1,34 +1,39 @@
-import React from 'react';
+import React from "react";
+import {
+  StyledInputForm,
+  StyledInputLabel,
+  StyledInputTextarea,
+  StyledNext,
+  StyledPrev,
+} from "../StyledComponents";
 import "./Language.css";
 
 function Language() {
-    return (
-      <div className="container-fluid content">
-        <div className="row">
-          <div className="col-12 main-content">
-            <form>
-              <div className="form-group input-form">
-                <label for="inputLanguages">Langauges (%)</label>
-                <textarea
-                  className="form-control"
-                  id="inputLanguages"
-                  rows="8"
-                ></textarea>
-              </div>
-            </form>
+  return (
+    <div className="container-fluid content">
+      <div className="row">
+        <div className="col-12 main-content">
+          <form>
+            <StyledInputForm className="form-group">
+              <StyledInputLabel for="inputLanguages">
+                Langauges (%)
+              </StyledInputLabel>
+              <StyledInputTextarea
+                className="form-control"
+                id="inputLanguages"
+                rows="8"
+              ></StyledInputTextarea>
+            </StyledInputForm>
+          </form>
 
-            <div className="buttons">
-              <a className="previous" href="#">
-                Back
-              </a>
-              <a className="next" href="#">
-                Next Section
-              </a>
-            </div>
+          <div className="buttons">
+            <StyledPrev href="#">Back</StyledPrev>
+            <StyledNext href="#">Next Section</StyledNext>
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 }
 
 export default Language;

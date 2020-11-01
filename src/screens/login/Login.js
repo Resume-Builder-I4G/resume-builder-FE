@@ -44,7 +44,14 @@ const StyledButton = styled.a`
   border: none;
   width: 200px;
   height: 40px;
-  border-radius: 15px;
+
+  &:hover {
+    background-color: #f2f6fb !important;
+    color: #216de0 !important;
+    border: 1px solid#216DE0;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+  }
 `;
 
 const StyledCheckbox = styled.input`
@@ -187,9 +194,9 @@ function Signup() {
               <li className="already__haveaccount">Don’t have an account?</li>
               <Link to="/register">
                 <li>
-                  <Button href="#" className="btn btn-primary">
+                  <StyledButton href="#" className="btn btn-primary">
                     Sign up
-                  </Button>
+                  </StyledButton>
                 </li>
               </Link>
             </ul>

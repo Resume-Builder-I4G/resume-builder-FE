@@ -42,7 +42,7 @@ const ResumeTabs = [
     image: achievement,
     title: "Achievements",
     alt: "achievementIcon",
-    path: "achivement",
+    path: "achivements",
   },
   { image: skills, title: "Skills", alt: "skillsIcon", path: "skills" },
   {

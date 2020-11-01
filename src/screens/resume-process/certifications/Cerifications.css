@@ -1,0 +1,316 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F8F8;
+}
+
+.content {
+    padding: 0 10px !important;
+}
+
+
+.main-content {
+    background-color: #FFF;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 30px !important;
+    height: 100%;
+
+}
+
+.input-form {
+    padding: 0;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+
+.input-form label {
+    color: #474747;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.input-form input {
+    background-color: #F8F8F8;
+    border: 1px solid #CDCDCD;
+    height: 50px !important;
+}
+
+.button {
+    margin-top: 100px;
+    text-align: right;
+}
+
+.next {
+    width: 250px;
+    background-color: #216DE0;
+    border: 1px solid #216DE0;
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1% 3%;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.next:hover {
+    text-decoration: underline #FFF;
+    color: #FFF;
+}
+
+.add-item {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.add-item a {
+    font-size: 1.5rem;
+    color: #216DE0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+}
+
+.previous {
+    width: 250px;
+    background-color: #FFF;
+    color: #216DE0;
+    border: 1px solid #216DE0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1% 1%;
+    text-align: center;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+
+.previous:hover {
+    color: #216DE0;
+    text-decoration: underline #216DE0;
+}
+
+@media screen and (max-width: 590px) {
+    .input-form label {
+        font-size: 1rem;
+    }
+
+    .next,
+    .previous {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .input-form label {
+        font-size: 0.8rem;
+    }
+
+    .next,
+    .previous {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 436px) {
+    .input-form label {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    input::placeholder {
+        font-size: 0.7rem;
+    }
+
+    .input-form label {
+        font-size: 0.6rem;
+    }
+
+    .next,
+    .previous {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .input-form label {
+        font-size: 0.5rem;
+    }
+}
+
+
+
+.cert-text {
+    position: relative;
+    top: 40px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.year-text {
+    position: relative;
+    top: 40px;
+    left: 60%;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    background-color: #F8F8F8;
+    border: 1px solid #CDCDCD;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+input::placeholder {
+    padding-left: 20px;
+    font-size: 1.5rem;
+}
+
+.resume-cert {
+    margin-top: 50px;
+}
+
+.first {
+    margin-bottom: 20px;
+}
+
+div li .span-icon {
+    display: inline-block;
+    min-width: 130px;
+    min-height: 130px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    ;
+    margin-top: 20px;
+    box-sizing: border-box;
+
+}
+
+ion-icon {
+    font-size: 64px;
+
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    text-align: center;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    border: none;
+    outline: none;
+    background: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.done-btn {
+    height: 100%;
+
+}
+
+.previous {
+    float: right;
+    margin-right: 10px;
+    width: 250px;
+    height: 50px;
+    background-color: #FFF;
+    color: #216DE0;
+    border: 1px solid #216DE0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    outline: none;
+    text-align: center;
+    border-radius: 6px;
+
+
+
+}
+
+
+.next {
+    float: right;
+    width: 250px;
+    height: 50px;
+    background-color: #216DE0;
+    border: 1px solid #216DE0;
+    color: #FFF;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 6px;
+
+
+
+}
+
+.next:hover {
+    text-decoration: underline #FFF;
+    color: #FFF;
+}
+
+.addmore {
+    text-decoration: none;
+    float: right;
+    margin-top: 60px;
+    padding-right: 15px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #216DE0;
+}
+
+
+
+div li .cert-icon {
+    margin-left: 40px;
+}
+
+.resume-cert .input-cert {
+    width: 502px;
+    height: 70px;
+}
+
+.year-input {
+    width: 204px;
+    height: 70px;
+    margin-left: 30px;
+}

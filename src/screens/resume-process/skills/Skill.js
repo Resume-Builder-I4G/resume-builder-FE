@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  StyledInputForm,
+  StyledInputLabel,
+  StyledInputTextarea,
+  StyledNext,
+  StyledPrev,
+} from "../StyledComponents";
 import "./Skill.css";
 
 function Skill() {
@@ -7,23 +14,19 @@ function Skill() {
       <div className="row">
         <div className="col-12 main-content">
           <form>
-            <div className="form-group input-form">
-              <label for="inputSkills">Skills</label>
-              <textarea
+            <StyledInputForm className="form-group">
+              <StyledInputLabel for="inputSkills">Skills</StyledInputLabel>
+              <StyledInputTextarea
                 className="form-control"
                 id="inputSkills"
                 rows="8"
-              ></textarea>
-            </div>
+              ></StyledInputTextarea>
+            </StyledInputForm>
           </form>
 
           <div className="buttons">
-            <a className="previous" href="#">
-              Back
-            </a>
-            <a className="next" href="#">
-              Next Section
-            </a>
+            <StyledPrev href="#">Back</StyledPrev>
+            <StyledNext href="#">Next Section</StyledNext>
           </div>
         </div>
       </div>
