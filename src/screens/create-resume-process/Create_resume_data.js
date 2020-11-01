@@ -36,7 +36,7 @@ const ResumeTabs = [
     image: certification,
     title: "Certifications",
     alt: "certificationIcon",
-    path: "certification",
+    path: "certifications",
   },
   {
     image: achievement,

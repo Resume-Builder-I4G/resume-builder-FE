@@ -1,84 +1,88 @@
 import React from "react";
 import {
+  StyledAddItemText,
   StyledInputForm,
   StyledInputInput,
   StyledInputLabel,
   StyledInputTextarea,
+  StyledNext,
+  StyledPrev,
+  StyledAddItemWrap,
 } from "../StyledComponents";
 import "./Education.css";
 
-function Education({ menu, activeMenu }) {
+function Education() {
   return (
-    <div>
-      <div class="container-fluid content">
-        <div class="row">
-          <div class="col-12 main-content">
+    <div className="housing">
+      <div className="container-fluid content">
+        <div className="row">
+          <div className="col-12 main-content">
             <form>
-              <div class="form-row">
-                <StyledInputForm class="form-group col-xs-6">
-                  <StyledInputLabel for="inputInstitutionName">
-                    Institution Name
-                  </StyledInputLabel>
+              <div className="form-row">
+                <StyledInputForm className="form-group col-md-6">
+                  <label htmlFor="inputInstitutionName">Institution Name</label>
                   <StyledInputInput
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="inputInstitutionName"
-                    placeholder="e.g Lautech"
+                    placeholder="e.g lautech"
                   />
                 </StyledInputForm>
-                <StyledInputForm class="form-group col-xs-6">
-                  <StyledInputLabel for="inputFieldName">
-                    Field of Study
-                  </StyledInputLabel>
+                <StyledInputForm className="form-group col-md-6">
+                  <label for="inputCompanyName">Field of Study</label>
                   <StyledInputInput
                     type="text"
-                    class="form-control"
-                    id="inputFieldName"
+                    className="form-control"
+                    id="inputCompanyName"
+                    placeholder=""
                   />
                 </StyledInputForm>
               </div>
 
-              <div class="form-row">
-                <StyledInputForm class="form-group col-xs-6">
+              <div className="form-row">
+                <StyledInputForm className="form-group col-md-6">
                   <StyledInputLabel for="inputCountry">
                     Country
                   </StyledInputLabel>
                   <StyledInputInput
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="inputCountry"
                     placeholder="e.g Nigeria"
                   />
                 </StyledInputForm>
 
-                <StyledInputForm class="form-group col-xs-6">
-                  <StyledInputLabel for="inputCity">City</StyledInputLabel>
+                <StyledInputForm className="form-group col-md-6">
+                  <label for="inputCity">City</label>
                   <StyledInputInput
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="inputCity"
                     placeholder="e.g Ogbomoso"
                   />
                 </StyledInputForm>
               </div>
 
-              <StyledInputForm class="form-group check-input">
-                <input
+              <StyledInputForm className="form-group check-input mr-4">
+                <StyledInputInput
                   type="checkbox"
-                  class="form-check-input"
+                  className="form-check-input"
                   id="checkPresent"
                 />
-                <StyledInputLabel class="form-check-label" for="checkPresent">
+                <StyledInputLabel
+                  className="form-check-label"
+                  for="checkPresent"
+                >
                   Currently study here
                 </StyledInputLabel>
               </StyledInputForm>
 
-              <div class="form-row">
-                <StyledInputForm class="form-group col-xs-3">
+              <div className="form-row mt-4">
+                <StyledInputForm className="form-group col-md-3">
                   <StyledInputLabel for="inputStartMonth">
                     Time Period
                   </StyledInputLabel>
-                  <select id="inputStartMonth" class="form-control">
+                  <select id="inputStartMonth" className="form-control">
                     <option selected>Month</option>
                     <option>January</option>
                     <option>February</option>
@@ -94,9 +98,9 @@ function Education({ menu, activeMenu }) {
                     <option>December</option>
                   </select>
                 </StyledInputForm>
-                <StyledInputForm class="form-group col-xs-3">
+                <StyledInputForm className="form-group col-md-3">
                   <StyledInputLabel for="inputStartYear">.</StyledInputLabel>
-                  <select id="inputStartYear" class="form-control">
+                  <select id="inputStartYear" className="form-control">
                     <option selected>Year</option>
                     <option>2020</option>
                     <option>2019</option>
@@ -132,9 +136,9 @@ function Education({ menu, activeMenu }) {
                   </select>
                 </StyledInputForm>
 
-                <StyledInputForm class="form-group col-xs-3">
+                <StyledInputForm className="form-group col-md-3">
                   <StyledInputLabel for="inputStartMonth">.</StyledInputLabel>
-                  <select id="inputStartMonth" class="form-control">
+                  <select id="inputStartMonth" className="form-control">
                     <option selected>Month</option>
                     <option>January</option>
                     <option>February</option>
@@ -150,9 +154,9 @@ function Education({ menu, activeMenu }) {
                     <option>December</option>
                   </select>
                 </StyledInputForm>
-                <StyledInputForm class="form-group col-xs-3">
+                <StyledInputForm className="form-group col-md-3">
                   <StyledInputLabel for="inputStartYear">.</StyledInputLabel>
-                  <select id="inputStartYear" class="form-control">
+                  <select id="inputStartYear" className="form-control">
                     <option selected>Year</option>
                     <option>2020</option>
                     <option>2019</option>
@@ -189,31 +193,27 @@ function Education({ menu, activeMenu }) {
                 </StyledInputForm>
               </div>
 
-              <StyledInputForm class="form-group">
-                <StyledInputLabel for="inputOtherInfo">
+              <StyledInputForm className="form-group">
+                <StyledInputLabel for="inputDescription">
                   Other Information
                 </StyledInputLabel>
                 <StyledInputTextarea
-                  class="form-control"
-                  id="inputOtherInfo"
+                  className="form-control"
+                  id="inputDescription"
                   rows="8"
                 ></StyledInputTextarea>
               </StyledInputForm>
             </form>
 
-            <div class="add-item">
-              <a class="addItem" href="#">
-                <span class="plus">+</span>&nbsp; Add Another
-              </a>
-            </div>
+            <StyledAddItemWrap>
+              <StyledAddItemText href="#">
+                <span className="plus">+</span>&nbsp; Add Another
+              </StyledAddItemText>
+            </StyledAddItemWrap>
 
-            <div class="buttons">
-              <a class="previous" href="#">
-                Back
-              </a>
-              <a class="next" href="#">
-                Next Section
-              </a>
+            <div className="buttons">
+              <StyledPrev href="#">Back</StyledPrev>
+              <StyledNext href="#">Next Section</StyledNext>
             </div>
           </div>
         </div>

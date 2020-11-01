@@ -19,6 +19,15 @@ const StyledInputInput = styled.input`
   background-color: #f8f8f8;
   border: 1px solid #cdcdcd;
   height: 50px;
+
+  &::placeholder {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
 `;
 
 const StyledInputTextarea = styled.textarea`
