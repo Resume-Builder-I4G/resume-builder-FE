@@ -20,7 +20,7 @@ function Experience() {
             <form>
               <div className="form-row">
                 <StyledInputForm className="form-group col-md-6">
-                  <label for="inputJobTitle">Job Title</label>
+                  <label htmlFor="inputJobTitle">Job Title</label>
                   <StyledInputInput
                     type="text"
                     className="form-control"
