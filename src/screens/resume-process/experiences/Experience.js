@@ -1,4 +1,14 @@
 import React from "react";
+import {
+  StyledAddItemText,
+  StyledInputForm,
+  StyledInputInput,
+  StyledInputLabel,
+  StyledInputTextarea,
+  StyledNext,
+  StyledPrev,
+  StyledAddItemWrap,
+} from "../StyledComponents";
 import "./Experience.css";
 
 function Experience() {
@@ -9,62 +19,69 @@ function Experience() {
           <div className="col-12 main-content">
             <form>
               <div className="form-row">
-                <div className="form-group col-md-6 input-form">
+                <StyledInputForm className="form-group col-md-6">
                   <label for="inputJobTitle">Job Title</label>
-                  <input
+                  <StyledInputInput
                     type="text"
                     className="form-control"
                     id="inputJobTitle"
                     placeholder="e.g Graphics Designer"
                   />
-                </div>
-                <div className="form-group col-md-6 input-form">
+                </StyledInputForm>
+                <StyledInputForm className="form-group col-md-6">
                   <label for="inputCompanyName">Company Name</label>
-                  <input
+                  <StyledInputInput
                     type="text"
                     className="form-control"
                     id="inputCompanyName"
                     placeholder="e.g Ingressive 4 Good"
                   />
-                </div>
+                </StyledInputForm>
               </div>
 
               <div className="form-row">
-                <div className="form-group col-md-6 input-form">
-                  <label for="inputCountry">Country</label>
-                  <input
+                <StyledInputForm className="form-group col-md-6">
+                  <StyledInputLabel for="inputCountry">
+                    Country
+                  </StyledInputLabel>
+                  <StyledInputInput
                     type="text"
                     className="form-control"
                     id="inputCountry"
                     placeholder="e.g Nigeria"
                   />
-                </div>
+                </StyledInputForm>
 
-                <div className="form-group col-md-6 input-form">
+                <StyledInputForm className="form-group col-md-6">
                   <label for="inputCity">City</label>
-                  <input
+                  <StyledInputInput
                     type="text"
                     className="form-control"
                     id="inputCity"
                     placeholder="e.g Ogbomoso"
                   />
-                </div>
+                </StyledInputForm>
               </div>
 
-              <div className="form-group input-form check-input mr-4">
-                <input
+              <StyledInputForm className="form-group check-input mr-4">
+                <StyledInputInput
                   type="checkbox"
                   className="form-check-input"
                   id="checkPresent"
                 />
-                <label className="form-check-label" for="checkPresent">
+                <StyledInputLabel
+                  className="form-check-label"
+                  for="checkPresent"
+                >
                   Currently working here
-                </label>
-              </div>
+                </StyledInputLabel>
+              </StyledInputForm>
 
               <div className="form-row mt-4">
-                <div className="form-group input-form col-md-3">
-                  <label for="inputStartMonth">Time Period</label>
+                <StyledInputForm className="form-group col-md-3">
+                  <StyledInputLabel for="inputStartMonth">
+                    Time Period
+                  </StyledInputLabel>
                   <select id="inputStartMonth" className="form-control">
                     <option selected>Month</option>
                     <option>January</option>
@@ -80,9 +97,9 @@ function Experience() {
                     <option>November</option>
                     <option>December</option>
                   </select>
-                </div>
-                <div className="form-group input-form col-md-3">
-                  <label for="inputStartYear">.</label>
+                </StyledInputForm>
+                <StyledInputForm className="form-group col-md-3">
+                  <StyledInputLabel for="inputStartYear">.</StyledInputLabel>
                   <select id="inputStartYear" className="form-control">
                     <option selected>Year</option>
                     <option>2020</option>
@@ -117,10 +134,10 @@ function Experience() {
                     <option>1991</option>
                     <option>1990</option>
                   </select>
-                </div>
+                </StyledInputForm>
 
-                <div className="form-group input-form col-md-3">
-                  <label for="inputStartMonth">.</label>
+                <StyledInputForm className="form-group col-md-3">
+                  <StyledInputLabel for="inputStartMonth">.</StyledInputLabel>
                   <select id="inputStartMonth" className="form-control">
                     <option selected>Month</option>
                     <option>January</option>
@@ -136,12 +153,9 @@ function Experience() {
                     <option>November</option>
                     <option>December</option>
                   </select>
-                </div>
-                <div
-                  className="form-group input-form
-                         col-md-3"
-                >
-                  <label for="inputStartYear">.</label>
+                </StyledInputForm>
+                <StyledInputForm className="form-group col-md-3">
+                  <StyledInputLabel for="inputStartYear">.</StyledInputLabel>
                   <select id="inputStartYear" className="form-control">
                     <option selected>Year</option>
                     <option>2020</option>
@@ -176,32 +190,30 @@ function Experience() {
                     <option>1991</option>
                     <option>1990</option>
                   </select>
-                </div>
+                </StyledInputForm>
               </div>
 
-              <div className="form-group input-form">
-                <label for="inputDescription">Description</label>
-                <textarea
+              <StyledInputForm className="form-group">
+                <StyledInputLabel for="inputDescription">
+                  Description
+                </StyledInputLabel>
+                <StyledInputTextarea
                   className="form-control"
                   id="inputDescription"
                   rows="8"
-                ></textarea>
-              </div>
+                ></StyledInputTextarea>
+              </StyledInputForm>
             </form>
 
-            <div className="add-item">
-              <a className="addItem" href="#">
+            <StyledAddItemWrap>
+              <StyledAddItemText href="#">
                 <span className="plus">+</span>&nbsp; Add Another
-              </a>
-            </div>
+              </StyledAddItemText>
+            </StyledAddItemWrap>
 
             <div className="buttons">
-              <a className="previous" href="#">
-                Back
-              </a>
-              <a className="next" href="#">
-                Next Section
-              </a>
+              <StyledPrev href="#">Back</StyledPrev>
+              <StyledNext href="#">Next Section</StyledNext>
             </div>
           </div>
         </div>

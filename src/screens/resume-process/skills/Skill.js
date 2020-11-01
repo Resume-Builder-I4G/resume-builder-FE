@@ -6,21 +6,19 @@ import {
   StyledNext,
   StyledPrev,
 } from "../StyledComponents";
-import "./Language.css";
+import "./Skill.css";
 
-function Language() {
+function Skill() {
   return (
     <div className="container-fluid content">
       <div className="row">
         <div className="col-12 main-content">
           <form>
             <StyledInputForm className="form-group">
-              <StyledInputLabel for="inputLanguages">
-                Langauges (%)
-              </StyledInputLabel>
+              <StyledInputLabel for="inputSkills">Skills</StyledInputLabel>
               <StyledInputTextarea
                 className="form-control"
-                id="inputLanguages"
+                id="inputSkills"
                 rows="8"
               ></StyledInputTextarea>
             </StyledInputForm>
@@ -36,4 +34,4 @@ function Language() {
   );
 }
 
-export default Language;
+export default Skill;
