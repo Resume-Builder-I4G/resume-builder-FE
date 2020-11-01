@@ -49,7 +49,7 @@ const ResumeTabs = [
     image: reference,
     title: "Reference",
     alt: "referenceIcon",
-    path: "reference",
+    path: "references",
   },
 ];
 

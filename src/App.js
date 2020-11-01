@@ -20,6 +20,7 @@ import Education from "./screens/resume-process/education/Education";
 import Achivements from "./screens/resume-process/achievement/Achievement";
 import Personal_info from "./screens/resume-process/personal-info/Personal_info";
 import Certifications from "./screens/resume-process/certifications/Certifications";
+import References from "./screens/resume-process/references/References";
 
 import { Link, Router } from "react-router-dom";
 import "./screens/create-resume-process/Create_resume.css";
@@ -72,6 +73,7 @@ function App() {
                   <Route path={`${url}/languages`} component={Language} />
                   <Route path={`${url}/achivements`} component={Achivements} />
                   <Route path={`${url}/education`} component={Education} />
+                  <Route path={`${url}/references`} component={References} />
                   <Route
                     path={`${url}/certifications`}
                     component={Certifications}
