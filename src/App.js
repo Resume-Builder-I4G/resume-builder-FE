@@ -9,6 +9,7 @@ import Error404 from "./screens/error404/Error404";
 import Register from "./screens/sign_up/Signup";
 import Login from "./screens/login/Login";
 import Choose_color from "./screens/choose_colors/Choose_color";
+import Dashboard from "./screens/user_dashboard/Dashboard";
 
 //Create Resume process imports
 import Create_resume from "./screens/create-resume-process/Create_resume";
@@ -37,15 +38,16 @@ function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/choose-color" component={Choose_color} />
-        <Route exact path="/new-resume" component={Create_resume} />
+        {/* <Route exact path="/new-resume" component={Create_resume} /> */}
         <Route
           path="/new-resume"
           render={({ match: { url } }) => (
             <div>
               <ENavbar />
-              <div class="row">
+              <div className="row">
                 <div className="col-3 sidebar-container">
                   <div className="sidebar">
                     <div className="contain">
