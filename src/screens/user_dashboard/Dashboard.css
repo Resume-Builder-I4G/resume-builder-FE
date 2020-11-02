@@ -1,0 +1,93 @@
+.topbar {
+    margin-top: 30px;
+}
+
+.new-resume-btn {
+    align-self: center;
+}
+
+.bar span {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #216DE0;
+    align-self: center;
+}
+
+.layoutView a {
+    align-self: center;
+}
+
+.layoutView a:first-child {
+    margin-right: 20px;
+}
+
+.resume-options select {
+    outline: none;
+    border: none;
+    margin-right: 60px;
+}
+
+.resume-info {
+    height: 92.44544219970703px;
+    position: absolute;
+    z-index: 999;
+    width: 255px;
+    background: #FFFFFF;
+    background: #FFFFFF;
+    border: 1px solid #CFCFCF;
+    border-radius: 0px 0px 6px 6px;
+    padding: 20px 15px;
+}
+
+.left-info li {
+    font-size: 8px;
+    line-height: 12px;
+    text-align: left;
+}
+
+.left-info li span {
+    color: #B1B1B1;
+}
+
+.resume-item {
+    height: 419px;
+    width: 250px;
+    border-radius: 6px;
+
+}
+
+.resume-img {
+    height: 328.5px;
+    width: 100%;
+}
+
+.search-bar-container input {
+    height: 60px;
+    width: 100%;
+    left: 100px;
+    top: 276.59716796875px;
+    border-radius: 16px;
+
+}
+
+.left-info p {
+    margin-bottom: 5px !important;
+}
+
+.right-info {
+    align-self: center;
+}
+
+.right-info a {
+    height: 15px;
+    width: 18px;
+    margin-right: 20px;
+}
+
+.right-info a:nth-last-of-type(1) {
+    margin: 0;
+}
