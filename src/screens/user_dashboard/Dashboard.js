@@ -113,32 +113,30 @@ function Dashboard() {
               {listOfResumes.map((resume) => {
                 return (
                   <div>
-                    <div className="resume-item">
-                      <div className="resume-img">
-                        <img src={ResumeImage} alt="" />
-                      </div>
-                      <div className="resume-info d-flex">
-                        <div className="left-info">
-                          <p className="bold">Resume_1</p>
-                          <ul>
-                            <li>
-                              <span>Created on:</span> Apr 04, 2020
-                            </li>
-                            <li>
-                              <span>Modified on:</span> Apr 04, 2020
-                            </li>
-                          </ul>
+                    <div className="row">
+                      <div className="resume-item col-md-3">
+                        <div className="resume-img">
+                          <img src={ResumeImage} className="img-fluid" alt="" />
                         </div>
-                        <div className="right-info">
-                          <a href="#" className="mr-3">
-                            <img src={Download} alt="" />
-                          </a>
-                          <a href="#">
-                            <img src={Share} alt="" />
-                          </a>
-                          <a href="#">
-                            <img src={More} alt="" />
-                          </a>
+                        <div className="resume-info d-flex justify-content-between">
+                          <div className="left-info">
+                            <p className="bold">Resume_1</p>
+                            <ul>
+                              <li>Created on: Apr 04, 2020</li>
+                              <li>Modified on: Apr 04, 2020</li>
+                            </ul>
+                          </div>
+                          <div className="right-info">
+                            <a href="#">
+                              <img src={Download} alt="" />
+                            </a>
+                            <a href="#">
+                              <img src={Share} alt="" />
+                            </a>
+                            <a href="#">
+                              <img src={More} alt="" />
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>

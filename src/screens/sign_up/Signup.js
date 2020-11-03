@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Signup.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import styled from "styled-components";
+import { useAuth } from "../../context/auth";
+
 import illustration from "../../assets/svgs/Mobile login-pana.svg";
 import googleImg from "../../assets/svgs/signup-svg/Google.svg";
 import fbImg from "../../assets/svgs/signup-svg/Facebook.svg";
@@ -53,46 +55,51 @@ const StyledButton = styled.a`
   }
 `;
 
-function Signup() {
+function Signup(props) {
+  const [isSignedUp, setSignedUp] = useState(false);
+  const [isError, setIsError] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [status, setStatus] = useState("");
   const [loader, setLoader] = useState(false);
+  const { setAuthTokens } = useAuth();
+  const referer = "/dashboard";
 
   const submitForm = (event) => {
     event.preventDefault();
     setLoader(true);
 
     axios
-      .post("https://jsonplaceholder.typicode.com/posts", {
+      .post("https://resume-builder-i4g.herokuapp.com/auth/signup", {
         name: name,
         email: email,
         password: password,
       })
       .then((response) => {
         console.log(response);
+        console.log(response.statusText);
         if (response.status === 200 || response.status === 201) {
-          // form.reset();
-          setStatus("SUCCESS");
+          setAuthTokens(response.data);
+          setSignedUp(true);
           setLoader(false);
         } else {
-          setStatus("ERROR");
+          setIsError(true);
           setLoader(false);
         }
       })
       .catch((error) => {
         console.log(error);
-        setStatus("ERROR");
+        setIsError(true);
         setLoader(false);
       });
 
     setLoader(true);
   };
 
-  const updateStatus = () => {
-    setStatus((status = ""));
-  };
+  if (isSignedUp) {
+    return <Redirect to={referer} />;
+  }
 
   return (
     <div>
@@ -164,6 +171,9 @@ function Signup() {
                   {!loader ? "Sign Up" : <i className="fas fa-ellipsis-h"></i>}
                 </button>
               </div>
+              {isError && (
+                <div>The username or password provided were incorrect!</div>
+              )}
             </form>
             <div className="bottom-signup d-flex">
               <p>Create account with: </p>
@@ -185,7 +195,7 @@ function Signup() {
           <div className="right-nav col-md-5">
             <ul className="menu-items d-flex">
               <li className="already__haveaccount">Already have an account?</li>
-              <Link to="/login">
+              <Link to="/sign-in">
                 <li>
                   <StyledButton href="#" className="btn btn-primary">
                     Log in

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Login.css";
+import "./SignIn.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import loginIlustration from "../../assets/svgs/login-svg/Login-pana 1.svg";
@@ -150,12 +150,12 @@ function Signup() {
               <div className="form-check">
                 <StyledCheckbox
                   type="checkbox"
-                  class="form-check-input"
+                  className="form-check-input"
                   id="exampleCheck1"
                 />
                 <StyledCheckboxLabel
-                  class="form-check-label"
-                  for="exampleCheck1"
+                  className="form-check-label"
+                  htmlFor="exampleCheck1"
                 >
                   Remember me
                 </StyledCheckboxLabel>
@@ -192,7 +192,7 @@ function Signup() {
           <div className="right-nav col-md-5">
             <ul className="menu-items d-flex">
               <li className="already__haveaccount">Don’t have an account?</li>
-              <Link to="/register">
+              <Link to="/sign-up">
                 <li>
                   <StyledButton href="#" className="btn btn-primary">
                     Sign up
