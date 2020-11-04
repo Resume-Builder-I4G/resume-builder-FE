@@ -21,11 +21,4 @@ function PrivateRoute({ component: Component, ...rest }) {
   );
 }
 
-{
-  /* <Route
-        path="/new-resume"
-        render={({ match: { url } }) => <NewResume url={url} />}
-      /> */
-}
-
 export default PrivateRoute;

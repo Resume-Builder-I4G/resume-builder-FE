@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, Route } from "react-router-dom";
 
-import ResumeTabs from "../../screens/create-resume-process/Create_resume_data";
+import ResumeTabs from "./Imports";
 import ENavbar from "../../components/resume_editing_navbar/ENavbar";
+
+import "./New_resume.css";
 
 //Create Resume process imports
 
@@ -38,14 +40,29 @@ function New_resume({ url }) {
         </div>
 
         <div className="col-8">
-          <Route path={`${url}/personal-info`} component={Personal_info} />
-          <Route path={`${url}/skills`} component={Skills} exact />
-          <Route path={`${url}/experience`} component={Experience} />
-          <Route path={`${url}/languages`} component={Language} />
-          <Route path={`${url}/achivements`} component={Achivements} />
-          <Route path={`${url}/education`} component={Education} />
-          <Route path={`${url}/references`} component={References} />
-          <Route path={`${url}/certifications`} component={Certifications} />
+          <Route
+            path="/new-resume"
+            render={({ match: { url } }) => {
+              return (
+                <>
+                  <Route
+                    path={`${url}/personal-info`}
+                    component={Personal_info}
+                  />
+                  <Route path={`${url}/skills`} component={Skills} exact />
+                  <Route path={`${url}/experience`} component={Experience} />
+                  <Route path={`${url}/languages`} component={Language} />
+                  <Route path={`${url}/achivements`} component={Achivements} />
+                  <Route path={`${url}/education`} component={Education} />
+                  <Route path={`${url}/references`} component={References} />
+                  <Route
+                    path={`${url}/certifications`}
+                    component={Certifications}
+                  />
+                </>
+              );
+            }}
+          />
         </div>
       </div>
     </div>

@@ -13,20 +13,6 @@ import New_resume from "./screens/new-resume/New_resume";
 import Choose_color from "./screens/choose_colors/Choose_color";
 import Dashboard from "./screens/user_dashboard/Dashboard";
 
-//Create Resume process imports
-import Create_resume from "./screens/create-resume-process/Create_resume";
-
-import Skills from "./screens/resume-process/skills/Skill";
-import Experience from "./screens/resume-process/experiences/Experience";
-import Language from "./screens/resume-process/languages/Language";
-import Education from "./screens/resume-process/education/Education";
-import Achivements from "./screens/resume-process/achievement/Achievement";
-import Personal_info from "./screens/resume-process/personal-info/Personal_info";
-import Certifications from "./screens/resume-process/certifications/Certifications";
-import References from "./screens/resume-process/references/References";
-
-import "./screens/create-resume-process/Create_resume.css";
-
 const Routes = () => (
   <BrowserRouter>
     <Switch>

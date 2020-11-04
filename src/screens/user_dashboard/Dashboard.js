@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
-import Daniel from "../../assets/images/Editing-Navbar-Img/Daniel.png";
+import Navbar from "../../components/dashboard_navbar/Dashboard_Nav";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import Grid from "../../assets/svgs/user_dashboard/grid.svg";
 import List from "../../assets/svgs/user_dashboard/list.svg";
 import Download from "../../assets/svgs/user_dashboard/download.svg";
@@ -9,6 +11,7 @@ import Share from "../../assets/svgs/user_dashboard/share.svg";
 import More from "../../assets/svgs/user_dashboard/more-horizontal.svg";
 import ResumeImage from "../../assets/images/user_dashboard/resume-image.png";
 import styled from "styled-components";
+import NewResume from "../new-resume/New_resume";
 
 const StyledWelcomeMsg = styled.h1`
   font-size: 30px;
@@ -32,43 +35,7 @@ function Dashboard() {
   const listOfResumes = [];
   return (
     <div>
-      <nav className="navbar navbar-css navbar-expand-lg navbar-light bg-primary sticky-top">
-        <div className="container">
-          <Link to="/">
-            <a className="navbar-brand text-light logo">
-              Resume <span className="sub-logo text-light">Builder</span>
-            </a>
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-            <img
-              className="img-fluid"
-              src="./assets/images/navicon.png"
-              alt=""
-            />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to="/contact">
-                  <a className="nav-link text-light" href="">
-                    <img src={Daniel} alt="" />
-                    Awojide Daniel
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
       <div className="body">
         <div className="container">
           <div className="topbar d-flex justify-content-between">
@@ -79,16 +46,18 @@ function Dashboard() {
               </StyledInfo>
             </div>
             <div className="new-resume-btn text-center">
-              <button href="#" className="btn btn-primary">
-                New Resume
-              </button>
+              <Link to="/new-resume">
+                <button href="#" className="btn btn-primary">
+                  New Resume
+                </button>
+              </Link>
             </div>
           </div>
           <div className="search-bar-container mt-4">
             <input type="text" />
           </div>
           <div className="resumes-container mt-4">
-            <div className="bar d-flex justify-content-between">
+            <div className="bar d-flex justify-content-between mb-3">
               <span>Your resumes</span>
               <div className="resume-options d-flex">
                 <select
