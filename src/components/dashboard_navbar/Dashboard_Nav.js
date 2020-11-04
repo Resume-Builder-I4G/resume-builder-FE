@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Daniel from "../../assets/images/user_dashboard/Daniel.png";
+import "./Dashboard_Nav.css";
 
 function Dashboard_Nav() {
   return (
@@ -43,8 +44,20 @@ function Dashboard_Nav() {
                 <img src={Daniel} alt="" />
                 Awojide Daniel
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                kgjh
+              <div
+                class="dropdown-menu text-center"
+                aria-labelledby="navbarDropdown"
+              >
+                <p className="name">Awojide Daniel</p>
+                <p className="email">awojidedaniel@gmail.com</p>
+                <div className="btn-wrap">
+                  <a className="settings-btn" href="#">
+                    Settings
+                  </a>
+                  <a className="log-out-btn" href="#">
+                    Log Out
+                  </a>
+                </div>
               </div>
             </li>
           </ul>
