@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   StyledInputForm,
   StyledInputLabel,
@@ -12,8 +13,30 @@ function Skill() {
   const [skill, setSkill] = useState("");
 
   const submitHandler = (event) => {
+    let varData = JSON.parse(localStorage.getItem("tokens"));
+    console.log(varData.token);
+    let varToken = JSON.stringify(varData);
+    console.log(varToken);
     event.preventDefault();
-    console.log(skill);
+    axios
+      .post(
+        "https://resume-builder-i4g.herokuapp.com/skills",
+        {
+          name: skill,
+          level: 3, //varEmail is a variable which holds the email
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${varData}`,
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

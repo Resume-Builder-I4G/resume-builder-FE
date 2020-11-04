@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Login.css";
-import { Link } from "react-router-dom";
+import "./SignIn.css";
+import { Link, Redirect } from "react-router-dom";
 import styled from "styled-components";
+import { useAuth } from "../../context/auth";
+
 import loginIlustration from "../../assets/svgs/login-svg/Login-pana 1.svg";
 import googleImg from "../../assets/svgs/signup-svg/Google.svg";
 import fbImg from "../../assets/svgs/signup-svg/Facebook.svg";
@@ -64,18 +66,24 @@ const StyledCheckbox = styled.input`
 
 const StyledCheckboxLabel = styled.label``;
 
-function Signup() {
+function Signin(props) {
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [loader, setLoader] = useState(false);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [status, setStatus] = useState("");
-  const [loader, setLoader] = useState(false);
+
+  const { setAuthTokens } = useAuth();
+  // const referer = props.location.state.referer || "/";
+  const referer = "/dashboard";
 
   const submitForm = (event) => {
     event.preventDefault();
     setLoader(true);
 
     axios
-      .post("https://jsonplaceholder.typicode.com/posts", {
+      .post("https://resume-builder-i4g.herokuapp.com/auth/signin", {
         email: email,
         password: password,
       })
@@ -83,25 +91,26 @@ function Signup() {
         console.log(response);
         if (response.status === 200 || response.status === 201) {
           // form.reset();
-          setStatus("SUCCESS");
+          setAuthTokens(response.data);
+
+          setLoggedIn(true);
           setLoader(false);
         } else {
-          setStatus("ERROR");
+          setIsError(true);
           setLoader(false);
         }
       })
       .catch((error) => {
         console.log(error);
-        setStatus("ERROR");
         setLoader(false);
       });
 
     setLoader(true);
   };
 
-  const updateStatus = () => {
-    setStatus((status = ""));
-  };
+  if (isLoggedIn) {
+    return <Redirect to={referer} />;
+  }
 
   return (
     <div>
@@ -150,12 +159,12 @@ function Signup() {
               <div className="form-check">
                 <StyledCheckbox
                   type="checkbox"
-                  class="form-check-input"
+                  className="form-check-input"
                   id="exampleCheck1"
                 />
                 <StyledCheckboxLabel
-                  class="form-check-label"
-                  for="exampleCheck1"
+                  className="form-check-label"
+                  htmlFor="exampleCheck1"
                 >
                   Remember me
                 </StyledCheckboxLabel>
@@ -168,10 +177,17 @@ function Signup() {
                   style={{ background: loader ? "#ccc" : null }}
                 >
                   {" "}
-                  {!loader ? "Log in" : <i className="fas fa-ellipsis-h"></i>}
+                  {!loader ? (
+                    "Log in"
+                  ) : (
+                    <i class="fa fa-spinner" aria-hidden="true"></i>
+                  )}
                 </button>
               </div>
             </form>
+            {isError && (
+              <div>The username or password provided were incorrect!</div>
+            )}
             <div className="bottom-signup d-flex">
               <p>Log in with: </p>
               <div className="other-signup">
@@ -192,7 +208,7 @@ function Signup() {
           <div className="right-nav col-md-5">
             <ul className="menu-items d-flex">
               <li className="already__haveaccount">Don’t have an account?</li>
-              <Link to="/register">
+              <Link to="/sign-up">
                 <li>
                   <StyledButton href="#" className="btn btn-primary">
                     Sign up
@@ -212,4 +228,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Signin;
