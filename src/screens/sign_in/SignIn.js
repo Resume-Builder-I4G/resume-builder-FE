@@ -180,7 +180,7 @@ function Signin(props) {
                   {!loader ? (
                     "Log in"
                   ) : (
-                    <i class="fa fa-spinner" aria-hidden="true"></i>
+                    <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                   )}
                 </button>
               </div>
