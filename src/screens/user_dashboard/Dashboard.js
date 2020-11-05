@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Dashboard.css";
 import Navbar from "../../components/dashboard_navbar/Dashboard_Nav";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { useAuth } from "../../context/auth";
 
 import Grid from "../../assets/svgs/user_dashboard/grid.svg";
 import List from "../../assets/svgs/user_dashboard/list.svg";
@@ -32,7 +34,32 @@ const StyledInfo = styled.p`
 `;
 
 function Dashboard() {
+  const { setAuthTokens } = useAuth();
   const listOfResumes = [];
+
+  const userDashboard = () => {
+    let bigToken = JSON.parse(localStorage.getItem("tokens"));
+    const token = bigToken.token;
+    console.log(token);
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    axios
+      .get("https://resume-builder-i4g.herokuapp.com/user", config)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  userDashboard();
+
   return (
     <div>
       <Navbar />

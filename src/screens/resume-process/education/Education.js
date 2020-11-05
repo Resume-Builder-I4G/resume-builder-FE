@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   StyledAddItemText,
   StyledInputForm,
@@ -26,8 +27,36 @@ function Education() {
   const [endYear, setEndYear] = useState("Year");
 
   const submitHandler = (event) => {
+    let bigToken = JSON.parse(localStorage.getItem("tokens"));
+    const token = bigToken.token;
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
     event.preventDefault();
+    axios
+      .post(
+        "https://resume-builder-i4g.herokuapp.com/education",
+        {
+          course: study,
+          school: institution,
+          start_date: `${startMonth} ${startYear}`,
+          end_date: `${endMonth} ${endYear}`,
+          description: information,
+        },
+        config
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+
   return (
     <div className="housing">
       <div className="container-fluid content">
