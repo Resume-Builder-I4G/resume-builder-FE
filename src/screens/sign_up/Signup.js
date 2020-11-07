@@ -104,7 +104,7 @@ function Signup(props) {
   }
 
   return (
-    <div>
+    <div id="sign-up">
       <div className="row signup-body">
         <div className="col-md-7 left-signup">
           <div className="logo">
@@ -166,7 +166,7 @@ function Signup(props) {
               <div className="text-left">
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary sign-up-btn"
                   style={{ background: loader ? "#ccc" : null }}
                 >
                   {" "}

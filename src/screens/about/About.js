@@ -45,7 +45,7 @@ function About() {
   ];
 
   return (
-    <div>
+    <div id="about">
       <Navbar />
       <div className="mt-4" />
       <div className="container">

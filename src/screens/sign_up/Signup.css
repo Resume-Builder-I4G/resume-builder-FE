@@ -6,6 +6,10 @@ body {
     height: 100vh;
 }
 
+#sign-up {
+    background: #fff;
+}
+
 /* Navigation bar */
 * {
     padding: 0;
@@ -37,12 +41,18 @@ body {
     color: #216de0 !important;
 }
 
+.sign-up-btn {
+    background-color: #216de0 !important;
+    border: none;
+    width: 200px;
+    height: 40px;
+}
+
 .btn-primary {
     background-color: #216de0 !important;
     border: none;
     width: 200px;
     height: 40px;
-    border-radius: 15px;
 }
 
 a[type="button"]:hover {
