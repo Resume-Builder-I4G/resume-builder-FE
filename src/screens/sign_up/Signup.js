@@ -166,7 +166,7 @@ function Signup(props) {
               <div className="text-left">
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary sign-up-btn"
                   style={{ background: loader ? "#ccc" : null }}
                 >
                   {" "}
