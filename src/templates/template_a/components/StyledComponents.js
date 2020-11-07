@@ -21,9 +21,6 @@ const StyledResumeRight = styled.div`
   height: 842px;
   width: 390px;
 `;
-const StyledProfileImg = styled.img`
-  border-radius: 50%;
-`;
 
 const StyledH1 = styled.h1`
   font-size: 36px;
@@ -39,6 +36,7 @@ const StyledH2 = styled.h2`
   line-height: 19px;
   letter-spacing: 0em;
   text-align: left;
+  margin-bottom: 10px;
 `;
 
 const StyledH3 = styled.h3`
@@ -49,6 +47,16 @@ const StyledH3 = styled.h3`
   line-height: 12px;
   letter-spacing: 0em;
   text-align: left;
+`;
+
+const StylePicDiv = styled.div`
+  padding-top: 10px;
+`;
+
+const StyledProfileImg = styled.img`
+  border-radius: 50%;
+  margin: 0 auto !important;
+  text-align: center;
 `;
 
 const StyledAboutText = styled.p`
@@ -120,6 +128,10 @@ const StyledSlist = styled.li`
   text-align: left;
 `;
 
+const NameDiv = styled.div`
+  max-width: 250px;
+`;
+
 const StyledResumeRole = styled.p`
   font-size: 12px;
   font-style: normal;
@@ -129,11 +141,69 @@ const StyledResumeRole = styled.p`
   text-align: left;
 `;
 
+const ContactItem = styled.li`
+  font-family: Inter;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: 0em;
+  text-align: left;
+`;
+
+const StyledExperienceDiv = styled.div`
+  margin-top: 15px;
+`;
+
+const CompanySpan = styled.span`
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+`;
+
+const ExpDuration = styled.span`
+  margin-bottom: 5px;
+  font-family: Inter;
+  font-size: 8px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: right;
+`;
+
+const ExpText = styled.p`
+  margin-bottom: 5px;
+  font-family: Inter;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+`;
+
+//Certification Styles
+const CertText = styled.span`
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+`;
+
 export {
   StyledResume,
   StyledResumeLeft,
   StyledResumeRight,
   StyledProfileImg,
+  StylePicDiv,
   StyledH1,
   StyledH2,
   StyledH3,
@@ -144,5 +214,12 @@ export {
   StyledEDuration,
   StyledLlist,
   StyledSlist,
+  NameDiv,
   StyledResumeRole,
+  ContactItem,
+  StyledExperienceDiv,
+  CompanySpan,
+  ExpDuration,
+  ExpText,
+  CertText,
 };

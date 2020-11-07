@@ -35,7 +35,7 @@ function Template_A() {
       </StyledResumeLeft>
 
       <StyledResumeRight>
-        <div className="top d-flex">
+        <div className="top d-flex justify-content-between">
           <div className="right-left">
             <Header name={personalInfo.name} role={workExperience} />
           </div>

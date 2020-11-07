@@ -21,7 +21,7 @@ function Personal_info() {
     event.preventDefault();
     const personalInfo = {
       name: `${firstName} ${lastName}`,
-      contact: email,
+      email: email,
       phone: phone,
       address: location,
       about: summary,

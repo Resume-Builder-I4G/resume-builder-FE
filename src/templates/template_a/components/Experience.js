@@ -1,26 +1,32 @@
 import React from "react";
-import { StyledH2 } from "./StyledComponents";
+import {
+  StyledExperienceDiv,
+  StyledH2,
+  CompanySpan,
+  ExpDuration,
+  ExpText,
+} from "./StyledComponents";
 
 function Experience({ experienceItems }) {
   return (
-    <div>
+    <StyledExperienceDiv>
       <StyledH2>Work Experience</StyledH2>
       <ul>
         {experienceItems.map((item) => {
           return (
             <li>
               <div className="d-flex justify-content-between">
-                <span>{item.company}</span>
-                <span>{`${item.startYear} - ${item.endYear}`}</span>
+                <CompanySpan>{item.company}</CompanySpan>
+                <ExpDuration>{`${item.startYear} - ${item.endYear}`}</ExpDuration>
               </div>
-              <p className="title">{item.title}</p>
-              <p className="city">{`${item.city}, ${item.country}`}</p>
-              <p className="description">{item.description}</p>
+              <ExpText>{item.title}</ExpText>
+              <ExpText>{`${item.city}, ${item.country}`}</ExpText>
+              <ExpText>{item.description}</ExpText>
             </li>
           );
         })}
       </ul>
-    </div>
+    </StyledExperienceDiv>
   );
 }
 
