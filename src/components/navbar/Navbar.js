@@ -27,21 +27,21 @@ const Navbar = () => {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link to="/">
-                <a className="nav-link" href="#">
+                <a className="nav-link text-dark" href="#">
                   Home <span className="sr-only">(current)</span>
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/about">
-                <a className="nav-link" href="">
+                <a className="nav-link text-dark" href="">
                   About
                 </a>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/contact">
-                <a className="nav-link" href="">
+                <a className="nav-link text-dark" href="">
                   Contact
                 </a>
               </Link>
