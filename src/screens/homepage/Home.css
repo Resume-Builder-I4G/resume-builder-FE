@@ -13,14 +13,6 @@ header {
     margin-left: 100px;
 }
 
-/* .left h1 {
-    width: 674px;
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 90px;
-    color: #2E2E2E;
-} */
-
 .left .motto {
     font-size: 20px;
     line-height: 24px;
@@ -110,7 +102,7 @@ header .left button p {
     margin-top: 50px;
 }
 
-.btn {
+/* .btn {
     background: #216de0;
     border-radius: 6px;
     font-weight: 500;
@@ -118,7 +110,7 @@ header .left button p {
     line-height: 29px;
     padding: 19px 27px;
     color: white;
-}
+} */
 
 #section2 {
     display: flex;
