@@ -4,6 +4,8 @@ import "./Signup.css";
 import { Link, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import { useAuth } from "../../context/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
 import illustration from "../../assets/svgs/Mobile login-pana.svg";
 import googleImg from "../../assets/svgs/signup-svg/Google.svg";
@@ -168,12 +170,10 @@ function Signup(props) {
                   style={{ background: loader ? "#ccc" : null }}
                 >
                   {" "}
-                  {!loader ? "Sign Up" : <i className="fas fa-ellipsis-h"></i>}
+                  {!loader ? "Sign Up" : <FontAwesomeIcon icon={faEllipsisH} />}
                 </button>
               </div>
-              {isError && (
-                <div>The username or password provided were incorrect!</div>
-              )}
+              {isError && <div>The username or password provided</div>}
             </form>
             <div className="bottom-signup d-flex">
               <p>Create account with: </p>

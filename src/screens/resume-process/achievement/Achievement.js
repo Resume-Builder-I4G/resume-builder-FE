@@ -8,6 +8,7 @@ import {
   StyledPrev,
 } from "../StyledComponents";
 import "./Achievements.css";
+import { Link } from "react-router-dom";
 
 function Achievement() {
   return (
@@ -54,8 +55,12 @@ function Achievement() {
           </StyledAddItemWrap>
 
           <div className="buttons">
-            <StyledPrev href="#">Back</StyledPrev>
-            <StyledNext href="#">Next Section</StyledNext>
+            <Link to="/new-resume/experience">
+              <StyledPrev href="#">Back</StyledPrev>
+            </Link>
+            <Link to="/new-resume/experience">
+              <StyledNext href="#">Next Section</StyledNext>
+            </Link>
           </div>
         </div>
       </div>

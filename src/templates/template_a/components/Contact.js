@@ -5,11 +5,11 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { ContactItem, StyledH2 } from "./StyledComponents";
+import { ContactDiv, ContactItem, StyledH2 } from "./StyledComponents";
 
 function Contact({ contact }) {
   return (
-    <div>
+    <ContactDiv>
       <StyledH2>Contact</StyledH2>
       <ul>
         <ContactItem>
@@ -22,7 +22,7 @@ function Contact({ contact }) {
           <FontAwesomeIcon icon={faEnvelope} /> {contact.email}
         </ContactItem>
       </ul>
-    </div>
+    </ContactDiv>
   );
 }
 

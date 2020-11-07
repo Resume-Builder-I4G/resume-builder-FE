@@ -141,6 +141,10 @@ const StyledResumeRole = styled.p`
   text-align: left;
 `;
 
+const ContactDiv = styled.div`
+  padding-top: 10px;
+`;
+
 const ContactItem = styled.li`
   font-family: Inter;
   font-size: 8px;
@@ -217,6 +221,7 @@ export {
   StyledSlist,
   NameDiv,
   StyledResumeRole,
+  ContactDiv,
   ContactItem,
   StyledExperienceDiv,
   CompanySpan,

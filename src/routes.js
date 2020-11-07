@@ -20,13 +20,13 @@ const Routes = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
-      <Route exact path="/template-a" component={TemplateA} />
       <Route exact path="/sign-in" component={SignIn} />
       <Route exact path="/sign-up" component={SignUp} />
 
       {/* Private Route available to only authenticated User */}
       <PrivateRoute path="/dashboard" component={Dashboard} />
       <PrivateRoute path="/new-resume" component={New_resume} />
+      <PrivateRoute path="/template-a" component={TemplateA} />
 
       {/* Error 404 - Page Not Found */}
       <Route path="*" component={Error404} />
