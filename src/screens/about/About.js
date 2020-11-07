@@ -14,6 +14,10 @@ const StyledTitle = styled.h1`
   font-weight: 500;
   line-height: 22px;
   color: #216de0;
+
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 20px;
+  }
 `;
 
 const StyledPara = styled.p`
@@ -23,6 +27,13 @@ const StyledPara = styled.p`
   line-height: 30px;
   letter-spacing: 0em;
   color: #474747;
+
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    font-size: 17px;
+  }
 `;
 
 function About() {
