@@ -8,6 +8,10 @@ header {
     display: flex;
 }
 
+.homepage {
+    background-color: #fff;
+}
+
 .left {
     margin-top: 214px;
     margin-left: 100px;
