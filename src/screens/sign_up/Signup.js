@@ -104,7 +104,7 @@ function Signup(props) {
   }
 
   return (
-    <div>
+    <div id="sign-up">
       <div className="row signup-body">
         <div className="col-md-7 left-signup">
           <div className="logo">

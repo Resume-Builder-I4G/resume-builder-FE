@@ -6,6 +6,10 @@ body {
     height: 100vh;
 }
 
+#sign-up {
+    background: #fff;
+}
+
 /* Navigation bar */
 * {
     padding: 0;
