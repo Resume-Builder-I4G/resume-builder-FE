@@ -12,12 +12,12 @@ header {
     background-color: #fff;
 }
 
-.left {
+header .left {
     margin-top: 214px;
     margin-left: 100px;
 }
 
-.left .motto {
+header .left .motto {
     font-size: 20px;
     line-height: 24px;
     color: #474747;
