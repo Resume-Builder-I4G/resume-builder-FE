@@ -10,6 +10,7 @@ import Error404 from "./screens/error404/Error404";
 import SignUp from "./screens/sign_up/Signup";
 import SignIn from "./screens/sign_in/SignIn";
 import New_resume from "./screens/new-resume/New_resume";
+import TemplateA from "./templates/template_a/Template_A";
 import Choose_color from "./screens/choose_colors/Choose_color";
 import Dashboard from "./screens/user_dashboard/Dashboard";
 
@@ -19,6 +20,7 @@ const Routes = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
+      <Route exact path="/template-a" component={TemplateA} />
       <Route exact path="/sign-in" component={SignIn} />
       <Route exact path="/sign-up" component={SignUp} />
 

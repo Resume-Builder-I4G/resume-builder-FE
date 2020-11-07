@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   StyledInputForm,
   StyledInputInput,
@@ -18,6 +19,15 @@ function Personal_info() {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    const personalInfo = {
+      name: `${firstName} ${lastName}`,
+      email: email,
+      phone: phone,
+      address: location,
+      about: summary,
+    };
+
+    localStorage.setItem("Personal_info", JSON.stringify(personalInfo));
   };
 
   return (
@@ -114,9 +124,11 @@ function Personal_info() {
             </form>
 
             <div className="button">
-              <StyledNext type="submit" onClick={submitHandler} href="#">
-                Next Section
-              </StyledNext>
+              <Link to="/new-resume/education">
+                <StyledNext type="submit" onClick={submitHandler} href="#">
+                  Next Section
+                </StyledNext>
+              </Link>
             </div>
           </div>
         </div>

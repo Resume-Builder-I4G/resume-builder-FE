@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyledInputForm,
   StyledInputInput,
@@ -7,6 +7,7 @@ import {
   StyledPrev,
 } from "../StyledComponents";
 import "./References.css";
+import { Link } from "react-router-dom";
 
 function References({ menu, activeMenu }) {
   return (
@@ -74,7 +75,12 @@ function References({ menu, activeMenu }) {
             </form>
 
             <div className="button">
-              <StyledPrev href="#"> Back </StyledPrev>
+              <Link to="/new-resume/skills">
+                <StyledPrev href="#"> Back </StyledPrev>
+              </Link>
+              <Link to="/template-a">
+                <StyledNext href="#">Download</StyledNext>
+              </Link>
             </div>
           </div>
         </div>

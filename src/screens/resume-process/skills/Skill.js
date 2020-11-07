@@ -17,7 +17,7 @@ function Skill() {
   const submitHandler = (event) => {
     let skillSplit = skill.split(",");
     const skillList = skillSplit;
-    localStorage.setItem("Skill", skillList);
+    localStorage.setItem("Skill", JSON.stringify(skillList));
     // let bigToken = JSON.parse(localStorage.getItem("tokens"));
     // const token = bigToken.token;
     // const config = {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   StyledInputForm,
   StyledInputLabel,
@@ -9,12 +10,22 @@ import {
 import "./Language.css";
 
 function Language() {
-  const [language, setLanguage] = useState("");
+  let initLang;
+  const [language, setLanguage] = useState(initLang);
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(language);
+    let langSplit = language.split(",");
+    const langList = langSplit;
+    localStorage.setItem("Languages", JSON.stringify(langList));
   };
+
+  const getLanguages = () => {
+    initLang = localStorage.getItem("Languages");
+    console.log(initLang);
+  };
+
+  // getLanguages();
 
   return (
     <div className="container-fluid content">
@@ -29,6 +40,7 @@ function Language() {
                 className="form-control"
                 id="inputLanguages"
                 rows="8"
+                defaultValue={initLang}
                 value={language}
                 onChange={(event) => setLanguage(event.target.value)}
               ></StyledInputTextarea>

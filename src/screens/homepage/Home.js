@@ -69,7 +69,9 @@ function Home() {
       <header>
         <div className="left" data-aos="fade-right">
           <StyledTitle>Create a mind blowing resume.</StyledTitle>
-          <p>Design and build a unique CV that your dream job will notice.</p>
+          <p className="motto">
+            Design and build a unique CV that your dream job will notice.
+          </p>
           <StyledButton className="btn btn-primary">
             Build your resume
           </StyledButton>
