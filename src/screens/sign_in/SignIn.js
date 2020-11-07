@@ -4,6 +4,8 @@ import "./SignIn.css";
 import { Link, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import { useAuth } from "../../context/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
 import loginIlustration from "../../assets/svgs/login-svg/Login-pana 1.svg";
 import googleImg from "../../assets/svgs/signup-svg/Google.svg";
@@ -156,32 +158,31 @@ function Signin(props) {
                   />
                 </Styledlabel>
               </div>
-              <div className="form-check">
-                <StyledCheckbox
-                  type="checkbox"
-                  className="form-check-input"
-                  id="exampleCheck1"
-                />
-                <StyledCheckboxLabel
-                  className="form-check-label"
-                  htmlFor="exampleCheck1"
-                >
-                  Remember me
-                </StyledCheckboxLabel>
+              <div className="d-flex justify-content-between">
+                <div className="form-check">
+                  <StyledCheckbox
+                    type="checkbox"
+                    className="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <StyledCheckboxLabel
+                    className="form-check-label"
+                    htmlFor="exampleCheck1"
+                  >
+                    Remember me
+                  </StyledCheckboxLabel>
+                </div>
+                <a href="#">Forgot Password?</a>
               </div>
 
-              <div className="text-left">
+              <div className="text-left mt-4">
                 <button
                   type="submit"
                   className="btn btn-primary"
                   style={{ background: loader ? "#ccc" : null }}
                 >
                   {" "}
-                  {!loader ? (
-                    "Log in"
-                  ) : (
-                    <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
-                  )}
+                  {!loader ? "Log in" : <FontAwesomeIcon icon={faEllipsisH} />}
                 </button>
               </div>
             </form>
