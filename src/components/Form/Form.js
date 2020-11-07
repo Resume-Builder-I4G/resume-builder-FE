@@ -129,7 +129,7 @@ const Form = () => {
           </label>
         </div>
 
-        <div className="text-right">
+        <div className="text-right btn-container">
           <button
             type="submit"
             className="btn btn-primary"
