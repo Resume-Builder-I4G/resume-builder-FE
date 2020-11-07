@@ -40,10 +40,10 @@ body {
     color: #474747;
 }
 
-.button {
+/* .button {
     margin-top: 100px;
     text-align: right;
-}
+} */
 
 
 .add-item {
@@ -56,7 +56,7 @@ body {
     color: #216DE0;
 }
 
-.buttons {
+.done-btn .buttons {
     display: flex;
     justify-content: flex-end;
     margin-top: 100px;
