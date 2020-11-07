@@ -27,6 +27,19 @@ function Experience() {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    const experienceObj = {
+      company: company,
+      title: title,
+      city: city,
+      country: country,
+      description: description,
+      startYear: startYear,
+      endYear: endYear,
+    };
+
+    const experienceItems = [];
+    experienceItems.push(experienceObj);
+    localStorage.setItem("Experience", JSON.stringify(experienceItems));
   };
 
   return (

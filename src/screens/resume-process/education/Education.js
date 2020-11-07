@@ -12,10 +12,11 @@ import {
 } from "../StyledComponents";
 import "./Education.css";
 import { arrayOfYears, arrayOfMonths } from "../../../components/DateObject";
+import { Link } from "react-router-dom";
 
 function Education() {
   const [institution, setInstitution] = useState("");
-  const [study, setStudy] = useState("");
+  const [course, setCourse] = useState("");
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [information, setInformation] = useState("");
@@ -27,34 +28,42 @@ function Education() {
   const [endYear, setEndYear] = useState("Year");
 
   const submitHandler = (event) => {
-    let bigToken = JSON.parse(localStorage.getItem("tokens"));
-    const token = bigToken.token;
-
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+    const educationObj = {
+      course: course,
+      institution: institution,
+      location: `${city}, ${country}`,
+      information: information,
+      duration: `${startYear} - ${endYear}`,
     };
-
-    event.preventDefault();
-    axios
-      .post(
-        "https://resume-builder-i4g.herokuapp.com/education",
-        {
-          course: study,
-          school: institution,
-          start_date: `${startMonth} ${startYear}`,
-          end_date: `${endMonth} ${endYear}`,
-          description: information,
-        },
-        config
-      )
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const educationItems = [];
+    educationItems.push(educationObj);
+    localStorage.setItem("Education", JSON.stringify(educationItems));
+    // let bigToken = JSON.parse(localStorage.getItem("tokens"));
+    // const token = bigToken.token;
+    // const config = {
+    //   headers: {
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    // };
+    // event.preventDefault();
+    // axios
+    //   .post(
+    //     "https://resume-builder-i4g.herokuapp.com/education",
+    //     {
+    //       course: course,
+    //       school: institution,
+    //       start_date: `${startYear} ${startYear}`,
+    //       end_date: `${endMonth} ${endYear}`,
+    //       description: information,
+    //     },
+    //     config
+    //   )
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
   return (
@@ -85,7 +94,7 @@ function Education() {
                     className="form-control"
                     id="inputCompanyName"
                     placeholder=""
-                    onChange={(event) => setStudy(event.target.value)}
+                    onChange={(event) => setCourse(event.target.value)}
                   />
                 </StyledInputForm>
               </div>
@@ -237,12 +246,16 @@ function Education() {
             </StyledAddItemWrap>
 
             <div className="buttons">
-              <StyledPrev type="submit" onClick={submitHandler} href="#">
-                Back
-              </StyledPrev>
-              <StyledNext type="submit" onClick={submitHandler} href="#">
-                Next Section
-              </StyledNext>
+              <Link to="/new-resume/personal-info">
+                <StyledPrev type="submit" onClick={submitHandler} href="#">
+                  Back
+                </StyledPrev>
+              </Link>
+              <Link to="/new-resume/experience">
+                <StyledNext type="submit" onClick={submitHandler} href="#">
+                  Next Section
+                </StyledNext>
+              </Link>
             </div>
           </div>
         </div>
