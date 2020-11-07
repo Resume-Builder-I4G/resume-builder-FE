@@ -149,6 +149,7 @@ const ContactItem = styled.li`
   line-height: 10px;
   letter-spacing: 0em;
   text-align: left;
+  margin-bottom: 12px;
 `;
 
 const StyledExperienceDiv = styled.div`
