@@ -1,4 +1,4 @@
-import personalInfow from "../../assets/svgs/create-resume-img/personalinfoW.svg";
+import personalInfow from "../../assets/svgs/create-resume-img/personalinfo.svg";
 import educationInfo from "../../assets/svgs/create-resume-img/educationIcon.svg";
 import workexperience from "../../assets/svgs/create-resume-img/workexperience.svg";
 import language from "../../assets/svgs/create-resume-img/languageIcon.svg";
