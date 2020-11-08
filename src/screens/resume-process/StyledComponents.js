@@ -38,7 +38,7 @@ const StyledNext = styled.a`
   width: 210px;
   background-color: #216de0;
   border: 1px solid #216de0;
-  color: #fff;
+  color: #fff !important;
   font-size: 1.3rem;
   font-weight: 500;
   padding: 1% 3%;
@@ -47,7 +47,7 @@ const StyledNext = styled.a`
 
   &:hover {
     text-decoration: underline #fff;
-    color: #fff;
+    color: #fff !important;
   }
 `;
 
@@ -79,6 +79,12 @@ const StyledAddItemWrap = styled.div`
   padding-right: 20px;
 `;
 
+const Buttons = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 100px;
+`;
+
 export {
   StyledInputForm,
   StyledInputLabel,
@@ -88,4 +94,5 @@ export {
   StyledPrev,
   StyledAddItemText,
   StyledAddItemWrap,
+  Buttons,
 };

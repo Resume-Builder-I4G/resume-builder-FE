@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Buttons,
   StyledAddItemText,
   StyledAddItemWrap,
   StyledInputForm,
@@ -54,14 +55,17 @@ function Achievement() {
             </StyledAddItemText>
           </StyledAddItemWrap>
 
-          <div className="buttons">
-            <Link to="/new-resume/experience">
-              <StyledPrev href="#">Back</StyledPrev>
-            </Link>
-            <Link to="/new-resume/experience">
-              <StyledNext href="#">Next Section</StyledNext>
-            </Link>
-          </div>
+          <Buttons>
+            <StyledPrev href="#">
+              <Link to="/new-resume/experience">Back</Link>
+            </StyledPrev>
+
+            <StyledNext href="#">
+              <Link to="/new-resume/experience" className="text-white">
+                Next Section
+              </Link>
+            </StyledNext>
+          </Buttons>
         </div>
       </div>
     </div>

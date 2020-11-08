@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  Buttons,
   StyledInputForm,
   StyledInputInput,
   StyledInputLabel,
@@ -74,14 +75,17 @@ function References({ menu, activeMenu }) {
               </StyledInputForm>
             </form>
 
-            <div className="button">
-              <Link to="/new-resume/skills">
-                <StyledPrev href="#"> Back </StyledPrev>
-              </Link>
-              <Link to="/template-a">
-                <StyledNext href="#">Download</StyledNext>
-              </Link>
-            </div>
+            <Buttons>
+              <StyledPrev href="#">
+                <Link to="/new-resume/skills"> Back </Link>
+              </StyledPrev>
+
+              <StyledNext href="#">
+                <Link to="/template-a" className="text-white">
+                  Download
+                </Link>
+              </StyledNext>
+            </Buttons>
           </div>
         </div>
       </div>

@@ -8,9 +8,11 @@ import {
   StyledNext,
   StyledPrev,
   StyledAddItemWrap,
+  Buttons,
 } from "../StyledComponents";
 import "./Experience.css";
 import { arrayOfYears, arrayOfMonths } from "../../../components/DateObject";
+import { Link } from "react-router-dom";
 
 function Experience() {
   const [title, setTitle] = useState("");
@@ -221,14 +223,16 @@ function Experience() {
               </StyledAddItemText>
             </StyledAddItemWrap>
 
-            <div className="buttons">
+            <Buttons>
               <StyledPrev type="submit" onClick={submitHandler} href="#">
-                Back
+                <Link to="/new-resume/education">Back</Link>
               </StyledPrev>
               <StyledNext type="submit" onClick={submitHandler} href="#">
-                Next Section
+                <Link to="/new-resume/languages" className="text-white">
+                  Next Section
+                </Link>
               </StyledNext>
-            </div>
+            </Buttons>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import {
   StyledNext,
   StyledPrev,
   StyledAddItemWrap,
+  Buttons,
 } from "../StyledComponents";
 import "./Education.css";
 import { arrayOfYears, arrayOfMonths } from "../../../components/DateObject";
@@ -245,18 +246,17 @@ function Education() {
               </StyledAddItemText>
             </StyledAddItemWrap>
 
-            <div className="buttons">
-              <Link to="/new-resume/personal-info">
-                <StyledPrev type="submit" onClick={submitHandler} href="#">
-                  Back
-                </StyledPrev>
-              </Link>
-              <Link to="/new-resume/experience">
-                <StyledNext type="submit" onClick={submitHandler} href="#">
+            <Buttons>
+              <StyledPrev type="submit" onClick={submitHandler} href="#">
+                <Link to="/new-resume/personal-info">Back</Link>
+              </StyledPrev>
+
+              <StyledNext type="submit" onClick={submitHandler} href="#">
+                <Link to="/new-resume/experience" className="text-white">
                   Next Section
-                </StyledNext>
-              </Link>
-            </div>
+                </Link>
+              </StyledNext>
+            </Buttons>
           </div>
         </div>
       </div>

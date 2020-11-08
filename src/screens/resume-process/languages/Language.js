@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
+  Buttons,
   StyledInputForm,
   StyledInputLabel,
   StyledInputTextarea,
@@ -47,14 +48,16 @@ function Language() {
             </StyledInputForm>
           </form>
 
-          <div className="buttons">
+          <Buttons>
             <StyledPrev type="submit" onClick={submitHandler} href="#">
-              Back
+              <Link to="/new-resume/languages">Back</Link>
             </StyledPrev>
             <StyledNext type="submit" onClick={submitHandler} href="#">
-              Next Section
+              <Link to="/new-resume/languages" className="text-white">
+                Next Section
+              </Link>
             </StyledNext>
-          </div>
+          </Buttons>
         </div>
       </div>
     </div>

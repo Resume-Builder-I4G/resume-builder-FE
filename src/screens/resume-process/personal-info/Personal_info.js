@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
+  Buttons,
   StyledInputForm,
   StyledInputInput,
   StyledInputLabel,
@@ -123,13 +124,13 @@ function Personal_info() {
               </StyledInputForm>
             </form>
 
-            <div className="button">
-              <Link to="/new-resume/education">
-                <StyledNext type="submit" onClick={submitHandler} href="#">
+            <Buttons>
+              <StyledNext type="submit" onClick={submitHandler} href="#">
+                <Link to="/new-resume/education" className="text-white">
                   Next Section
-                </StyledNext>
-              </Link>
-            </div>
+                </Link>
+              </StyledNext>
+            </Buttons>
           </div>
         </div>
       </div>

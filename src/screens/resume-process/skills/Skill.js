@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import {
+  Buttons,
   StyledInputForm,
   StyledInputLabel,
   StyledInputTextarea,
@@ -63,7 +64,7 @@ function Skill() {
     //   });
   };
 
-  getSkills();
+  // getSkills();
   return (
     <div className="container-fluid content">
       <div className="row">
@@ -83,18 +84,17 @@ function Skill() {
             </StyledInputForm>
           </form>
 
-          <div className="buttons">
-            <Link to="/new-resume/achivements">
-              <StyledPrev type="submit" onClick={submitHandler} href="#">
-                Back
-              </StyledPrev>
-            </Link>
-            <Link to="/new-resume/references">
-              <StyledNext type="submit" onClick={submitHandler} href="#">
+          <Buttons>
+            <StyledPrev type="submit" onClick={submitHandler} href="#">
+              <Link to="/new-resume/achivements">Back</Link>
+            </StyledPrev>
+
+            <StyledNext type="submit" onClick={submitHandler} href="#">
+              <Link to="/new-resume/references" className="text-white">
                 Next Section
-              </StyledNext>
-            </Link>
-          </div>
+              </Link>
+            </StyledNext>
+          </Buttons>
         </div>
       </div>
     </div>
