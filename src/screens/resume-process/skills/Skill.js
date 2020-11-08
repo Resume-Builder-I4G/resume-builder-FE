@@ -64,7 +64,6 @@ function Skill() {
     //   });
   };
 
-  // getSkills();
   return (
     <div className="container-fluid content">
       <div className="row">
