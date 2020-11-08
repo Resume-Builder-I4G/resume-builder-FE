@@ -61,7 +61,7 @@ function Dashboard() {
   userDashboard();
 
   return (
-    <div>
+    <div id="dashboard">
       <Navbar />
       <div className="body">
         <div className="container">
