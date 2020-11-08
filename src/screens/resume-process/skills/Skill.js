@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import {
+  Buttons,
+  MainContent,
   StyledInputForm,
   StyledInputLabel,
   StyledInputTextarea,
@@ -63,11 +65,10 @@ function Skill() {
     //   });
   };
 
-  getSkills();
   return (
     <div className="container-fluid content">
       <div className="row">
-        <div className="col-12 main-content">
+        <MainContent className="col-12">
           <form onSubmit={submitHandler}>
             <StyledInputForm className="form-group">
               <StyledInputLabel for="inputSkills">Skills</StyledInputLabel>
@@ -83,19 +84,18 @@ function Skill() {
             </StyledInputForm>
           </form>
 
-          <div className="buttons">
-            <Link to="/new-resume/achivements">
-              <StyledPrev type="submit" onClick={submitHandler} href="#">
-                Back
-              </StyledPrev>
-            </Link>
-            <Link to="/new-resume/references">
-              <StyledNext type="submit" onClick={submitHandler} href="#">
+          <Buttons>
+            <StyledPrev type="submit" onClick={submitHandler} href="#">
+              <Link to="/new-resume/achivements">Back</Link>
+            </StyledPrev>
+
+            <StyledNext type="submit" onClick={submitHandler} href="#">
+              <Link to="/new-resume/references" className="text-white">
                 Next Section
-              </StyledNext>
-            </Link>
-          </div>
-        </div>
+              </Link>
+            </StyledNext>
+          </Buttons>
+        </MainContent>
       </div>
     </div>
   );

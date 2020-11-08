@@ -9,6 +9,8 @@ import {
   StyledNext,
   StyledPrev,
   StyledAddItemWrap,
+  Buttons,
+  MainContent,
 } from "../StyledComponents";
 import "./Education.css";
 import { arrayOfYears, arrayOfMonths } from "../../../components/DateObject";
@@ -70,7 +72,7 @@ function Education() {
     <div className="housing">
       <div className="container-fluid content">
         <div className="row">
-          <div className="col-12 main-content">
+          <MainContent className="col-12">
             <form onSubmit={submitHandler}>
               <div className="form-row">
                 <StyledInputForm className="form-group col-md-6">
@@ -245,19 +247,18 @@ function Education() {
               </StyledAddItemText>
             </StyledAddItemWrap>
 
-            <div className="buttons">
-              <Link to="/new-resume/personal-info">
-                <StyledPrev type="submit" onClick={submitHandler} href="#">
-                  Back
-                </StyledPrev>
-              </Link>
-              <Link to="/new-resume/experience">
-                <StyledNext type="submit" onClick={submitHandler} href="#">
+            <Buttons>
+              <StyledPrev type="submit" onClick={submitHandler} href="#">
+                <Link to="/new-resume/personal-info">Back</Link>
+              </StyledPrev>
+
+              <StyledNext type="submit" onClick={submitHandler} href="#">
+                <Link to="/new-resume/experience" className="text-white">
                   Next Section
-                </StyledNext>
-              </Link>
-            </div>
-          </div>
+                </Link>
+              </StyledNext>
+            </Buttons>
+          </MainContent>
         </div>
       </div>
     </div>

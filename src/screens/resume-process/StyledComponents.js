@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+const MainContent = styled.div`
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: #fff;
+  margin: 30px 0;
+  padding: 30px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+`;
 const StyledInputForm = styled.div`
   padding: 0;
   border-radius: 6px;
@@ -38,7 +49,7 @@ const StyledNext = styled.a`
   width: 210px;
   background-color: #216de0;
   border: 1px solid #216de0;
-  color: #fff;
+  color: #fff !important;
   font-size: 1.3rem;
   font-weight: 500;
   padding: 1% 3%;
@@ -47,7 +58,7 @@ const StyledNext = styled.a`
 
   &:hover {
     text-decoration: underline #fff;
-    color: #fff;
+    color: #fff !important;
   }
 `;
 
@@ -79,7 +90,14 @@ const StyledAddItemWrap = styled.div`
   padding-right: 20px;
 `;
 
+const Buttons = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 100px;
+`;
+
 export {
+  MainContent,
   StyledInputForm,
   StyledInputLabel,
   StyledInputInput,
@@ -88,4 +106,5 @@ export {
   StyledPrev,
   StyledAddItemText,
   StyledAddItemWrap,
+  Buttons,
 };

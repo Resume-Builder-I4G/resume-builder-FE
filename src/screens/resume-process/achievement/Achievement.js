@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  Buttons,
+  MainContent,
   StyledAddItemText,
   StyledAddItemWrap,
   StyledInputForm,
@@ -14,7 +16,7 @@ function Achievement() {
   return (
     <div className="container-fluid content">
       <div className="row">
-        <div className="col-12 main-content">
+        <MainContent className="col-12">
           <form>
             <StyledInputForm className="form-group">
               <label for="inputAchievement">Achievements</label>
@@ -54,15 +56,18 @@ function Achievement() {
             </StyledAddItemText>
           </StyledAddItemWrap>
 
-          <div className="buttons">
-            <Link to="/new-resume/experience">
-              <StyledPrev href="#">Back</StyledPrev>
-            </Link>
-            <Link to="/new-resume/experience">
-              <StyledNext href="#">Next Section</StyledNext>
-            </Link>
-          </div>
-        </div>
+          <Buttons>
+            <StyledPrev href="#">
+              <Link to="/new-resume/experience">Back</Link>
+            </StyledPrev>
+
+            <StyledNext href="#">
+              <Link to="/new-resume/experience" className="text-white">
+                Next Section
+              </Link>
+            </StyledNext>
+          </Buttons>
+        </MainContent>
       </div>
     </div>
   );

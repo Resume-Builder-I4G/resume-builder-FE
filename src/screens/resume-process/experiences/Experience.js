@@ -8,9 +8,12 @@ import {
   StyledNext,
   StyledPrev,
   StyledAddItemWrap,
+  Buttons,
+  MainContent,
 } from "../StyledComponents";
 import "./Experience.css";
 import { arrayOfYears, arrayOfMonths } from "../../../components/DateObject";
+import { Link } from "react-router-dom";
 
 function Experience() {
   const [title, setTitle] = useState("");
@@ -46,7 +49,7 @@ function Experience() {
     <div className="housing">
       <div className="container-fluid content">
         <div className="row">
-          <div className="col-12 main-content">
+          <MainContent className="col-12">
             <form onSubmit={submitHandler}>
               <div className="form-row">
                 <StyledInputForm className="form-group col-md-6">
@@ -221,15 +224,17 @@ function Experience() {
               </StyledAddItemText>
             </StyledAddItemWrap>
 
-            <div className="buttons">
+            <Buttons>
               <StyledPrev type="submit" onClick={submitHandler} href="#">
-                Back
+                <Link to="/new-resume/education">Back</Link>
               </StyledPrev>
               <StyledNext type="submit" onClick={submitHandler} href="#">
-                Next Section
+                <Link to="/new-resume/languages" className="text-white">
+                  Next Section
+                </Link>
               </StyledNext>
-            </div>
-          </div>
+            </Buttons>
+          </MainContent>
         </div>
       </div>
     </div>

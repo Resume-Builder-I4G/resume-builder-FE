@@ -7,6 +7,8 @@ import {
   StyledPrev,
   StyledAddItemText,
   StyledAddItemWrap,
+  Buttons,
+  MainContent,
 } from "../StyledComponents";
 import "./Cerifications.css";
 import { Link } from "react-router-dom";
@@ -28,7 +30,7 @@ function Certifications() {
   };
   return (
     <div className="container-fluid content">
-      <div className="col col-md-12 col-xs-6 main-content">
+      <MainContent className="col col-md-12 col-xs-6">
         <form onSubmit={submitHandler}>
           <div className="form-row">
             <StyledInputForm className="form-group col-md-8">
@@ -85,21 +87,19 @@ function Certifications() {
             <span className="plus">+</span>&nbsp; Add Another
           </StyledAddItemText>
         </StyledAddItemWrap>
-        <div className="col-md-12 done-btn">
-          <div className="buttons">
-            <Link to="/new-resume/languages">
-              <StyledPrev href="#" onClick={submitHandler}>
-                Previous
-              </StyledPrev>
+
+        <Buttons>
+          <StyledPrev href="#" onClick={submitHandler}>
+            <Link to="/new-resume/languages">Previous</Link>
+          </StyledPrev>
+
+          <StyledNext href="#" onClick={submitHandler}>
+            <Link to="/new-resume/achivements" className="text-white">
+              Next Section
             </Link>
-            <Link to="/new-resume/achivements">
-              <StyledNext href="#" onClick={submitHandler}>
-                Next Section
-              </StyledNext>
-            </Link>
-          </div>
-        </div>
-      </div>
+          </StyledNext>
+        </Buttons>
+      </MainContent>
     </div>
   );
 }

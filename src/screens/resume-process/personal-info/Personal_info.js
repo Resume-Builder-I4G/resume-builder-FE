@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
+  Buttons,
+  MainContent,
   StyledInputForm,
   StyledInputInput,
   StyledInputLabel,
@@ -34,7 +36,7 @@ function Personal_info() {
     <div>
       <div className="container-fluid content">
         <div className="row">
-          <div className="col-12 main-content">
+          <MainContent className="col-12">
             <form onSubmit={submitHandler}>
               <div style={{ width: "100%" }} className="form-row">
                 <StyledInputForm
@@ -123,14 +125,14 @@ function Personal_info() {
               </StyledInputForm>
             </form>
 
-            <div className="button">
-              <Link to="/new-resume/education">
-                <StyledNext type="submit" onClick={submitHandler} href="#">
+            <Buttons>
+              <StyledNext type="submit" onClick={submitHandler} href="#">
+                <Link to="/new-resume/education" className="text-white">
                   Next Section
-                </StyledNext>
-              </Link>
-            </div>
-          </div>
+                </Link>
+              </StyledNext>
+            </Buttons>
+          </MainContent>
         </div>
       </div>
     </div>
