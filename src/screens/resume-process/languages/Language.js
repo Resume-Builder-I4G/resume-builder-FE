@@ -17,9 +17,11 @@ function Language() {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    let langSplit = language.split(",");
-    const langList = langSplit;
-    localStorage.setItem("Languages", JSON.stringify(langList));
+    if (language) {
+      let langSplit = language.split(",");
+      const langList = langSplit;
+      localStorage.setItem("Languages", JSON.stringify(langList));
+    }
   };
 
   const getLanguages = () => {
@@ -51,10 +53,10 @@ function Language() {
 
           <Buttons>
             <StyledPrev type="submit" onClick={submitHandler} href="#">
-              <Link to="/new-resume/languages">Back</Link>
+              <Link to="/new-resume/experience">Back</Link>
             </StyledPrev>
             <StyledNext type="submit" onClick={submitHandler} href="#">
-              <Link to="/new-resume/languages" className="text-white">
+              <Link to="/new-resume/certifications" className="text-white">
                 Next Section
               </Link>
             </StyledNext>

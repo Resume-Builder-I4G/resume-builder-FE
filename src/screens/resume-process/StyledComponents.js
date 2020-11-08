@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MainContent = styled.div`
-  height: 1000px;
+  min-height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
