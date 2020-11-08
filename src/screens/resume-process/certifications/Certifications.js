@@ -8,6 +8,7 @@ import {
   StyledAddItemText,
   StyledAddItemWrap,
   Buttons,
+  MainContent,
 } from "../StyledComponents";
 import "./Cerifications.css";
 import { Link } from "react-router-dom";
@@ -29,7 +30,7 @@ function Certifications() {
   };
   return (
     <div className="container-fluid content">
-      <div className="col col-md-12 col-xs-6 main-content">
+      <MainContent className="col col-md-12 col-xs-6">
         <form onSubmit={submitHandler}>
           <div className="form-row">
             <StyledInputForm className="form-group col-md-8">
@@ -98,7 +99,7 @@ function Certifications() {
             </Link>
           </StyledNext>
         </Buttons>
-      </div>
+      </MainContent>
     </div>
   );
 }

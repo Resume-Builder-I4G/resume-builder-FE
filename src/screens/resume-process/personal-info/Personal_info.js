@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Buttons,
+  MainContent,
   StyledInputForm,
   StyledInputInput,
   StyledInputLabel,
@@ -35,7 +36,7 @@ function Personal_info() {
     <div>
       <div className="container-fluid content">
         <div className="row">
-          <div className="col-12 main-content">
+          <MainContent className="col-12">
             <form onSubmit={submitHandler}>
               <div style={{ width: "100%" }} className="form-row">
                 <StyledInputForm
@@ -131,7 +132,7 @@ function Personal_info() {
                 </Link>
               </StyledNext>
             </Buttons>
-          </div>
+          </MainContent>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ import {
   StyledPrev,
   StyledAddItemWrap,
   Buttons,
+  MainContent,
 } from "../StyledComponents";
 import "./Experience.css";
 import { arrayOfYears, arrayOfMonths } from "../../../components/DateObject";
@@ -48,7 +49,7 @@ function Experience() {
     <div className="housing">
       <div className="container-fluid content">
         <div className="row">
-          <div className="col-12 main-content">
+          <MainContent className="col-12">
             <form onSubmit={submitHandler}>
               <div className="form-row">
                 <StyledInputForm className="form-group col-md-6">
@@ -233,7 +234,7 @@ function Experience() {
                 </Link>
               </StyledNext>
             </Buttons>
-          </div>
+          </MainContent>
         </div>
       </div>
     </div>

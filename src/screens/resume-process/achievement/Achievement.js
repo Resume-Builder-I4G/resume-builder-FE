@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Buttons,
+  MainContent,
   StyledAddItemText,
   StyledAddItemWrap,
   StyledInputForm,
@@ -15,7 +16,7 @@ function Achievement() {
   return (
     <div className="container-fluid content">
       <div className="row">
-        <div className="col-12 main-content">
+        <MainContent className="col-12">
           <form>
             <StyledInputForm className="form-group">
               <label for="inputAchievement">Achievements</label>
@@ -66,7 +67,7 @@ function Achievement() {
               </Link>
             </StyledNext>
           </Buttons>
-        </div>
+        </MainContent>
       </div>
     </div>
   );

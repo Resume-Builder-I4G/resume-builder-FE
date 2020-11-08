@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
   Buttons,
+  MainContent,
   StyledInputForm,
   StyledInputInput,
   StyledInputLabel,
@@ -15,7 +16,7 @@ function References({ menu, activeMenu }) {
     <div>
       <div className="container-fluid content">
         <div className="row">
-          <div className="col-12 main-content">
+          <MainContent className="col-12">
             <form>
               <div style={{ width: "100%" }} className="form-row">
                 <StyledInputForm
@@ -86,7 +87,7 @@ function References({ menu, activeMenu }) {
                 </Link>
               </StyledNext>
             </Buttons>
-          </div>
+          </MainContent>
         </div>
       </div>
     </div>

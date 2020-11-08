@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+const MainContent = styled.div`
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: #fff;
+  margin: 30px 0;
+  padding: 30px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+`;
 const StyledInputForm = styled.div`
   padding: 0;
   border-radius: 6px;
@@ -86,6 +97,7 @@ const Buttons = styled.div`
 `;
 
 export {
+  MainContent,
   StyledInputForm,
   StyledInputLabel,
   StyledInputInput,

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import {
   Buttons,
+  MainContent,
   StyledInputForm,
   StyledInputLabel,
   StyledInputTextarea,
@@ -67,7 +68,7 @@ function Skill() {
   return (
     <div className="container-fluid content">
       <div className="row">
-        <div className="col-12 main-content">
+        <MainContent className="col-12">
           <form onSubmit={submitHandler}>
             <StyledInputForm className="form-group">
               <StyledInputLabel for="inputSkills">Skills</StyledInputLabel>
@@ -94,7 +95,7 @@ function Skill() {
               </Link>
             </StyledNext>
           </Buttons>
-        </div>
+        </MainContent>
       </div>
     </div>
   );

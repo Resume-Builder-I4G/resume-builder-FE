@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Buttons,
+  MainContent,
   StyledInputForm,
   StyledInputLabel,
   StyledInputTextarea,
@@ -31,7 +32,7 @@ function Language() {
   return (
     <div className="container-fluid content">
       <div className="row">
-        <div className="col-12 main-content">
+        <MainContent className="col-12">
           <form onSubmit={submitHandler}>
             <StyledInputForm className="form-group">
               <StyledInputLabel for="inputLanguages">
@@ -58,7 +59,7 @@ function Language() {
               </Link>
             </StyledNext>
           </Buttons>
-        </div>
+        </MainContent>
       </div>
     </div>
   );
