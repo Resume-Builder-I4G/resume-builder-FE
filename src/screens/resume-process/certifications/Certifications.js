@@ -14,21 +14,12 @@ import "./Cerifications.css";
 import { Link } from "react-router-dom";
 
 function Certifications() {
-  // const [certName, setCertName] = useState("");
-  // const [certYear, setCertYear] = useState("");
-
-  // const submitHandler = (event) => {
-  //   event.preventDefault();
-  //   const certificationObj = {
-  //     name: certName,
-  //     year: certYear,
-  //   };
-
-  //   const certificationItems = [];
-  //   certificationItems.push(certificationObj);
-  //   localStorage.setItem("Cerifications", JSON.stringify(certificationItems));
-  // };
   const [cert, setCert] = useState([{ certName: "", certYear: "" }]);
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    localStorage.setItem("Cerifications", JSON.stringify(cert));
+  };
 
   //Handle input change
   const handleInputChange = (e, index) => {
@@ -55,7 +46,7 @@ function Certifications() {
       <MainContent className="col col-md-12 col-xs-6">
         <div>
           {/* <form onSubmit={submitHandler}> */}
-          <form>
+          <form onSubmit={submitHandler}>
             {cert.map((x, i) => {
               return (
                 <React.Fragment key={x.certName}>
@@ -65,24 +56,22 @@ function Certifications() {
                         Certificate
                       </StyledInputLabel>
                       <StyledInputInput
-                        style={{ width: "98%" }}
                         type="text"
+                        placeholder="e.g Figma Ambassador"
                         name="certName"
                         value={x.certName}
-                        placeholder="e.g Figma Ambassador"
-                        className="input-cert first"
                         id="cert"
                         onChange={(e) => handleInputChange(e, i)}
+                        style={{ width: "98%" }}
                       />
                     </StyledInputForm>
                     <StyledInputForm className="form-group col-md-4">
                       <StyledInputLabel htmlFor="year">Year</StyledInputLabel>
                       <StyledInputInput
-                        type="Number"
+                        type="number"
                         placeholder="Year"
                         name="certYear"
                         value={x.certYear}
-                        className="year-input"
                         id="year"
                         onChange={(e) => handleInputChange(e, i)}
                       />
@@ -113,13 +102,12 @@ function Certifications() {
           </form>
         </div>
 
-        <div style={{ marginTop: 20 }}>{JSON.stringify(cert)}</div>
         <Buttons>
-          <StyledPrev href="#">
+          <StyledPrev href="#" onClick={submitHandler}>
             <Link to="/new-resume/languages">Previous</Link>
           </StyledPrev>
 
-          <StyledNext href="#">
+          <StyledNext href="#" onClick={submitHandler}>
             <Link to="/new-resume/achivements" className="text-white">
               Next Section
             </Link>

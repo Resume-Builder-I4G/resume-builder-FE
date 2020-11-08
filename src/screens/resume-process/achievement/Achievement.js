@@ -64,11 +64,7 @@ function Achievement() {
                     </StyledInputForm>
                     <StyledAddItemWrap>
                       {achievement.length - 1 === i && (
-                        <StyledAddItemText
-                          href="#"
-                          button
-                          onClick={handleAddClick}
-                        >
+                        <StyledAddItemText href="#" onClick={handleAddClick}>
                           <span className="plus"> +</span>&nbsp; Add Another
                         </StyledAddItemText>
                       )}

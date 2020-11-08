@@ -18,10 +18,10 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/contact" component={Contact} />
-      <Route exact path="/sign-in" component={SignIn} />
-      <Route exact path="/sign-up" component={SignUp} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/sign-in" component={SignIn} />
+      <Route path="/sign-up" component={SignUp} />
 
       {/* Private Route available to only authenticated User */}
       <PrivateRoute path="/dashboard" component={Dashboard} />
