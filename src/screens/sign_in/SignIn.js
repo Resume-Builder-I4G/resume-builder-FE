@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./SignIn.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useAuth } from "../../context/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
@@ -170,6 +169,7 @@ function Signin(props) {
                   type="submit"
                   className="btn btn-primary"
                   style={{ background: loader ? "#ccc" : null }}
+                  onClick={handleLogin}
                 >
                   {" "}
                   {!loader ? "Log in" : <FontAwesomeIcon icon={faEllipsisH} />}
