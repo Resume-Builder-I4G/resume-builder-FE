@@ -63,8 +63,8 @@ function App(props) {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-        <PublicRoute path="/about" component={About} />
-        <PublicRoute path="/contact" component={Contact} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={Contact} />
         <PublicRoute path="/sign-in" component={SignIn} />
         <PublicRoute path="/sign-up" component={SignUp} />
 
