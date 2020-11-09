@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Dashboard.css";
 import Navbar from "../../components/dashboard_navbar/Dashboard_Nav";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useAuth } from "../../context/auth";
 
 import Grid from "../../assets/svgs/user_dashboard/grid.svg";
 import List from "../../assets/svgs/user_dashboard/list.svg";

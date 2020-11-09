@@ -10,9 +10,7 @@ function ENavbar() {
     <nav className="navbar navbar-css navbar-expand-lg navbar-light bg-primary sticky-top">
       <div className="container">
         <Link to="/">
-          <a className="navbar-brand text-white logo">
-            Resume <span className="sub-logo text-white">Builder</span>
-          </a>
+          <a className="navbar-brand text-white logo">ResumeBuilder</a>
         </Link>
         <button
           className="navbar-toggler"
