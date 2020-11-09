@@ -58,18 +58,17 @@ const StyledButton = styled.a`
 `;
 
 function Signup(props) {
-  const [isSignedUp, setSignedUp] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loader, setLoader] = useState(false);
-  const { setAuthTokens } = useAuth();
-  const referer = "/dashboard";
 
-  const submitForm = (event) => {
+  // handle button click of login form
+  const handleSignUp = (event) => {
     event.preventDefault();
+    setIsError(false);
     setLoader(true);
 
     axios
@@ -79,12 +78,11 @@ function Signup(props) {
         password: password,
       })
       .then((response) => {
-        console.log(response);
-        console.log(response.statusText);
         if (response.status === 200 || response.status === 201) {
-          setAuthTokens(response.data);
-          setSignedUp(true);
+          console.log(response);
           setLoader(false);
+          setUserSession(response.data.token, response.data.user);
+          props.history.push("/dashboard");
         } else {
           setIsError(true);
           setLoader(false);
@@ -92,16 +90,9 @@ function Signup(props) {
       })
       .catch((error) => {
         console.log(error);
-        setIsError(true);
         setLoader(false);
       });
-
-    setLoader(true);
   };
-
-  if (isSignedUp) {
-    return <Redirect to={referer} />;
-  }
 
   return (
     <div id="sign-up">
@@ -117,7 +108,7 @@ function Signup(props) {
           <div className="signup-content">
             <Title>Create Account</Title>
             <p className="signup__text">Register your account!</p>
-            <form className="form" onSubmit={submitForm}>
+            <form className="form" onSubmit={handleSignUp}>
               <div className="form-group">
                 <Styledlabel htmlFor="contact-name">
                   <span>Full Name</span>
@@ -168,6 +159,7 @@ function Signup(props) {
                   type="submit"
                   className="btn btn-primary sign-up-btn"
                   style={{ background: loader ? "#ccc" : null }}
+                  onClick={handleSignUp}
                 >
                   {" "}
                   {!loader ? "Sign Up" : <FontAwesomeIcon icon={faEllipsisH} />}
