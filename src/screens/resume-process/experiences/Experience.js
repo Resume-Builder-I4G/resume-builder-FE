@@ -28,6 +28,8 @@ function Experience() {
   const [endMonth, setEndMonth] = useState("Month");
   const [endYear, setEndYear] = useState("Year");
 
+  const [check, setCheck] = useState(false);
+
   const submitHandler = (event) => {
     event.preventDefault();
     const experienceObj = {
@@ -104,15 +106,16 @@ function Experience() {
               </div>
 
               <StyledInputForm className="form-group check-input mr-4">
-                <StyledInputInput
-                  type="checkbox"
-                  className="form-check-input"
-                  id="checkPresent"
-                />
                 <StyledInputLabel
                   className="form-check-label"
                   htmlFor="checkPresent"
                 >
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id="checkPresent"
+                    onChange={(event) => setCheck(event.target.checked)}
+                  />
                   Currently working here
                 </StyledInputLabel>
               </StyledInputForm>
@@ -162,46 +165,82 @@ function Experience() {
                 </StyledInputForm>
 
                 <StyledInputForm className="form-group col-md-3">
-                  <StyledInputLabel htmlFor="inputStartMonth">
-                    .
-                  </StyledInputLabel>
-                  <select
-                    id="inputStartMonth"
-                    className="form-control"
-                    value={endMonth}
-                    onChange={(event) => setEndMonth(event.target.value)}
-                    onBlur={(event) => setEndMonth(event.target.value)}
-                  >
-                    <option>Month</option>
-                    {arrayOfMonths.map((month) => {
-                      return (
-                        <option key={month} value={month}>
-                          {month}
-                        </option>
-                      );
-                    })}
-                  </select>
+                  <StyledInputLabel htmlFor="inputEndMonth">.</StyledInputLabel>
+                  {check ? (
+                    <select
+                      id="inputEndMonth"
+                      className="form-control"
+                      value={endMonth}
+                      disabled={true}
+                      onChange={(event) => setEndMonth(event.target.value)}
+                      onBlur={(event) => setEndMonth(event.target.value)}
+                    >
+                      <option>Month</option>
+                      {arrayOfMonths.map((month) => {
+                        return (
+                          <option key={month} value={month}>
+                            {month}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  ) : (
+                    <select
+                      id="inputEndMonth"
+                      className="form-control"
+                      value={endMonth}
+                      onChange={(event) => setEndMonth(event.target.value)}
+                      onBlur={(event) => setEndMonth(event.target.value)}
+                    >
+                      <option>Month</option>
+                      {arrayOfMonths.map((month) => {
+                        return (
+                          <option key={month} value={month}>
+                            {month}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  )}
                 </StyledInputForm>
                 <StyledInputForm className="form-group col-md-3">
-                  <StyledInputLabel htmlFor="inputStartYear">
-                    .
-                  </StyledInputLabel>
-                  <select
-                    id="inputStartYear"
-                    className="form-control"
-                    value={endYear}
-                    onChange={(event) => setEndYear(event.target.value)}
-                    onBlur={(event) => setEndYear(event.target.value)}
-                  >
-                    <option>Year</option>
-                    {arrayOfYears().map((year) => {
-                      return (
-                        <option key={year} value={year}>
-                          {year}
-                        </option>
-                      );
-                    })}
-                  </select>
+                  <StyledInputLabel htmlFor="inputEndYear">.</StyledInputLabel>
+                  {check ? (
+                    <select
+                      id="inputEndYear"
+                      className="form-control"
+                      value={endYear}
+                      disabled={true}
+                      onChange={(event) => setEndYear(event.target.value)}
+                      onBlur={(event) => setEndYear(event.target.value)}
+                    >
+                      <option>Year</option>
+                      {arrayOfYears().map((year) => {
+                        return (
+                          <option key={year} value={year}>
+                            {year}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  ) : (
+                    <select
+                      id="inputEndYear"
+                      className="form-control"
+                      value={endYear}
+                      onChange={(event) => setEndYear(event.target.value)}
+                      onBlur={(event) => setEndYear(event.target.value)}
+                    >
+                      <option>Year</option>
+                      {arrayOfYears().map((year) => {
+                        return (
+                          <option key={year} value={year}>
+                            {year}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  )}
                 </StyledInputForm>
               </div>
 

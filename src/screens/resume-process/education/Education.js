@@ -26,20 +26,61 @@ function Education() {
   const [startMonth, setStartMonth] = useState("Month");
   const [startYear, setStartYear] = useState("Year");
 
+  const [check, setCheck] = useState(false);
+
   const [endMonth, setEndMonth] = useState("Month");
   const [endYear, setEndYear] = useState("Year");
 
+  const [edu, setEdu] = useState([
+    {
+      course: "",
+      institution: "",
+      city: "",
+      country: "",
+      information: "",
+      startMonth: "",
+      startYear: "",
+      endMonth: "",
+      endYear: "",
+    },
+  ]);
+
+  //Handle input change
+  const handleInputChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...edu];
+    list[index][name] = value;
+    setEdu(list);
+  };
+
+  // handle click event of the Remove button
+  const handleRemoveClick = (index) => {
+    const list = [...edu];
+    list.splice(index, 1);
+    setEdu(list);
+  };
+
+  // handle click event of the Add button
+  const handleAddClick = () => {
+    setEdu([
+      ...edu,
+      {
+        course: "",
+        institution: "",
+        city: "",
+        country: "",
+        information: "",
+        startMonth: "",
+        startYear: "",
+        endMonth: "",
+        endYear: "",
+      },
+    ]);
+  };
+
   const submitHandler = (event) => {
-    const educationObj = {
-      course: course,
-      institution: institution,
-      location: `${city}, ${country}`,
-      information: information,
-      duration: `${startYear} - ${endYear}`,
-    };
-    const educationItems = [];
-    educationItems.push(educationObj);
-    localStorage.setItem("Education", JSON.stringify(educationItems));
+    event.preventDefault();
+    localStorage.setItem("Education", JSON.stringify(edu));
     // let bigToken = JSON.parse(localStorage.getItem("tokens"));
     // const token = bigToken.token;
     // const config = {
@@ -74,178 +115,260 @@ function Education() {
         <div className="row">
           <MainContent className="col-12">
             <form onSubmit={submitHandler}>
-              <div className="form-row">
-                <StyledInputForm className="form-group col-md-6">
-                  <StyledInputLabel htmlFor="inputInstitutionName">
-                    Institution Name
-                  </StyledInputLabel>
-                  <StyledInputInput
-                    type="text"
-                    className="form-control"
-                    id="inputInstitutionName"
-                    placeholder="e.g lautech"
-                    onChange={(event) => setInstitution(event.target.value)}
-                  />
-                </StyledInputForm>
-                <StyledInputForm className="form-group col-md-6">
-                  <StyledInputLabel htmlFor="inputCompanyName">
-                    Field of Study
-                  </StyledInputLabel>
-                  <StyledInputInput
-                    type="text"
-                    className="form-control"
-                    id="inputCompanyName"
-                    placeholder=""
-                    onChange={(event) => setCourse(event.target.value)}
-                  />
-                </StyledInputForm>
-              </div>
+              {edu.map((x, i) => {
+                return (
+                  <React.Fragment key={edu[x.course]}>
+                    <div className="form-row">
+                      <StyledInputForm className="form-group col-md-6">
+                        <StyledInputLabel htmlFor="inputInstitutionName">
+                          Institution Name
+                        </StyledInputLabel>
+                        <StyledInputInput
+                          type="text"
+                          className="form-control"
+                          id="inputInstitutionName"
+                          placeholder="e.g lautech"
+                          name="institution"
+                          value={x.institution}
+                          onChange={(e) => handleInputChange(e, i)}
+                        />
+                      </StyledInputForm>
+                      <StyledInputForm className="form-group col-md-6">
+                        <StyledInputLabel htmlFor="inputCompanyName">
+                          Field of Study
+                        </StyledInputLabel>
+                        <StyledInputInput
+                          type="text"
+                          className="form-control"
+                          id="inputCompanyName"
+                          placeholder=""
+                          name="course"
+                          value={x.course}
+                          onChange={(e) => handleInputChange(e, i)}
+                        />
+                      </StyledInputForm>
+                    </div>
 
-              <div className="form-row">
-                <StyledInputForm className="form-group col-md-6">
-                  <StyledInputLabel htmlFor="inputCountry">
-                    Country
-                  </StyledInputLabel>
-                  <StyledInputInput
-                    type="text"
-                    className="form-control"
-                    id="inputCountry"
-                    placeholder="e.g Nigeria"
-                    onChange={(event) => setCountry(event.target.value)}
-                  />
-                </StyledInputForm>
-                <StyledInputForm className="form-group col-md-6">
-                  <StyledInputLabel htmlFor="inputCity">City</StyledInputLabel>
-                  <StyledInputInput
-                    type="text"
-                    className="form-control"
-                    id="inputCity"
-                    placeholder="e.g Ogbomoso"
-                    onChange={(event) => setCity(event.target.value)}
-                  />
-                </StyledInputForm>
-              </div>
+                    <div className="form-row">
+                      <StyledInputForm className="form-group col-md-6">
+                        <StyledInputLabel htmlFor="inputCountry">
+                          Country
+                        </StyledInputLabel>
+                        <StyledInputInput
+                          type="text"
+                          className="form-control"
+                          id="inputCountry"
+                          placeholder="e.g Nigeria"
+                          name="country"
+                          value={x.country}
+                          onChange={(e) => handleInputChange(e, i)}
+                        />
+                      </StyledInputForm>
+                      <StyledInputForm className="form-group col-md-6">
+                        <StyledInputLabel htmlFor="inputCity">
+                          City
+                        </StyledInputLabel>
+                        <StyledInputInput
+                          type="text"
+                          className="form-control"
+                          id="inputCity"
+                          placeholder="e.g Ogbomoso"
+                          name="city"
+                          value={x.city}
+                          onChange={(e) => handleInputChange(e, i)}
+                        />
+                      </StyledInputForm>
+                    </div>
 
-              <StyledInputForm className="form-group check-input mr-4">
-                <StyledInputInput
-                  type="checkbox"
-                  className="form-check-input"
-                  id="checkPresent"
-                />
-                <StyledInputLabel
-                  className="form-check-label"
-                  htmlFor="checkPresent"
-                >
-                  Currently study here
-                </StyledInputLabel>
-              </StyledInputForm>
+                    <StyledInputForm className="form-group check-input mr-4">
+                      <StyledInputLabel
+                        className="form-check-label"
+                        htmlFor="checkPresent"
+                      >
+                        <input
+                          type="checkbox"
+                          className="form-check-input"
+                          id="checkPresent"
+                          onChange={(event) => setCheck(event.target.checked)}
+                        />
+                        Currently study here
+                      </StyledInputLabel>
+                    </StyledInputForm>
 
-              <div className="form-row mt-4">
-                <StyledInputForm className="form-group col-md-3">
-                  <StyledInputLabel htmlFor="inputStartMonth">
-                    Time Period
-                  </StyledInputLabel>
-                  <select
-                    id="inputStartMonth"
-                    className="form-control"
-                    value={startMonth}
-                    onChange={(event) => setStartMonth(event.target.value)}
-                    onBlur={(event) => setStartMonth(event.target.value)}
-                  >
-                    <option>Month</option>
-                    {arrayOfMonths.map((month) => {
-                      return (
-                        <option key={month} value={month}>
-                          {month}
-                        </option>
-                      );
-                    })}
-                  </select>
-                </StyledInputForm>
-                <StyledInputForm className="form-group col-md-3">
-                  <StyledInputLabel htmlFor="inputStartYear">
-                    .
-                  </StyledInputLabel>
-                  <select
-                    id="inputStartYear"
-                    className="form-control"
-                    value={startYear}
-                    onChange={(event) => setStartYear(event.target.value)}
-                    onBlur={(event) => setStartYear(event.target.value)}
-                  >
-                    <option>Year</option>
-                    {arrayOfYears().map((year) => {
-                      return (
-                        <option key={year} value={year}>
-                          {year}
-                        </option>
-                      );
-                    })}
-                  </select>
-                </StyledInputForm>
+                    <div className="form-row mt-4">
+                      <StyledInputForm className="form-group col-md-3">
+                        <StyledInputLabel htmlFor="inputStartMonth">
+                          Time Period
+                        </StyledInputLabel>
+                        <select
+                          id="inputStartMonth"
+                          className="form-control"
+                          name="startMonth"
+                          value={x.startMonth}
+                          onChange={(e) => handleInputChange(e, i)}
+                          onBlur={(e) => handleInputChange(e, i)}
+                        >
+                          <option>Month</option>
+                          {arrayOfMonths.map((month) => {
+                            return (
+                              <option key={month} value={month}>
+                                {month}
+                              </option>
+                            );
+                          })}
+                        </select>
+                      </StyledInputForm>
+                      <StyledInputForm className="form-group col-md-3">
+                        <StyledInputLabel htmlFor="inputStartYear">
+                          .
+                        </StyledInputLabel>
+                        <select
+                          id="inputStartYear"
+                          className="form-control"
+                          name="startYear"
+                          value={x.startYear}
+                          onChange={(e) => handleInputChange(e, i)}
+                          onBlur={(e) => handleInputChange(e, i)}
+                        >
+                          <option>Year</option>
+                          {arrayOfYears().map((year) => {
+                            return (
+                              <option key={year} value={year}>
+                                {year}
+                              </option>
+                            );
+                          })}
+                        </select>
+                      </StyledInputForm>
 
-                <StyledInputForm className="form-group col-md-3">
-                  <StyledInputLabel htmlFor="inputStartMonth">
-                    .
-                  </StyledInputLabel>
-                  <select
-                    id="inputStartMonth"
-                    className="form-control"
-                    value={endMonth}
-                    onChange={(event) => setEndMonth(event.target.value)}
-                    onBlur={(event) => setEndMonth(event.target.value)}
-                  >
-                    <option>Month</option>
-                    {arrayOfMonths.map((month) => {
-                      return (
-                        <option key={month} value={month}>
-                          {month}
-                        </option>
-                      );
-                    })}
-                  </select>
-                </StyledInputForm>
-                <StyledInputForm className="form-group col-md-3">
-                  <StyledInputLabel htmlFor="inputStartYear">
-                    .
-                  </StyledInputLabel>
-                  <select
-                    id="inputStartYear"
-                    className="form-control"
-                    value={endYear}
-                    onChange={(event) => setEndYear(event.target.value)}
-                    onBlur={(event) => setEndYear(event.target.value)}
-                  >
-                    <option>Year</option>
-                    {arrayOfYears().map((year) => {
-                      return (
-                        <option key={year} value={year}>
-                          {year}
-                        </option>
-                      );
-                    })}
-                  </select>
-                </StyledInputForm>
-              </div>
+                      <StyledInputForm className="form-group col-md-3">
+                        <StyledInputLabel htmlFor="inputEndMonth">
+                          .
+                        </StyledInputLabel>
+                        {check ? (
+                          <select
+                            id="inputEndMonth"
+                            className="form-control"
+                            disabled={true}
+                            name="endMonth"
+                            value={x.endMonth}
+                            onChange={(e) => handleInputChange(e, i)}
+                            onBlur={(e) => handleInputChange(e, i)}
+                          >
+                            <option>Month</option>
+                            {arrayOfMonths.map((month) => {
+                              return (
+                                <option key={month} value={month}>
+                                  {month}
+                                </option>
+                              );
+                            })}
+                          </select>
+                        ) : (
+                          <select
+                            id="inputEndMonth"
+                            className="form-control"
+                            name="endMonth"
+                            value={x.endMonth}
+                            onChange={(e) => handleInputChange(e, i)}
+                            onBlur={(e) => handleInputChange(e, i)}
+                          >
+                            <option>Month</option>
+                            {arrayOfMonths.map((month) => {
+                              return (
+                                <option key={month} value={month}>
+                                  {month}
+                                </option>
+                              );
+                            })}
+                          </select>
+                        )}
+                      </StyledInputForm>
+                      <StyledInputForm className="form-group col-md-3">
+                        <StyledInputLabel htmlFor="inputEndYear">
+                          .
+                        </StyledInputLabel>
+                        {check ? (
+                          <select
+                            id="inputEndYear"
+                            className="form-control"
+                            disabled={true}
+                            name="endYear"
+                            value={x.endYear}
+                            onChange={(e) => handleInputChange(e, i)}
+                            onBlur={(e) => handleInputChange(e, i)}
+                          >
+                            <option>Year</option>
+                            {arrayOfYears().map((year) => {
+                              return (
+                                <option key={year} value={year}>
+                                  {year}
+                                </option>
+                              );
+                            })}
+                          </select>
+                        ) : (
+                          <select
+                            id="inputEndYear"
+                            className="form-control"
+                            name="endYear"
+                            value={x.endYear}
+                            onChange={(e) => handleInputChange(e, i)}
+                            onBlur={(e) => handleInputChange(e, i)}
+                          >
+                            <option>Year</option>
+                            {arrayOfYears().map((year) => {
+                              return (
+                                <option key={year} value={year}>
+                                  {year}
+                                </option>
+                              );
+                            })}
+                          </select>
+                        )}
+                      </StyledInputForm>
+                    </div>
 
-              <StyledInputForm className="form-group">
-                <StyledInputLabel htmlFor="inputDescription">
-                  Other Information
-                </StyledInputLabel>
-                <StyledInputTextarea
-                  className="form-control"
-                  id="inputDescription"
-                  rows="8"
-                  onChange={(event) => setInformation(event.target.value)}
-                ></StyledInputTextarea>
-              </StyledInputForm>
+                    <StyledInputForm className="form-group">
+                      <StyledInputLabel htmlFor="inputDescription">
+                        Other Information
+                      </StyledInputLabel>
+                      <StyledInputTextarea
+                        className="form-control"
+                        id="inputDescription"
+                        rows="8"
+                        onChange={(event) => setInformation(event.target.value)}
+                      ></StyledInputTextarea>
+                    </StyledInputForm>
+                    <StyledAddItemWrap>
+                      {edu.length - 1 === i && (
+                        <StyledAddItemText
+                          href="#"
+                          button
+                          onClick={handleAddClick}
+                        >
+                          <span className="plus"> +</span>&nbsp; Add Another
+                        </StyledAddItemText>
+                      )}
+                      {edu.length !== 1 && (
+                        <StyledAddItemText
+                          href="#"
+                          onClick={() => handleRemoveClick(i)}
+                        >
+                          <span className="plus">-</span>&nbsp; Remove
+                        </StyledAddItemText>
+                      )}
+                    </StyledAddItemWrap>
+                  </React.Fragment>
+                );
+              })}
             </form>
 
-            <StyledAddItemWrap>
+            {/* <StyledAddItemWrap>
               <StyledAddItemText href="#">
                 <span className="plus">+</span>&nbsp; Add Another
               </StyledAddItemText>
-            </StyledAddItemWrap>
+            </StyledAddItemWrap> */}
 
             <Buttons>
               <StyledPrev type="submit" onClick={submitHandler} href="#">
