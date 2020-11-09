@@ -52,7 +52,9 @@ function Dashboard(props) {
         <div className="container">
           <div className="topbar d-flex justify-content-between">
             <div>
-              <StyledWelcomeMsg>Glad to have you back, Daniel</StyledWelcomeMsg>
+              <StyledWelcomeMsg>
+                Glad to have you back, {user.name}
+              </StyledWelcomeMsg>
               <StyledInfo>
                 One of your resume is still missing your personal details.
               </StyledInfo>
