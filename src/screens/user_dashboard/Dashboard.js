@@ -47,7 +47,7 @@ function Dashboard(props) {
 
   return (
     <div id="dashboard">
-      <Navbar />
+      <Navbar handleLogout={handleLogout} />
       <div className="body">
         <div className="container">
           <div className="topbar d-flex justify-content-between">
