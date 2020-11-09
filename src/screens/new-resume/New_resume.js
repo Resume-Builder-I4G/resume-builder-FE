@@ -27,7 +27,10 @@ function New_resume({ url }) {
             <div className="contain">
               {ResumeTabs.map((resumetab) => {
                 return (
-                  <Link to={`/new-resume/${resumetab.path}`}>
+                  <Link
+                    key={resumetab.title}
+                    to={`/new-resume/${resumetab.path}`}
+                  >
                     <div className="option">
                       <img src={resumetab.image} alt={resumetab.alt} />
                       <p>{resumetab.title}</p>

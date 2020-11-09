@@ -17,19 +17,19 @@ import { arrayOfYears, arrayOfMonths } from "../../../components/DateObject";
 import { Link } from "react-router-dom";
 
 function Education() {
-  const [institution, setInstitution] = useState("");
-  const [course, setCourse] = useState("");
-  const [country, setCountry] = useState("");
-  const [city, setCity] = useState("");
-  const [information, setInformation] = useState("");
+  // const [institution, setInstitution] = useState("");
+  // const [course, setCourse] = useState("");
+  // const [country, setCountry] = useState("");
+  // const [city, setCity] = useState("");
+  // const [information, setInformation] = useState("");
 
-  const [startMonth, setStartMonth] = useState("Month");
-  const [startYear, setStartYear] = useState("Year");
+  // const [startMonth, setStartMonth] = useState("Month");
+  // const [startYear, setStartYear] = useState("Year");
 
-  const [check, setCheck] = useState(false);
+  // const [check, setCheck] = useState(false);
 
-  const [endMonth, setEndMonth] = useState("Month");
-  const [endYear, setEndYear] = useState("Year");
+  // const [endMonth, setEndMonth] = useState("Month");
+  // const [endYear, setEndYear] = useState("Year");
 
   const [edu, setEdu] = useState([
     {
@@ -38,6 +38,7 @@ function Education() {
       city: "",
       country: "",
       information: "",
+      check: false,
       startMonth: "",
       startYear: "",
       endMonth: "",
@@ -70,6 +71,7 @@ function Education() {
         city: "",
         country: "",
         information: "",
+        check: "",
         startMonth: "",
         startYear: "",
         endMonth: "",
@@ -189,7 +191,9 @@ function Education() {
                           type="checkbox"
                           className="form-check-input"
                           id="checkPresent"
-                          onChange={(event) => setCheck(event.target.checked)}
+                          name="check"
+                          value={x.check}
+                          onChange={(e) => handleInputChange(e, i)}
                         />
                         Currently study here
                       </StyledInputLabel>
@@ -245,7 +249,7 @@ function Education() {
                         <StyledInputLabel htmlFor="inputEndMonth">
                           .
                         </StyledInputLabel>
-                        {check ? (
+                        {x.check ? (
                           <select
                             id="inputEndMonth"
                             className="form-control"
@@ -288,7 +292,7 @@ function Education() {
                         <StyledInputLabel htmlFor="inputEndYear">
                           .
                         </StyledInputLabel>
-                        {check ? (
+                        {x.check ? (
                           <select
                             id="inputEndYear"
                             className="form-control"
@@ -337,10 +341,10 @@ function Education() {
                         className="form-control"
                         id="inputDescription"
                         rows="8"
-                        onChange={(event) => setInformation(event.target.value)}
+                        onChange={(e) => handleInputChange(e, i)}
                       ></StyledInputTextarea>
                     </StyledInputForm>
-                    <StyledAddItemWrap>
+                    <StyledAddItemWrap style={{ marginBottom: "30px" }}>
                       {edu.length - 1 === i && (
                         <StyledAddItemText
                           href="#"

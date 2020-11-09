@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./SignIn.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useAuth } from "../../context/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,6 +11,7 @@ import googleImg from "../../assets/svgs/signup-svg/Google.svg";
 import fbImg from "../../assets/svgs/signup-svg/Facebook.svg";
 import linkedinImg from "../../assets/svgs/signup-svg/LinkedIn.svg";
 import Button from "../../components/Button";
+import { setUserSession } from "../../utils/Common";
 
 const Title = styled.h1`
   font-style: normal;
@@ -69,19 +69,16 @@ const StyledCheckbox = styled.input`
 const StyledCheckboxLabel = styled.label``;
 
 function Signin(props) {
-  const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
   const [loader, setLoader] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setAuthTokens } = useAuth();
-  // const referer = props.location.state.referer || "/";
-  const referer = "/dashboard";
-
-  const submitForm = (event) => {
+  // handle button click of login form
+  const handleLogin = (event) => {
     event.preventDefault();
+    setIsError(false);
     setLoader(true);
 
     axios
@@ -90,13 +87,11 @@ function Signin(props) {
         password: password,
       })
       .then((response) => {
-        console.log(response);
         if (response.status === 200 || response.status === 201) {
-          // form.reset();
-          setAuthTokens(response.data);
-
-          setLoggedIn(true);
+          console.log(response);
           setLoader(false);
+          setUserSession(response.data.token, response.data.user);
+          props.history.push("/dashboard");
         } else {
           setIsError(true);
           setLoader(false);
@@ -106,13 +101,7 @@ function Signin(props) {
         console.log(error);
         setLoader(false);
       });
-
-    setLoader(true);
   };
-
-  if (isLoggedIn) {
-    return <Redirect to={referer} />;
-  }
 
   return (
     <div id="sign-in">
@@ -128,7 +117,7 @@ function Signin(props) {
           <div className="signup-content">
             <Title>Welcome back!</Title>
             <p className="signup__text">Login to continue!</p>
-            <form className="form" onSubmit={submitForm}>
+            <form className="form" onSubmit={handleLogin}>
               <div className="form-group">
                 <Styledlabel htmlFor="signup-email">
                   <span>Email</span>
@@ -180,6 +169,7 @@ function Signin(props) {
                   type="submit"
                   className="btn btn-primary"
                   style={{ background: loader ? "#ccc" : null }}
+                  onClick={handleLogin}
                 >
                   {" "}
                   {!loader ? "Log in" : <FontAwesomeIcon icon={faEllipsisH} />}

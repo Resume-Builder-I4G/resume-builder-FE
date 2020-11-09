@@ -20,7 +20,7 @@ function Education({ educationItems }) {
             <StyledELocation>{item.country}</StyledELocation>
             <StyledEInformation>{item.information}</StyledEInformation>
             <StyledEDuration>
-              {item.startYear} - {item.endYear}
+              {`${item.startYear} - ${item.endYear ? item.endYear : "Present"}`}
             </StyledEDuration>
           </div>
         );

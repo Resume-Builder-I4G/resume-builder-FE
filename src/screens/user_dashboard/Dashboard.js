@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Dashboard.css";
 import Navbar from "../../components/dashboard_navbar/Dashboard_Nav";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useAuth } from "../../context/auth";
 
 import Grid from "../../assets/svgs/user_dashboard/grid.svg";
 import List from "../../assets/svgs/user_dashboard/list.svg";
@@ -14,6 +13,7 @@ import More from "../../assets/svgs/user_dashboard/more-horizontal.svg";
 import ResumeImage from "../../assets/images/user_dashboard/resume-image.png";
 import styled from "styled-components";
 import NewResume from "../new-resume/New_resume";
+import { getUser, removeUserSession } from "../../utils/Common";
 
 const StyledWelcomeMsg = styled.h1`
   font-size: 30px;
@@ -33,41 +33,27 @@ const StyledInfo = styled.p`
   text-align: left;
 `;
 
-function Dashboard() {
-  const { setAuthTokens } = useAuth();
+function Dashboard(props) {
+  const user = getUser();
   const listOfResumes = [];
 
-  const userDashboard = () => {
-    let bigToken = JSON.parse(localStorage.getItem("tokens"));
-    const token = bigToken.token;
-    console.log(token);
-
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
-
-    axios
-      .get("https://resume-builder-i4g.herokuapp.com/user", config)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  // handle click event of logout button
+  const handleLogout = () => {
+    removeUserSession();
+    props.history.push("/sign-in");
+    console.log("log out");
   };
-
-  userDashboard();
 
   return (
     <div id="dashboard">
-      <Navbar />
+      <Navbar handleLogout={handleLogout} />
       <div className="body">
         <div className="container">
           <div className="topbar d-flex justify-content-between">
             <div>
-              <StyledWelcomeMsg>Glad to have you back, Daniel</StyledWelcomeMsg>
+              <StyledWelcomeMsg>
+                Glad to have you back, {user.name}
+              </StyledWelcomeMsg>
               <StyledInfo>
                 One of your resume is still missing your personal details.
               </StyledInfo>
@@ -91,6 +77,7 @@ function Dashboard() {
                   id="resumeOption"
                   className="form-control"
                   value="Last Opened"
+                  onChange={(e) => {}}
                 >
                   <option value="Last Opened">Last Opened</option>
                   <option value="Last Edited">Last Edited</option>
@@ -108,7 +95,7 @@ function Dashboard() {
             <div className="grid-view">
               {listOfResumes.map((resume) => {
                 return (
-                  <div>
+                  <div key={Date.now}>
                     <div className="row">
                       <div className="resume-item col-md-3">
                         <div className="resume-img">

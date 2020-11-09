@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 import Daniel from "../../assets/images/user_dashboard/Daniel.png";
 import "./Dashboard_Nav.css";
 
-function Dashboard_Nav() {
+function Dashboard_Nav(props) {
   return (
     <nav className="navbar navbar-css navbar-expand-lg navbar-light bg-primary sticky-top">
       <div className="container">
         <Link to="/">
-          <a className="navbar-brand text-light logo">
-            Resume <span className="sub-logo text-light">Builder</span>
-          </a>
+          <a className="navbar-brand text-white logo">ResumeBuilder</a>
         </Link>
         <button
           className="navbar-toggler"
@@ -54,7 +52,11 @@ function Dashboard_Nav() {
                   <a className="settings-btn" href="#">
                     Settings
                   </a>
-                  <a className="log-out-btn" href="#">
+                  <a
+                    className="log-out-btn"
+                    href="#"
+                    onClick={props.handleLogout}
+                  >
                     Log Out
                   </a>
                 </div>
