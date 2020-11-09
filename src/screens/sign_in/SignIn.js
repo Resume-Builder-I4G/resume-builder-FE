@@ -12,6 +12,7 @@ import googleImg from "../../assets/svgs/signup-svg/Google.svg";
 import fbImg from "../../assets/svgs/signup-svg/Facebook.svg";
 import linkedinImg from "../../assets/svgs/signup-svg/LinkedIn.svg";
 import Button from "../../components/Button";
+import { setUserSession } from "../../utils/Common";
 
 const Title = styled.h1`
   font-style: normal;
@@ -117,7 +118,7 @@ function Signin(props) {
           <div className="signup-content">
             <Title>Welcome back!</Title>
             <p className="signup__text">Login to continue!</p>
-            <form className="form" onSubmit={submitForm}>
+            <form className="form" onSubmit={handleLogin}>
               <div className="form-group">
                 <Styledlabel htmlFor="signup-email">
                   <span>Email</span>
