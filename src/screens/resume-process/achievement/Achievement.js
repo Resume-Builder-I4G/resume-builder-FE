@@ -47,7 +47,7 @@ function Achievement() {
             <form>
               {achievement.map((x, i) => {
                 return (
-                  <React.Fragment key={x.name}>
+                  <React.Fragment key={achievement[x.name]}>
                     <StyledInputForm className="form-group">
                       <label htmlFor="inputAchievement">Achievements</label>
                       <StyledInputInput

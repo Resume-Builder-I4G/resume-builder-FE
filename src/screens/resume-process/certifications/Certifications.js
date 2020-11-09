@@ -45,11 +45,10 @@ function Certifications() {
     <div className="container-fluid content">
       <MainContent className="col col-md-12 col-xs-6">
         <div>
-          {/* <form onSubmit={submitHandler}> */}
           <form onSubmit={submitHandler}>
             {cert.map((x, i) => {
               return (
-                <React.Fragment key={x.certName}>
+                <React.Fragment key={cert[x.certName]}>
                   <div className="form-row">
                     <StyledInputForm className="form-group col-md-8">
                       <StyledInputLabel htmlFor="cert">
@@ -60,7 +59,6 @@ function Certifications() {
                         placeholder="e.g Figma Ambassador"
                         name="certName"
                         value={x.certName}
-                        id="cert"
                         onChange={(e) => handleInputChange(e, i)}
                         style={{ width: "98%" }}
                       />
@@ -72,7 +70,6 @@ function Certifications() {
                         placeholder="Year"
                         name="certYear"
                         value={x.certYear}
-                        id="year"
                         onChange={(e) => handleInputChange(e, i)}
                       />
                     </StyledInputForm>
