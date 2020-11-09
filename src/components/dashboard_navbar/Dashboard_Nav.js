@@ -8,8 +8,8 @@ function Dashboard_Nav(props) {
     <nav className="navbar navbar-css navbar-expand-lg navbar-light bg-primary sticky-top">
       <div className="container">
         <Link to="/">
-          <a className="navbar-brand text-light logo">
-            Resume <span className="sub-logo text-light">Builder</span>
+          <a className="navbar-brand text-white logo">
+            Resume <span className="sub-logo text-white">Builder</span>
           </a>
         </Link>
         <button
