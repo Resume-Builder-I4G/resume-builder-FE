@@ -34,31 +34,15 @@ const StyledInfo = styled.p`
 `;
 
 function Dashboard() {
-  const { setAuthTokens } = useAuth();
+  const user = getUser();
   const listOfResumes = [];
 
-  const userDashboard = () => {
-    let bigToken = JSON.parse(localStorage.getItem("tokens"));
-    const token = bigToken.token;
-    console.log(token);
-
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
-
-    axios
-      .get("https://resume-builder-i4g.herokuapp.com/user", config)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  // handle click event of logout button
+  const handleLogout = () => {
+    removeUserSession();
+    props.history.push("/sign-in");
+    console.log("log out");
   };
-
-  userDashboard();
 
   return (
     <div id="dashboard">
