@@ -14,10 +14,15 @@ function Experience({ experienceItems }) {
       <ul>
         {experienceItems.map((item) => {
           return (
-            <li>
+            <li
+              style={{ marginBottom: "10px" }}
+              key={`${item.company}+${item.startYear}`}
+            >
               <div className="d-flex justify-content-between">
                 <CompanySpan>{item.company}</CompanySpan>
-                <ExpDuration>{`${item.startYear} - ${item.endYear}`}</ExpDuration>
+                <ExpDuration>{`${item.startYear} - ${
+                  item.endYear ? item.endYear : "Present"
+                }`}</ExpDuration>
               </div>
               <ExpText>{item.title}</ExpText>
               <ExpText>{`${item.city}, ${item.country}`}</ExpText>
