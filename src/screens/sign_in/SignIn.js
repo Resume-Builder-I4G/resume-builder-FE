@@ -69,19 +69,16 @@ const StyledCheckbox = styled.input`
 const StyledCheckboxLabel = styled.label``;
 
 function Signin(props) {
-  const [isLoggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
   const [loader, setLoader] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setAuthTokens } = useAuth();
-  // const referer = props.location.state.referer || "/";
-  const referer = "/dashboard";
-
-  const submitForm = (event) => {
+  // handle button click of login form
+  const handleLogin = (event) => {
     event.preventDefault();
+    setIsError(false);
     setLoader(true);
 
     axios
@@ -90,13 +87,11 @@ function Signin(props) {
         password: password,
       })
       .then((response) => {
-        console.log(response);
         if (response.status === 200 || response.status === 201) {
-          // form.reset();
-          setAuthTokens(response.data);
-
-          setLoggedIn(true);
+          console.log(response);
           setLoader(false);
+          setUserSession(response.data.token, response.data.user);
+          props.history.push("/dashboard");
         } else {
           setIsError(true);
           setLoader(false);
@@ -106,13 +101,7 @@ function Signin(props) {
         console.log(error);
         setLoader(false);
       });
-
-    setLoader(true);
   };
-
-  if (isLoggedIn) {
-    return <Redirect to={referer} />;
-  }
 
   return (
     <div id="sign-in">
