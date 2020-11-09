@@ -1,19 +1,18 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { useAuth } from "./context/auth";
+import { getToken } from "./utils/Common";
 
+// handle the private routes
 function PrivateRoute({ component: Component, ...rest }) {
-  const { authTokens } = useAuth();
-
   return (
     <Route
       {...rest}
       render={(props) =>
-        authTokens ? (
+        getToken() ? (
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: "/sign-in", state: { referer: props.location } }}
+            to={{ pathname: "/sign-in", state: { from: props.location } }}
           />
         )
       }
