@@ -14,6 +14,7 @@ import More from "../../assets/svgs/user_dashboard/more-horizontal.svg";
 import ResumeImage from "../../assets/images/user_dashboard/resume-image.png";
 import styled from "styled-components";
 import NewResume from "../new-resume/New_resume";
+import { getUser, removeUserSession } from "../../utils/Common";
 
 const StyledWelcomeMsg = styled.h1`
   font-size: 30px;
@@ -33,7 +34,7 @@ const StyledInfo = styled.p`
   text-align: left;
 `;
 
-function Dashboard() {
+function Dashboard(props) {
   const user = getUser();
   const listOfResumes = [];
 
