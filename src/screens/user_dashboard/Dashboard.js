@@ -91,6 +91,7 @@ function Dashboard() {
                   id="resumeOption"
                   className="form-control"
                   value="Last Opened"
+                  onChange={(e) => {}}
                 >
                   <option value="Last Opened">Last Opened</option>
                   <option value="Last Edited">Last Edited</option>
@@ -108,7 +109,7 @@ function Dashboard() {
             <div className="grid-view">
               {listOfResumes.map((resume) => {
                 return (
-                  <div>
+                  <div key={Date.now}>
                     <div className="row">
                       <div className="resume-item col-md-3">
                         <div className="resume-img">
