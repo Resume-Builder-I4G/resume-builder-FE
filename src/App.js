@@ -39,12 +39,10 @@ function App(props) {
     axios
       .get("https://resume-builder-i4g.herokuapp.com/user", config)
       .then((response) => {
-        console.log(response);
         // setUserSession(response.data.token, response.data.user);
         // setAuthLoading(false);
         const str = response.config.headers.Authorization;
         const result = str.replace("Bearer ", "");
-        console.log(result);
         setUserSession(result, response.data);
         setAuthLoading(false);
       })

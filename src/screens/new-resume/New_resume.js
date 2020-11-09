@@ -25,13 +25,13 @@ function New_resume({ url }) {
         <div className="col-3 sidebar-container">
           <div className="sidebar">
             <div className="contain">
-              {ResumeTabs.map((resumetab) => {
+              {ResumeTabs.map((resumetab, index) => {
                 return (
                   <Link
                     key={resumetab.title}
                     to={`/new-resume/${resumetab.path}`}
                   >
-                    <div className="option">
+                    <div className="option" key={resumetab.title}>
                       <img src={resumetab.image} alt={resumetab.alt} />
                       <p>{resumetab.title}</p>
                     </div>
