@@ -3,7 +3,6 @@ import axios from "axios";
 import "./Signup.css";
 import { Link, Redirect } from "react-router-dom";
 import styled from "styled-components";
-import { useAuth } from "../../context/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,6 +10,7 @@ import illustration from "../../assets/svgs/Mobile login-pana.svg";
 import googleImg from "../../assets/svgs/signup-svg/Google.svg";
 import fbImg from "../../assets/svgs/signup-svg/Facebook.svg";
 import linkedinImg from "../../assets/svgs/signup-svg/LinkedIn.svg";
+import { setUserSession } from "../../utils/Common";
 
 const Title = styled.h1`
   font-style: normal;
