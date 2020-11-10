@@ -9,43 +9,56 @@ import reference from "../../assets/svgs/create-resume-img/referenceIcon.svg";
 
 const ResumeTabs = [
   {
+    id: 1,
     image: personalInfow,
     title: "Personal Info",
     alt: "personalinfoW",
     path: "personal-info",
   },
   {
+    id: 2,
     image: educationInfo,
     title: "Education",
     alt: "educationIcon",
     path: "education",
   },
   {
+    id: 3,
     image: workexperience,
     title: "Work Experience",
     alt: "workexperience",
     path: "experience",
   },
   {
+    id: 4,
     image: language,
     title: "Languages",
     alt: "languageIcon",
     path: "languages",
   },
   {
+    id: 5,
     image: certification,
     title: "Certifications",
     alt: "certificationIcon",
     path: "certifications",
   },
   {
+    id: 6,
     image: achievement,
     title: "Achievements",
     alt: "achievementIcon",
     path: "achivements",
   },
-  { image: skills, title: "Skills", alt: "skillsIcon", path: "skills" },
   {
+    id: 7,
+    image: skills,
+    title: "Skills",
+    alt: "skillsIcon",
+    path: "skills",
+  },
+  {
+    id: 9,
     image: reference,
     title: "Reference",
     alt: "referenceIcon",
