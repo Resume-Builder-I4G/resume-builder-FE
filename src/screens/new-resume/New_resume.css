@@ -19,7 +19,7 @@
     filter: none;
 }
 
-.contain .option {
+/* .contain .option {
     width: 130px;
     height: 130px;
     background: #FFFFFF;
@@ -32,13 +32,13 @@
     align-content: center;
     margin: 10px 10px;
     filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.15));
-}
+} */
 
-.contain .option img {
+/* .contain .option img {
     margin-top: 20px;
-}
+} */
 
-.contain .option p {
+/* .contain .option p {
     width: 105px;
     margin: auto;
     text-align: center;
@@ -46,6 +46,10 @@
     font-weight: 400;
     line-height: 19px;
     letter-spacing: 0em;
+} */
+
+.contain .active {
+    background-color: #216DE0;
 }
 
 @media (max-width: 770px) {

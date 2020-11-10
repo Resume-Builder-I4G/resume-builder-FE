@@ -12,7 +12,7 @@ import {
 } from "../StyledComponents";
 import "./Skill.css";
 
-function Skill() {
+function Skill(props) {
   let initSkills;
   const [skill, setSkill] = useState(initSkills);
 
