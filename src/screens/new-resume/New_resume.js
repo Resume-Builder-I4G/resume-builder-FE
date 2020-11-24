@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 
 import ResumeTabs from "./Imports";
@@ -61,7 +61,7 @@ class New_resume extends Component {
       <div>
         <ENavbar />
         <div className="row">
-          <div className="col-3 sidebar-container">
+          <div className="col-md-3 sidebar-container">
             <div className="sidebar">
               <div className="contain">
                 {arr.map(({ id, image, title, alt, path }) => {
@@ -85,29 +85,37 @@ class New_resume extends Component {
             </div>
           </div>
 
-          <div className="col-8">
+          <div className="col-md-8">
             <Route
               path="/new-resume"
               render={({ match: { url } }) => {
                 return (
                   <>
-                    <Route
-                      path={`${url}/personal-info`}
-                      component={Personal_info}
-                    />
-                    <Route path={`${url}/skills`} component={Skills} exact />
-                    <Route path={`${url}/experience`} component={Experience} />
-                    <Route path={`${url}/languages`} component={Language} />
-                    <Route
-                      path={`${url}/achivements`}
-                      component={Achivements}
-                    />
-                    <Route path={`${url}/education`} component={Education} />
-                    <Route path={`${url}/references`} component={References} />
-                    <Route
-                      path={`${url}/certifications`}
-                      component={Certifications}
-                    />
+                    <Switch>
+                      <Route
+                        path={`${url}/personal-info`}
+                        component={Personal_info}
+                      />
+                      <Route path={`${url}/skills`} component={Skills} />
+                      <Route
+                        path={`${url}/experience`}
+                        component={Experience}
+                      />
+                      <Route path={`${url}/languages`} component={Language} />
+                      <Route
+                        path={`${url}/achivements`}
+                        component={Achivements}
+                      />
+                      <Route path={`${url}/education`} component={Education} />
+                      <Route
+                        path={`${url}/references`}
+                        component={References}
+                      />
+                      <Route
+                        path={`${url}/certifications`}
+                        component={Certifications}
+                      />
+                    </Switch>
                   </>
                 );
               }}

@@ -67,7 +67,7 @@ function Dashboard(props) {
             </div>
           </div>
           <div className="search-bar-container mt-4">
-            <input type="text" />
+            <input type="text" placeholder="Search" className="bg-white px-3" />
           </div>
           <div className="resumes-container mt-4">
             <div className="bar d-flex justify-content-between mb-3">

@@ -66,8 +66,8 @@ h2 {
     text-align: center !important;
   }
 
-  h2 {
-    font-size: 28px !important;
+  #about h2 {
+    font-size: 28px;
   }
 
   .our-team {
