@@ -43,22 +43,21 @@ function Dashboard_Nav(props) {
                 Awojide Daniel
               </a>
               <div
-                class="dropdown-menu text-center"
+                class="dropdown-menu bg-white text-center px-4 py-3"
                 aria-labelledby="navbarDropdown"
               >
                 <p className="name">Awojide Daniel</p>
                 <p className="email">awojidedaniel@gmail.com</p>
-                <div className="btn-wrap">
-                  <a className="settings-btn" href="#">
+                <div className="btn-wrap w-100 d-flex justify-content-between">
+                  <button className="settings-btn px-3 py-2 mr-4">
                     Settings
-                  </a>
-                  <a
-                    className="log-out-btn"
-                    href="#"
+                  </button>
+                  <button
+                    className="log-out-btn px-1 py-2"
                     onClick={props.handleLogout}
                   >
                     Log Out
-                  </a>
+                  </button>
                 </div>
               </div>
             </li>

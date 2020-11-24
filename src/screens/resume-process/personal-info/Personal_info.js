@@ -38,16 +38,13 @@ function Personal_info() {
         <div className="row">
           <MainContent className="col-12">
             <form onSubmit={submitHandler}>
-              <div style={{ width: "100%" }} className="form-row">
-                <StyledInputForm
-                  style={{ width: "48%", marginRight: "4%" }}
-                  className="form-group col-xs-6"
-                >
+              <div className="form-row">
+                <StyledInputForm className="form-group col-md-6">
                   <StyledInputLabel htmlFor="inputFirstName">
                     First Name
                   </StyledInputLabel>
                   <StyledInputInput
-                    style={{ width: "100%", marginRight: "50px" }}
+                    style={{ width: "100%" }}
                     type="text"
                     className="form-control"
                     id="inputFirstName"
@@ -55,10 +52,7 @@ function Personal_info() {
                     onChange={(event) => setFirstName(event.target.value)}
                   />
                 </StyledInputForm>
-                <StyledInputForm
-                  style={{ width: "48%" }}
-                  className="form-group col-xs-6"
-                >
+                <StyledInputForm className="form-group col-md-6">
                   <StyledInputLabel htmlFor="inputLastName">
                     Last Name
                   </StyledInputLabel>

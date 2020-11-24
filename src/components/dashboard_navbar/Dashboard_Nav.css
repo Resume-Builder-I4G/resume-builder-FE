@@ -1,7 +1,5 @@
 .dropdown-menu {
-    background-color: #ffffff;
     width: 284px;
-    padding: 17px 20px;
     background: #FFFFFF;
     border-radius: 6px;
 }
@@ -24,31 +22,29 @@
 
 .btn-wrap {
     margin-top: 40px;
+    justify-content: center;
 }
 
 .btn-wrap .settings-btn {
-    width: 210px;
+    width: 105px;
     background-color: #fff;
     color: #216de0;
     border: 1px solid #216de0;
     font-size: 1.3rem;
     font-weight: 500;
-    /* padding: 1% 1%; */
-    padding: 6px 20px;
-    text-align: center;
-    margin-right: 20px;
+    /* padding: 6px 20px; */
     border-radius: 6px;
 }
 
 .btn-wrap .log-out-btn {
-    width: 210px;
+    width: 105px;
     background-color: #216de0;
     border: 1px solid #216de0;
     color: #fff;
     font-size: 1.3rem;
     font-weight: 500;
     /* padding: 1% 3%; */
-    padding: 6px 20px;
+    /* padding: 6px 20px; */
     text-align: center;
     border-radius: 6px;
 }

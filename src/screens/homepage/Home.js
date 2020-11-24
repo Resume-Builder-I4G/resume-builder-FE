@@ -4,6 +4,8 @@ import Footer from "../../components/Footer/Footer";
 
 import resume_bro_1 from "../../assets/images/img-home/Resume-bro 1.svg";
 import bean_1 from "../../assets/images/img-home/bean-1.png";
+import bean_mobile from "../../assets/images/img-home/bg-mobile.svg";
+
 import phonebook from "../../assets/images/img-home/phonebook.png";
 import templates from "../../assets/images/img-home/template.png";
 import support from "../../assets/images/img-home/support.png";
@@ -66,8 +68,8 @@ function Home() {
   return (
     <div className="homepage">
       <Navbar />
-      <header>
-        <div className="left" data-aos="fade-right">
+      <header className="row desktop-hero">
+        <div className="left col-md" data-aos="fade-right">
           <StyledTitle>Create a mind blowing resume.</StyledTitle>
           <p className="motto">
             Design and build a unique CV that your dream job will notice.
@@ -76,9 +78,24 @@ function Home() {
             Build your resume
           </StyledButton>
         </div>
-        <div className="right">
+        <div className="right col-md">
           <img className="bean" src={bean_1} alt="bean-1" />
           <img className="headerPic" src={resume_bro_1} alt="resume pic" />
+        </div>
+      </header>
+      <header className="mobile-hero text-center">
+        <h1 className="mobile-title">Create a mind blowing resume.</h1>
+        <div className="header-images-mobile">
+          <img className="bean" src={bean_mobile} alt="bean-1" />
+          <img className="resume_img" src={resume_bro_1} alt="resume pic" />
+        </div>
+        <p className="motto-mobile text-center">
+          Design and build a unique CV that your dream job will notice.
+        </p>
+        <div className="build-resume-btn-mobile-wrap d-flex justify-content-center">
+          <button className="build-resume-btn-mobile text-white px-2 py-3">
+            Build your resume
+          </button>
         </div>
       </header>
       <section id="section1">
@@ -118,11 +135,12 @@ function Home() {
         </StyledButton>
       </section>
       <section id="section2">
+        <h2 className="how-it-works-mobile">How it works</h2>
         <div className="left2">
           <img src={resume_rafiki} alt="Resume-rafiki" />
         </div>
         <div className="right2">
-          <h2>How it works</h2>
+          <h2 className="how-it-works-desktop">How it works</h2>
           <div
             className="list2"
             data-aos="fade-down"
@@ -135,7 +153,9 @@ function Home() {
               </div>
               <div className="text2">
                 <p className="head2">Create an account</p>
-                <p>Sign up for an account with full details</p>
+                <p className="body2">
+                  Sign up for an account with full details
+                </p>
               </div>
             </div>
             <div className="contain2">
@@ -144,7 +164,7 @@ function Home() {
               </div>
               <div className="text2">
                 <p className="head2">Select template</p>
-                <p>
+                <p className="body2">
                   Choose from our various professional templates and start
                   building
                 </p>
@@ -156,7 +176,9 @@ function Home() {
               </div>
               <div className="text2">
                 <p className="head2">Add some content </p>
-                <p>Edit and change contents as you build your CV</p>
+                <p className="body2">
+                  Edit and change contents as you build your CV
+                </p>
               </div>
             </div>
             <div className="contain2">
@@ -165,7 +187,9 @@ function Home() {
               </div>
               <div className="text2">
                 <p className="head2">Choose your style</p>
-                <p>Style your CV using our awesome design themes</p>
+                <p className="body2">
+                  Style your CV using our awesome design themes
+                </p>
               </div>
             </div>
             <div className="contain2">
@@ -174,7 +198,9 @@ function Home() {
               </div>
               <div className="text2">
                 <p className="head2">Download</p>
-                <p>Download your CV and get the dream job you deserve</p>
+                <p className="body2">
+                  Download your CV and get the dream job you deserve
+                </p>
               </div>
             </div>
           </div>
@@ -183,7 +209,7 @@ function Home() {
       <section id="testimonials">
         <h2 className="text-center">Some words from our awesome clients</h2>
 
-        <div className="co">
+        <div className="co desktop-testimonials">
           <div
             id="carouselIndicators"
             className="carousel"
@@ -209,6 +235,7 @@ function Home() {
                           src={testimonial.avatar}
                           width="70"
                           className="rounded-circle"
+                          alt=""
                         />
                         <div className="profile-info">
                           <h4>{testimonial.name}</h4>
@@ -230,6 +257,7 @@ function Home() {
                       src={testimonialData[0].avatar}
                       width="70"
                       className="rounded-circle"
+                      alt=""
                     />
                     <div className="profile-info">
                       <h4>{testimonialData[0].name}</h4>
@@ -257,6 +285,22 @@ function Home() {
             </a>
           </div>
         </div>
+        <ul className="mobile-testimonials">
+          {testimonialData.map((data) => {
+            return (
+              <li className="mb-3" key={data.role}>
+                <div className="mobile-card text-center">
+                  <p className="testimonial-comment">{data.comments}</p>
+                  <img src={data.avatar} alt={`${data.name} img`} />
+                </div>
+                <div className="mobile-testimonial-info text-center">
+                  <p className="testimonial-name text-center">{data.name}</p>
+                  <p className="testimonial-role text-center">{data.role}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
         <div className="text-center">
           <StyledButton className="btn btn-primary">
             Build your resume

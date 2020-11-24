@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../../axios";
 import "./SignIn.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -82,7 +82,7 @@ function Signin(props) {
     setLoader(true);
 
     axios
-      .post("https://resume-builder-i4g.herokuapp.com/auth/signin", {
+      .post("/auth/signin", {
         email: email,
         password: password,
       })

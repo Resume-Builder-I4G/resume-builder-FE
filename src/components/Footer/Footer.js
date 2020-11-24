@@ -23,26 +23,32 @@ function Footer() {
           </div>
           <div className="col-md-8">
             <div className="row d-flex justify-content-between">
-              <div className="col-md-3">
-                <p>Quick links</p>
-                <ul className="footer-list">
-                  <li className="list-item">Home</li>
-                  <li className="list-item">About</li>
-                  <li className="list-item">Contact</li>
-                </ul>
+              <div className="col-md-8">
+                <div className="row qlinksandcontact">
+                  <div className="col-5">
+                    <p className="quicklinks">Quick links</p>
+                    <ul className="footer-list">
+                      <li className="list-item">Home</li>
+                      <li className="list-item">About</li>
+                      <li className="list-item">Contact</li>
+                    </ul>
+                  </div>
+                  <div className="col-7">
+                    <p className="contact-us">Contact Us</p>
+                    <ul className="footer-list">
+                      <li className="list-item">
+                        Office Address: <br /> 24 Lekki Street Lagos, Nigeria
+                      </li>
+                      <li className="list-item">Call: 090 - 000 - 0000</li>
+                      <li className="list-item">
+                        Email: hello@resumebuilder.com
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div className="col-md-5">
-                <p>Contact Us</p>
-                <ul className="footer-list">
-                  <li className="list-item">
-                    Office Address: <br /> 24 Lekki Street Lagos, Nigeria
-                  </li>
-                  <li className="list-item">Call: 090 - 000 - 0000</li>
-                  <li className="list-item">Email: hello@resumebuilder.com</li>
-                </ul>
-              </div>
               <div className="col-md-3">
-                <p>Follow Us</p>
+                <p className="follow-us">Follow Us</p>
                 <ul className="footer-list">
                   <li className="list-item">Twitter</li>
                   <li className="list-item">Instagram</li>
