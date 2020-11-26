@@ -17,8 +17,16 @@ body {
     background-color: #F8F8F8;
 }
 
-.content {
+#skills {
     padding: 0 10px !important;
+}
+
+#skills .previewndownload-wrap {
+    display: none;
+}
+
+#skills p.head-skills {
+    display: none;
 }
 
 
@@ -98,13 +106,52 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-    .input-form label {
-        font-size: 0.8rem;
+    #skills {
+        padding: 0 15px !important;
     }
 
-    .next,
-    .previous {
-        font-size: 1rem;
+    #skills .previewndownload-wrap {
+        display: block;
+    }
+
+    #skills .main-content-body {
+        padding: 40px 20px;
+        height: auto !important;
+        min-height: auto;
+    }
+
+    #skills .main-content-body p.head-skills {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 28px;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19px;
+    }
+
+    #skills .form-group label {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+    }
+
+    #skills form .skills-box {
+        height: 200px;
+        border-radius: 6px;
+        background: #F8F8F8;
+    }
+
+    #skills .nextnprev-btn-container {
+        margin-top: 20px;
+    }
+
+    #skills .nextnprev-btn-container button {
+        padding: 15px 20px;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
     }
 }
 

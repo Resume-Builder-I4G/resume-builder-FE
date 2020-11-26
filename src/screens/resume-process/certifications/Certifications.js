@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PreviewDownload from "../../../components/preview-download/PreviewDownload";
 import {
   StyledInputForm,
   StyledInputInput,
@@ -42,15 +43,19 @@ function Certifications() {
   };
 
   return (
-    <div className="container-fluid content">
-      <MainContent className="col col-md-12 col-xs-6">
-        <div>
+    <>
+      <div id="certificate" className="container-fluid content">
+        <div className="previewndownload-wrap">
+          <PreviewDownload />
+        </div>
+        <MainContent className="main-content-body">
+          <p className="head-certificate">Certificate</p>
           <form onSubmit={submitHandler}>
             {cert.map((x, i) => {
               return (
                 <React.Fragment key={cert[x.certName]}>
                   <div className="form-row">
-                    <StyledInputForm className="form-group col-md-8">
+                    <StyledInputForm className="form-group col-8">
                       <StyledInputLabel htmlFor="cert">
                         Certificate
                       </StyledInputLabel>
@@ -63,7 +68,7 @@ function Certifications() {
                         style={{ width: "98%" }}
                       />
                     </StyledInputForm>
-                    <StyledInputForm className="form-group col-md-4">
+                    <StyledInputForm className="form-group col-4">
                       <StyledInputLabel htmlFor="year">Year</StyledInputLabel>
                       <StyledInputInput
                         type="number"
@@ -71,10 +76,11 @@ function Certifications() {
                         name="certYear"
                         value={x.certYear}
                         onChange={(e) => handleInputChange(e, i)}
+                        style={{ width: "98%" }}
                       />
                     </StyledInputForm>
                   </div>
-                  <StyledAddItemWrap>
+                  <StyledAddItemWrap className="addnremove-btn-container">
                     {cert.length - 1 === i && (
                       <StyledAddItemText
                         href="#"
@@ -97,33 +103,21 @@ function Certifications() {
               );
             })}
           </form>
-        </div>
 
-        <Buttons>
-          <StyledPrev href="#" onClick={submitHandler}>
-            <Link to="/new-resume/languages">Previous</Link>
-          </StyledPrev>
+          <Buttons className="nextnprev-btn-container">
+            <StyledPrev href="#" onClick={submitHandler}>
+              <Link to="/new-resume/languages">Back</Link>
+            </StyledPrev>
 
-          <StyledNext href="#" onClick={submitHandler}>
-            <Link to="/new-resume/achivements" className="text-white">
-              Next Section
-            </Link>
-          </StyledNext>
-        </Buttons>
-
-        {/* <Buttons>
-          <StyledPrev href="#" onClick={submitHandler}>
-            <Link to="/new-resume/languages">Previous</Link>
-          </StyledPrev>
-
-          <StyledNext href="#" onClick={submitHandler}>
-            <Link to="/new-resume/achivements" className="text-white">
-              Next Section
-            </Link>
-          </StyledNext>
-        </Buttons> */}
-      </MainContent>
-    </div>
+            <StyledNext href="#" onClick={submitHandler}>
+              <Link to="/new-resume/achivements" className="text-white">
+                Next Section
+              </Link>
+            </StyledNext>
+          </Buttons>
+        </MainContent>
+      </div>
+    </>
   );
 }
 

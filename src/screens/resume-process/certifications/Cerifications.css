@@ -18,8 +18,16 @@ body {
     background-color: #F8F8F8;
 }
 
-.content {
+#certificate {
     padding: 0 10px !important;
+}
+
+#certificate .previewndownload-wrap {
+    display: none;
+}
+
+#certificate p.head-certificate {
+    display: none;
 }
 
 
@@ -48,6 +56,10 @@ body {
     color: #216DE0;
 }
 
+#certificate form div.addnremove-btn-container button {
+    box-shadow: none !important;
+}
+
 .done-btn .buttons {
     display: flex;
     justify-content: flex-end;
@@ -72,25 +84,70 @@ body {
     text-decoration: underline #216DE0;
 }
 
-@media screen and (max-width: 590px) {
-    .input-form label {
-        font-size: 1rem;
-    }
 
-    .next,
-    .previous {
-        font-size: 1.2rem;
-    }
-}
 
 @media screen and (max-width: 500px) {
-    .input-form label {
-        font-size: 0.8rem;
+    #certificate {
+        padding: 0 15px !important;
     }
 
-    .next,
-    .previous {
-        font-size: 1rem;
+    #certificate .previewndownload-wrap {
+        display: block;
+    }
+
+    #certificate .main-content-body {
+        padding: 40px 20px;
+        height: auto !important;
+        min-height: auto;
+    }
+
+    #certificate .main-content-body p.head-certificate {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 28px;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19px;
+    }
+
+    #certificate .form-group label {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+    }
+
+    #certificate .form-group input {
+        height: 48px;
+        border-radius: 6px;
+        width: 100%;
+    }
+
+    #certificate .form-group input::placeholder {
+        padding: 17px;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12px;
+    }
+
+    #certificate form div.addnremove-btn-container {
+        display: flex;
+        justify-content: end;
+    }
+
+    #certificate form div.addnremove-btn-container button {
+        box-shadow: none !important;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+    }
+
+    #certificate .nextnprev-btn-container button {
+        padding: 15px 20px;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
     }
 }
 

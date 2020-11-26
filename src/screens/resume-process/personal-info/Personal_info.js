@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import PreviewDownload from "../../../components/preview-download/PreviewDownload";
 import {
   Buttons,
   MainContent,
@@ -33,103 +34,106 @@ function Personal_info() {
   };
 
   return (
-    <div>
-      <div className="container-fluid content">
-        <div className="row">
-          <MainContent className="col-12">
-            <form onSubmit={submitHandler}>
-              <div className="form-row">
-                <StyledInputForm className="form-group col-md-6">
-                  <StyledInputLabel htmlFor="inputFirstName">
-                    First Name
-                  </StyledInputLabel>
-                  <StyledInputInput
-                    style={{ width: "100%" }}
-                    type="text"
-                    className="form-control"
-                    id="inputFirstName"
-                    placeholder="e.g John"
-                    onChange={(event) => setFirstName(event.target.value)}
-                  />
-                </StyledInputForm>
-                <StyledInputForm className="form-group col-md-6">
-                  <StyledInputLabel htmlFor="inputLastName">
-                    Last Name
-                  </StyledInputLabel>
-                  <StyledInputInput
-                    style={{ width: "100%" }}
-                    type="text"
-                    className="form-control"
-                    id="inputLastName"
-                    placeholder="e.g Doe"
-                    onChange={(event) => setLastName(event.target.value)}
-                  />
-                </StyledInputForm>
-              </div>
+    <>
+      <div id="personal-info" className="container-fluid content">
+        <div className="previewndownload-wrap">
+          <PreviewDownload />
+        </div>
 
-              <StyledInputForm className="form-group">
-                <StyledInputLabel htmlFor="inputEmail">
-                  Email Address
+        <MainContent className="main-content-body">
+          <p className="head-personal-info">Personal Info</p>
+          <form onSubmit={submitHandler}>
+            <div className="form-row">
+              <StyledInputForm className="form-group col-md-6">
+                <StyledInputLabel htmlFor="inputFirstName">
+                  First Name
                 </StyledInputLabel>
                 <StyledInputInput
-                  type="email"
-                  className="form-control"
-                  id="inputEmail"
-                  placeholder="example@gmail.com"
-                  onChange={(event) => setEmail(event.target.value)}
-                />
-              </StyledInputForm>
-
-              <StyledInputForm className="form-group">
-                <StyledInputLabel htmlFor="inputPhoneNumber">
-                  Phone Number
-                </StyledInputLabel>
-                <StyledInputInput
-                  type="tel"
-                  className="form-control"
-                  id="inputPhoneNumber"
-                  placeholder="080 000 0000"
-                  onChange={(event) => setPhone(event.target.value)}
-                />
-              </StyledInputForm>
-
-              <StyledInputForm className="form-group">
-                <StyledInputLabel htmlFor="inputLocation">
-                  Location
-                </StyledInputLabel>
-                <StyledInputInput
+                  style={{ width: "100%" }}
                   type="text"
                   className="form-control"
-                  id="inputLocation"
-                  placeholder="e.g Lagos Nigeria"
-                  onChange={(event) => setLocation(event.target.value)}
+                  id="inputFirstName"
+                  placeholder="e.g John"
+                  onChange={(event) => setFirstName(event.target.value)}
                 />
               </StyledInputForm>
-
-              <StyledInputForm className="form-group">
-                <StyledInputLabel htmlFor="inputProfSummary">
-                  Summary
+              <StyledInputForm className="form-group col-md-6">
+                <StyledInputLabel htmlFor="inputLastName">
+                  Last Name
                 </StyledInputLabel>
-                <StyledInputTextarea
+                <StyledInputInput
+                  style={{ width: "100%" }}
+                  type="text"
                   className="form-control"
-                  id="inputProfSummary"
-                  rows="8"
-                  onChange={(event) => setSummary(event.target.value)}
-                ></StyledInputTextarea>
+                  id="inputLastName"
+                  placeholder="e.g Doe"
+                  onChange={(event) => setLastName(event.target.value)}
+                />
               </StyledInputForm>
-            </form>
+            </div>
 
-            <Buttons>
-              <StyledNext type="submit" onClick={submitHandler} href="#">
-                <Link to="/new-resume/education" className="text-white">
-                  Next Section
-                </Link>
-              </StyledNext>
-            </Buttons>
-          </MainContent>
-        </div>
+            <StyledInputForm className="form-group">
+              <StyledInputLabel htmlFor="inputEmail">
+                Email Address
+              </StyledInputLabel>
+              <StyledInputInput
+                type="email"
+                className="form-control"
+                id="inputEmail"
+                placeholder="example@gmail.com"
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </StyledInputForm>
+
+            <StyledInputForm className="form-group">
+              <StyledInputLabel htmlFor="inputPhoneNumber">
+                Phone Number
+              </StyledInputLabel>
+              <StyledInputInput
+                type="tel"
+                className="form-control"
+                id="inputPhoneNumber"
+                placeholder="080 000 0000"
+                onChange={(event) => setPhone(event.target.value)}
+              />
+            </StyledInputForm>
+
+            <StyledInputForm className="form-group">
+              <StyledInputLabel htmlFor="inputLocation">
+                Location
+              </StyledInputLabel>
+              <StyledInputInput
+                type="text"
+                className="form-control"
+                id="inputLocation"
+                placeholder="e.g Lagos Nigeria"
+                onChange={(event) => setLocation(event.target.value)}
+              />
+            </StyledInputForm>
+
+            <StyledInputForm className="form-group">
+              <StyledInputLabel htmlFor="inputProfSummary">
+                Summary
+              </StyledInputLabel>
+              <StyledInputTextarea
+                className="form-control summary-box"
+                id="inputProfSummary"
+                rows="8"
+                onChange={(event) => setSummary(event.target.value)}
+              ></StyledInputTextarea>
+            </StyledInputForm>
+          </form>
+
+          <Buttons className="nextandprev-btn-container">
+            <StyledNext type="submit" onClick={submitHandler}>
+              <Link to="/new-resume/education" className="text-white">
+                Next Section
+              </Link>
+            </StyledNext>
+          </Buttons>
+        </MainContent>
       </div>
-    </div>
+    </>
   );
 }
 

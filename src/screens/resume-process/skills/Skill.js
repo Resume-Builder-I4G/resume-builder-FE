@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PreviewDownload from "../../../components/preview-download/PreviewDownload";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import {
@@ -70,37 +71,40 @@ function Skill(props) {
   };
 
   return (
-    <div className="container-fluid content">
-      <div className="row">
-        <MainContent className="col-12">
-          <form onSubmit={submitHandler}>
-            <StyledInputForm className="form-group">
-              <StyledInputLabel for="inputSkills">Skills</StyledInputLabel>
-              <StyledInputTextarea
-                className="form-control"
-                id="inputSkills"
-                rows="8"
-                defaultValue={initSkills}
-                value={skill}
-                placeholder={initSkills}
-                onChange={(event) => setSkill(event.target.value)}
-              ></StyledInputTextarea>
-            </StyledInputForm>
-          </form>
-
-          <Buttons>
-            <StyledPrev type="submit" onClick={submitHandler} href="#">
-              <Link to="/new-resume/achivements">Back</Link>
-            </StyledPrev>
-
-            <StyledNext type="submit" onClick={submitHandler} href="#">
-              <Link to="/new-resume/references" className="text-white">
-                Next Section
-              </Link>
-            </StyledNext>
-          </Buttons>
-        </MainContent>
+    <div id="skills" className="container-fluid content">
+      <div className="previewndownload-wrap">
+        <PreviewDownload />
       </div>
+
+      <MainContent className="main-content-body">
+        <p className="head-skills">Skills</p>
+        <form onSubmit={submitHandler}>
+          <StyledInputForm className="form-group">
+            <StyledInputLabel for="inputSkills">Skills</StyledInputLabel>
+            <StyledInputTextarea
+              className="form-control"
+              id="inputSkills"
+              rows="8"
+              defaultValue={initSkills}
+              value={skill}
+              placeholder={initSkills}
+              onChange={(event) => setSkill(event.target.value)}
+            ></StyledInputTextarea>
+          </StyledInputForm>
+        </form>
+
+        <Buttons className="nextnprev-btn-container">
+          <StyledPrev type="submit" onClick={submitHandler} href="#">
+            <Link to="/new-resume/achivements">Back</Link>
+          </StyledPrev>
+
+          <StyledNext type="submit" onClick={submitHandler} href="#">
+            <Link to="/new-resume/references" className="text-white">
+              Next Section
+            </Link>
+          </StyledNext>
+        </Buttons>
+      </MainContent>
     </div>
   );
 }

@@ -1,0 +1,13 @@
+@media screen and (max-width: 500px) {
+
+    #previewndownload {
+        display: flex;
+        margin-top: 35px !important;
+    }
+
+    #previewndownload span {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+    }
+}

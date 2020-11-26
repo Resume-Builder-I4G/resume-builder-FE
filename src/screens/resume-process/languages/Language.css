@@ -17,8 +17,16 @@ body {
   background-color: #f8f8f8;
 }
 
-.content {
+#languages {
   padding: 0 10px !important;
+}
+
+#languages .previewndownload-wrap {
+  display: none;
+}
+
+#languages p.head-languages {
+  display: none;
 }
 
 .input-form {
@@ -57,13 +65,52 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-  .input-form label {
-    font-size: 0.8rem;
+  #languages {
+    padding: 0 15px !important;
   }
 
-  .next,
-  .previous {
-    font-size: 1rem;
+  #languages .previewndownload-wrap {
+    display: block;
+  }
+
+  #languages .main-content-body {
+    padding: 40px 20px;
+    height: auto !important;
+    min-height: auto;
+  }
+
+  #languages .main-content-body p.head-languages {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+  }
+
+  #languages .form-group label {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+  }
+
+  #languages form .languages-box {
+    height: 200px;
+    border-radius: 6px;
+    background: #F8F8F8;
+  }
+
+  #languages .nextnprev-btn-container {
+    margin-top: 20px;
+  }
+
+  #languages .nextnprev-btn-container button {
+    padding: 15px 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
   }
 }
 

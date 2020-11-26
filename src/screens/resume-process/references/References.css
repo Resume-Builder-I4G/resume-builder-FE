@@ -15,8 +15,16 @@ body {
     margin: 0;
 }
 
-.content {
+#reference {
     padding: 0 10px !important;
+}
+
+#reference .previewndownload-wrap {
+    display: none;
+}
+
+#reference p.head-reference {
+    display: none;
 }
 
 .input-form {
@@ -47,23 +55,6 @@ body {
 .button {
     margin-top: 100px;
     text-align: right;
-}
-
-.next {
-    width: 250px;
-    background-color: #216DE0;
-    border: 1px solid #216DE0;
-    color: #FFF;
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding: 1% 3%;
-    text-align: center;
-    border-radius: 6px;
-}
-
-.next:hover {
-    text-decoration: underline #FFF;
-    color: #FFF;
 }
 
 
@@ -105,55 +96,79 @@ body {
     margin-top: 100px;
 }
 
-/* .previous {
-    width: 250px;
-    background-color: #FFF;
-    color: #216DE0;
-    border: 1px solid #216DE0;
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding: 1% 1%;
-    text-align: center;
-    margin-right: 20px;
-    border-radius: 6px;
-}
-
-.previous:hover {
-    color: #216DE0;
-    text-decoration: underline #216DE0;
-} */
-
 /*Experience */
 #inputJobTitle,
 #inputCompanyName {
     width: 95%;
 }
 
-/* Languages */
-.input-form #inputLanguages {
-    margin-bottom: 100px;
-}
 
-@media screen and (max-width: 590px) {
-    .input-form label {
-        font-size: 1rem;
-    }
-
-    .next,
-    .previous {
-        font-size: 1.2rem;
-    }
-}
 
 @media screen and (max-width: 500px) {
-    .input-form label {
-        font-size: 0.8rem;
+    #reference {
+        padding: 0 15px !important;
     }
 
-    .next,
-    .previous {
-        font-size: 1rem;
+    #reference .previewndownload-wrap {
+        display: block;
     }
+
+    #reference .main-content-body {
+        padding: 40px 20px;
+        height: auto !important;
+        min-height: auto;
+    }
+
+    #reference .main-content-body p.reference {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 28px;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19px;
+
+    }
+
+    #reference .form-row {
+        width: 100%;
+    }
+
+    #reference .reference-name,
+    .reference-company {
+        width: 100% !important;
+    }
+
+    #reference .form-group label {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+    }
+
+    #reference .form-group input {
+        height: 48px;
+        border-radius: 6px;
+    }
+
+    #reference .form-group input::placeholder {
+        padding: 17px;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12px;
+    }
+
+    #reference .nextandprev-btn-container {
+        margin-top: 20px;
+    }
+
+    #reference .nextandprev-btn-container button {
+        padding: 15px 20px;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+    }
+
 }
 
 @media screen and (max-width: 436px) {
