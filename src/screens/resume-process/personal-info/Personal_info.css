@@ -17,8 +17,16 @@ body {
     background-color: #F8F8F8;
 }
 
-.content {
+#personal-info {
     padding: 0 10px !important;
+}
+
+#personal-info .previewndownload-wrap {
+    display: none;
+}
+
+#personal-info p.head-personal-info {
+    display: none;
 }
 
 .input-form {
@@ -148,13 +156,64 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-    .input-form label {
-        font-size: 0.8rem;
+    #personal-info {
+        padding: 0 15px !important;
     }
 
-    .next,
-    .previous {
-        font-size: 1rem;
+    #personal-info .previewndownload-wrap {
+        display: block;
+    }
+
+    #personal-info .main-content-body {
+        padding: 40px 20px;
+    }
+
+    #personal-info .main-content-body p.head-personal-info {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 28px;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19px;
+
+    }
+
+    #personal-info .form-group label {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+    }
+
+    #personal-info .form-group input {
+        height: 48px;
+        border-radius: 6px;
+    }
+
+    #personal-info .form-group input::placeholder {
+        padding: 17px;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12px;
+    }
+
+    #personal-info form .summary-box {
+        height: 200px;
+        border-radius: 6px;
+        background: #F8F8F8;
+    }
+
+    #personal-info .nextandprev-btn-container {
+        margin-top: 20px;
+    }
+
+    #personal-info button {
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+        padding: 15px !important;
     }
 }
 

@@ -1,3 +1,8 @@
+#e-nav .profile-nav-mobile,
+.navbar-burger-mobile {
+    display: none;
+}
+
 .navbar-css {
     color: white;
 }
@@ -25,4 +30,43 @@
 
 .nav-link img {
     padding-right: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    #e-nav .navbar-brandname-container {
+        text-align: center;
+    }
+
+    #e-nav .navbar-brandname-container .navbar-brand {
+        font-size: 20px !important;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    #e-nav .navbar-brand {
+        margin: 0 !important;
+    }
+
+    #e-nav .profile-nav-mobile {
+        display: flex;
+        width: 10%;
+    }
+
+    #e-nav .profile-nav-mobile img {
+        width: 100%;
+        height: 35px;
+    }
+
+    #e-nav .navbar-toggler {
+        display: none;
+    }
+
+    #e-nav .navbar-burger-mobile {
+        display: flex;
+    }
+
+    #e-nav .navbar-burger-mobile img {
+        width: 15px;
+        height: 15px;
+    }
 }

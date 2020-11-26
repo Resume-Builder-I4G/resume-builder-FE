@@ -18,6 +18,7 @@ import Choose_color from "./screens/choose_colors/Choose_color";
 import Dashboard from "./screens/user_dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoutes";
 import PublicRoute from "./utils/PublicRoutes";
+import Personal_info from "./screens/resume-process/personal-info/Personal_info";
 
 AOS.init();
 

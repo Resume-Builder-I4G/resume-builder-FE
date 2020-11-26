@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import PreviewDownload from "../../../components/preview-download/PreviewDownload";
 import {
   StyledAddItemText,
   StyledInputForm,
@@ -17,20 +18,6 @@ import { arrayOfYears, arrayOfMonths } from "../../../components/DateObject";
 import { Link } from "react-router-dom";
 
 function Education() {
-  // const [institution, setInstitution] = useState("");
-  // const [course, setCourse] = useState("");
-  // const [country, setCountry] = useState("");
-  // const [city, setCity] = useState("");
-  // const [information, setInformation] = useState("");
-
-  // const [startMonth, setStartMonth] = useState("Month");
-  // const [startYear, setStartYear] = useState("Year");
-
-  // const [check, setCheck] = useState(false);
-
-  // const [endMonth, setEndMonth] = useState("Month");
-  // const [endYear, setEndYear] = useState("Year");
-
   const [edu, setEdu] = useState([
     {
       course: "",
@@ -112,76 +99,80 @@ function Education() {
   };
 
   return (
-    <div className="housing">
-      <div className="container-fluid content">
-        <div className="row">
-          <MainContent className="col-12">
-            <form onSubmit={submitHandler}>
-              {edu.map((x, i) => {
-                return (
-                  <React.Fragment key={edu[x.course]}>
-                    <div className="form-row">
-                      <StyledInputForm className="form-group col-md-6">
-                        <StyledInputLabel htmlFor="inputInstitutionName">
-                          Institution Name
-                        </StyledInputLabel>
-                        <StyledInputInput
-                          type="text"
-                          className="form-control"
-                          id="inputInstitutionName"
-                          placeholder="e.g lautech"
-                          name="institution"
-                          value={x.institution}
-                          onChange={(e) => handleInputChange(e, i)}
-                        />
-                      </StyledInputForm>
-                      <StyledInputForm className="form-group col-md-6">
-                        <StyledInputLabel htmlFor="inputCompanyName">
-                          Field of Study
-                        </StyledInputLabel>
-                        <StyledInputInput
-                          type="text"
-                          className="form-control"
-                          id="inputCompanyName"
-                          placeholder=""
-                          name="course"
-                          value={x.course}
-                          onChange={(e) => handleInputChange(e, i)}
-                        />
-                      </StyledInputForm>
-                    </div>
+    <>
+      <div id="education" className="container-fluid content">
+        <div className="previewndownload-wrap">
+          <PreviewDownload />
+        </div>
+        <MainContent className="main-content-body">
+          <p className="head-education">Education</p>
+          <form onSubmit={submitHandler}>
+            {edu.map((x, i) => {
+              return (
+                <React.Fragment key={edu[x.course]}>
+                  <div className="form-row">
+                    <StyledInputForm className="form-group col-md-6">
+                      <StyledInputLabel htmlFor="inputInstitutionName">
+                        Institution Name
+                      </StyledInputLabel>
+                      <StyledInputInput
+                        type="text"
+                        className="form-control"
+                        id="inputInstitutionName"
+                        placeholder="e.g lautech"
+                        name="institution"
+                        value={x.institution}
+                        onChange={(e) => handleInputChange(e, i)}
+                      />
+                    </StyledInputForm>
+                    <StyledInputForm className="form-group col-md-6">
+                      <StyledInputLabel htmlFor="inputCompanyName">
+                        Field of Study
+                      </StyledInputLabel>
+                      <StyledInputInput
+                        type="text"
+                        className="form-control"
+                        id="inputCompanyName"
+                        placeholder=""
+                        name="course"
+                        value={x.course}
+                        onChange={(e) => handleInputChange(e, i)}
+                      />
+                    </StyledInputForm>
+                  </div>
 
-                    <div className="form-row">
-                      <StyledInputForm className="form-group col-md-6">
-                        <StyledInputLabel htmlFor="inputCountry">
-                          Country
-                        </StyledInputLabel>
-                        <StyledInputInput
-                          type="text"
-                          className="form-control"
-                          id="inputCountry"
-                          placeholder="e.g Nigeria"
-                          name="country"
-                          value={x.country}
-                          onChange={(e) => handleInputChange(e, i)}
-                        />
-                      </StyledInputForm>
-                      <StyledInputForm className="form-group col-md-6">
-                        <StyledInputLabel htmlFor="inputCity">
-                          City
-                        </StyledInputLabel>
-                        <StyledInputInput
-                          type="text"
-                          className="form-control"
-                          id="inputCity"
-                          placeholder="e.g Ogbomoso"
-                          name="city"
-                          value={x.city}
-                          onChange={(e) => handleInputChange(e, i)}
-                        />
-                      </StyledInputForm>
-                    </div>
+                  <div className="form-row">
+                    <StyledInputForm className="form-group col-md-6">
+                      <StyledInputLabel htmlFor="inputCountry">
+                        Country
+                      </StyledInputLabel>
+                      <StyledInputInput
+                        type="text"
+                        className="form-control"
+                        id="inputCountry"
+                        placeholder="e.g Nigeria"
+                        name="country"
+                        value={x.country}
+                        onChange={(e) => handleInputChange(e, i)}
+                      />
+                    </StyledInputForm>
+                    <StyledInputForm className="form-group col-md-6">
+                      <StyledInputLabel htmlFor="inputCity">
+                        City
+                      </StyledInputLabel>
+                      <StyledInputInput
+                        type="text"
+                        className="form-control"
+                        id="inputCity"
+                        placeholder="e.g Ogbomoso"
+                        name="city"
+                        value={x.city}
+                        onChange={(e) => handleInputChange(e, i)}
+                      />
+                    </StyledInputForm>
+                  </div>
 
+                  <div className="currentlyStudy-container-desktop">
                     <StyledInputForm className="form-group check-input mr-4">
                       <StyledInputLabel
                         className="form-check-label"
@@ -198,9 +189,11 @@ function Education() {
                         Currently study here
                       </StyledInputLabel>
                     </StyledInputForm>
+                  </div>
 
-                    <div className="form-row mt-4">
-                      <StyledInputForm className="form-group col-md-3">
+                  <div className="row mt-4">
+                    <div className="col-6 mr-2 form-row">
+                      <StyledInputForm className="form-group col-md-6">
                         <StyledInputLabel htmlFor="inputStartMonth">
                           Time Period
                         </StyledInputLabel>
@@ -222,7 +215,7 @@ function Education() {
                           })}
                         </select>
                       </StyledInputForm>
-                      <StyledInputForm className="form-group col-md-3">
+                      <StyledInputForm className="form-group col-md-6">
                         <StyledInputLabel htmlFor="inputStartYear">
                           .
                         </StyledInputLabel>
@@ -244,8 +237,9 @@ function Education() {
                           })}
                         </select>
                       </StyledInputForm>
-
-                      <StyledInputForm className="form-group col-md-3">
+                    </div>
+                    <div className="col-6 form-row">
+                      <StyledInputForm className="form-group col-md-6">
                         <StyledInputLabel htmlFor="inputEndMonth">
                           .
                         </StyledInputLabel>
@@ -288,7 +282,7 @@ function Education() {
                           </select>
                         )}
                       </StyledInputForm>
-                      <StyledInputForm className="form-group col-md-3">
+                      <StyledInputForm className="form-group col-md-6">
                         <StyledInputLabel htmlFor="inputEndYear">
                           .
                         </StyledInputLabel>
@@ -332,63 +326,60 @@ function Education() {
                         )}
                       </StyledInputForm>
                     </div>
+                  </div>
 
-                    <StyledInputForm className="form-group">
-                      <StyledInputLabel htmlFor="inputDescription">
-                        Other Information
-                      </StyledInputLabel>
-                      <StyledInputTextarea
-                        className="form-control"
-                        id="inputDescription"
-                        rows="8"
-                        onChange={(e) => handleInputChange(e, i)}
-                      ></StyledInputTextarea>
-                    </StyledInputForm>
-                    <StyledAddItemWrap style={{ marginBottom: "30px" }}>
-                      {edu.length - 1 === i && (
-                        <StyledAddItemText
-                          href="#"
-                          button
-                          onClick={handleAddClick}
-                        >
-                          <span className="plus"> +</span>&nbsp; Add Another
-                        </StyledAddItemText>
-                      )}
-                      {edu.length !== 1 && (
-                        <StyledAddItemText
-                          href="#"
-                          onClick={() => handleRemoveClick(i)}
-                        >
-                          <span className="plus">-</span>&nbsp; Remove
-                        </StyledAddItemText>
-                      )}
-                    </StyledAddItemWrap>
-                  </React.Fragment>
-                );
-              })}
-            </form>
+                  <StyledInputForm className="form-group">
+                    <StyledInputLabel htmlFor="inputDescription">
+                      Other Information
+                    </StyledInputLabel>
+                    <StyledInputTextarea
+                      className="form-control other-info-box"
+                      id="inputDescription"
+                      rows="8"
+                      onChange={(e) => handleInputChange(e, i)}
+                    ></StyledInputTextarea>
+                  </StyledInputForm>
+                  <StyledAddItemWrap
+                    className="addnremove-btn-container"
+                    style={{ marginBottom: "30px" }}
+                  >
+                    {edu.length - 1 === i && (
+                      <StyledAddItemText
+                        href="#"
+                        button
+                        onClick={handleAddClick}
+                      >
+                        <span className="plus"> +</span>&nbsp; Add Another
+                      </StyledAddItemText>
+                    )}
+                    {edu.length !== 1 && (
+                      <StyledAddItemText
+                        href="#"
+                        onClick={() => handleRemoveClick(i)}
+                      >
+                        <span className="plus">-</span>&nbsp; Remove
+                      </StyledAddItemText>
+                    )}
+                  </StyledAddItemWrap>
+                </React.Fragment>
+              );
+            })}
+          </form>
 
-            {/* <StyledAddItemWrap>
-              <StyledAddItemText href="#">
-                <span className="plus">+</span>&nbsp; Add Another
-              </StyledAddItemText>
-            </StyledAddItemWrap> */}
+          <Buttons className="nextnprev-btn-container">
+            <StyledPrev type="submit" onClick={submitHandler} href="#">
+              <Link to="/new-resume/personal-info">Back</Link>
+            </StyledPrev>
 
-            <Buttons>
-              <StyledPrev type="submit" onClick={submitHandler} href="#">
-                <Link to="/new-resume/personal-info">Back</Link>
-              </StyledPrev>
-
-              <StyledNext type="submit" onClick={submitHandler} href="#">
-                <Link to="/new-resume/experience" className="text-white">
-                  Next Section
-                </Link>
-              </StyledNext>
-            </Buttons>
-          </MainContent>
-        </div>
+            <StyledNext type="submit" onClick={submitHandler} href="#">
+              <Link to="/new-resume/experience" className="text-white">
+                Next Section
+              </Link>
+            </StyledNext>
+          </Buttons>
+        </MainContent>
       </div>
-    </div>
+    </>
   );
 }
 

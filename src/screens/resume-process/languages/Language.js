@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import PreviewDownload from "../../../components/preview-download/PreviewDownload";
 import {
   Buttons,
   MainContent,
@@ -32,16 +33,20 @@ function Language() {
   // getLanguages();
 
   return (
-    <div className="container-fluid content">
-      <div className="row">
-        <MainContent className="col-12">
+    <>
+      <div id="languages" className="container-fluid content">
+        <div className="previewndownload-wrap">
+          <PreviewDownload />
+        </div>
+        <MainContent className="main-content-body">
+          <p className="head-languages">Language</p>
           <form onSubmit={submitHandler}>
             <StyledInputForm className="form-group">
               <StyledInputLabel for="inputLanguages">
                 Langauges (%)
               </StyledInputLabel>
               <StyledInputTextarea
-                className="form-control"
+                className="form-control languages-box"
                 id="inputLanguages"
                 rows="8"
                 defaultValue={initLang}
@@ -51,7 +56,7 @@ function Language() {
             </StyledInputForm>
           </form>
 
-          <Buttons>
+          <Buttons className="nextnprev-btn-container">
             <StyledPrev type="submit" onClick={submitHandler} href="#">
               <Link to="/new-resume/experience">Back</Link>
             </StyledPrev>
@@ -63,7 +68,7 @@ function Language() {
           </Buttons>
         </MainContent>
       </div>
-    </div>
+    </>
   );
 }
 

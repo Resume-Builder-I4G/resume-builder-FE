@@ -10,6 +10,10 @@ const MainContent = styled.div`
   margin: 30px 0;
   padding: 30px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 500px) {
+    margin-top: 35px;
+  }
 `;
 const StyledInputForm = styled.div`
   padding: 0;
@@ -42,10 +46,10 @@ const StyledInputInput = styled.input`
 `;
 
 const StyledInputTextarea = styled.textarea`
-  height: 300px !important;
+  height: 300px;
 `;
 
-const StyledNext = styled.a`
+const StyledNext = styled.button`
   width: 210px;
   background-color: #216de0;
   border: 1px solid #216de0;
@@ -62,7 +66,7 @@ const StyledNext = styled.a`
   }
 `;
 
-const StyledPrev = styled.a`
+const StyledPrev = styled.button`
   width: 210px;
   background-color: #fff;
   color: #216de0;
@@ -80,14 +84,22 @@ const StyledPrev = styled.a`
   }
 `;
 
-const StyledAddItemText = styled.a`
+const StyledAddItemText = styled.button`
   font-size: 1.3rem;
   color: #216de0;
 `;
 
 const StyledAddItemWrap = styled.div`
+  display: flex;
+  justify-content: end;
   text-align: right;
   padding-right: 20px;
+
+  @media (max-width: 500px) {
+    display: flex !important;
+    justify-content: end !important;
+    text-align: right;
+  }
 `;
 
 const Buttons = styled.div`

@@ -69,7 +69,8 @@ class New_resume extends Component {
                     <Link key={id} to={`/new-resume/${path}`}>
                       <Option
                         style={{
-                          backgroundColor: selected === id ? "#216DE0" : "",
+                          backgroundColor:
+                            selected === id ? "#216DE0" : "#ffffff",
                         }}
                         onClick={() => this.changeColor(id)}
                         key={id}

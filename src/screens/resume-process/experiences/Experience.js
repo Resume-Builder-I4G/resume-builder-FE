@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PreviewDownload from "../../../components/preview-download/PreviewDownload";
 import {
   StyledAddItemText,
   StyledInputForm,
@@ -16,20 +17,6 @@ import { arrayOfYears, arrayOfMonths } from "../../../components/DateObject";
 import { Link } from "react-router-dom";
 
 function Experience() {
-  // const [title, setTitle] = useState("");
-  // const [company, setCompany] = useState("");
-  // const [country, setCountry] = useState("");
-  // const [city, setCity] = useState("");
-  // const [description, setDescripttion] = useState("");
-
-  // const [startMonth, setStartMonth] = useState("Month");
-  // const [startYear, setStartYear] = useState("Year");
-
-  // const [endMonth, setEndMonth] = useState("Month");
-  // const [endYear, setEndYear] = useState("Year");
-
-  // const [check, setCheck] = useState(false);
-
   // const submitHandler = (event) => {
   //   event.preventDefault();
   //   const experienceObj = {
@@ -102,76 +89,80 @@ function Experience() {
   };
 
   return (
-    <div className="housing">
-      <div className="container-fluid content">
-        <div className="row">
-          <MainContent className="col-12">
-            <form onSubmit={submitHandler}>
-              {exp.map((x, i) => {
-                return (
-                  <React.Fragment key={exp[x.company]}>
-                    <div className="form-row">
-                      <StyledInputForm className="form-group col-md-6">
-                        <StyledInputLabel htmlFor="inputJobTitle">
-                          Job Title
-                        </StyledInputLabel>
-                        <StyledInputInput
-                          type="text"
-                          className="form-control"
-                          id="inputJobTitle"
-                          placeholder="e.g Graphics Designer"
-                          name="title"
-                          value={x.title}
-                          onChange={(e) => handleInputChange(e, i)}
-                        />
-                      </StyledInputForm>
-                      <StyledInputForm className="form-group col-md-6">
-                        <StyledInputLabel htmlFor="inputCompanyName">
-                          Company Name
-                        </StyledInputLabel>
-                        <StyledInputInput
-                          type="text"
-                          className="form-control"
-                          id="inputCompanyName"
-                          placeholder="e.g Ingressive 4 Good"
-                          name="company"
-                          value={x.company}
-                          onChange={(e) => handleInputChange(e, i)}
-                        />
-                      </StyledInputForm>
-                    </div>
+    <>
+      <div id="experience" className="container-fluid content">
+        <div className="previewndownload-wrap">
+          <PreviewDownload />
+        </div>
+        <MainContent className="main-content-body">
+          <p className="head-experience">Experience</p>
+          <form onSubmit={submitHandler}>
+            {exp.map((x, i) => {
+              return (
+                <React.Fragment key={exp[x.company]}>
+                  <div className="form-row">
+                    <StyledInputForm className="form-group col-md-6">
+                      <StyledInputLabel htmlFor="inputJobTitle">
+                        Job Title
+                      </StyledInputLabel>
+                      <StyledInputInput
+                        type="text"
+                        className="form-control"
+                        id="inputJobTitle"
+                        placeholder="e.g Graphics Designer"
+                        name="title"
+                        value={x.title}
+                        onChange={(e) => handleInputChange(e, i)}
+                      />
+                    </StyledInputForm>
+                    <StyledInputForm className="form-group col-md-6">
+                      <StyledInputLabel htmlFor="inputCompanyName">
+                        Company Name
+                      </StyledInputLabel>
+                      <StyledInputInput
+                        type="text"
+                        className="form-control"
+                        id="inputCompanyName"
+                        placeholder="e.g Ingressive 4 Good"
+                        name="company"
+                        value={x.company}
+                        onChange={(e) => handleInputChange(e, i)}
+                      />
+                    </StyledInputForm>
+                  </div>
 
-                    <div className="form-row">
-                      <StyledInputForm className="form-group col-md-6">
-                        <StyledInputLabel htmlFor="inputCountry">
-                          Country
-                        </StyledInputLabel>
-                        <StyledInputInput
-                          type="text"
-                          className="form-control"
-                          id="inputCountry"
-                          placeholder="e.g Nigeria"
-                          name="country"
-                          value={x.country}
-                          onChange={(e) => handleInputChange(e, i)}
-                        />
-                      </StyledInputForm>
-                      <StyledInputForm className="form-group col-md-6">
-                        <StyledInputLabel htmlFor="inputCity">
-                          City
-                        </StyledInputLabel>
-                        <StyledInputInput
-                          type="text"
-                          className="form-control"
-                          id="inputCity"
-                          placeholder="e.g Ogbomoso"
-                          name="city"
-                          value={x.city}
-                          onChange={(e) => handleInputChange(e, i)}
-                        />
-                      </StyledInputForm>
-                    </div>
+                  <div className="form-row">
+                    <StyledInputForm className="form-group col-md-6">
+                      <StyledInputLabel htmlFor="inputCountry">
+                        Country
+                      </StyledInputLabel>
+                      <StyledInputInput
+                        type="text"
+                        className="form-control"
+                        id="inputCountry"
+                        placeholder="e.g Nigeria"
+                        name="country"
+                        value={x.country}
+                        onChange={(e) => handleInputChange(e, i)}
+                      />
+                    </StyledInputForm>
+                    <StyledInputForm className="form-group col-md-6">
+                      <StyledInputLabel htmlFor="inputCity">
+                        City
+                      </StyledInputLabel>
+                      <StyledInputInput
+                        type="text"
+                        className="form-control"
+                        id="inputCity"
+                        placeholder="e.g Ogbomoso"
+                        name="city"
+                        value={x.city}
+                        onChange={(e) => handleInputChange(e, i)}
+                      />
+                    </StyledInputForm>
+                  </div>
 
+                  <div className="currentlyWorking-container-desktop">
                     <StyledInputForm className="form-group check-input mr-4">
                       <StyledInputLabel
                         className="form-check-label"
@@ -188,9 +179,11 @@ function Experience() {
                         Currently working here
                       </StyledInputLabel>
                     </StyledInputForm>
+                  </div>
 
-                    <div className="form-row mt-4">
-                      <StyledInputForm className="form-group col-md-3">
+                  <div className="row mt-4">
+                    <div className="col-6 mr-2 form-row">
+                      <StyledInputForm className="form-group col-md-6">
                         <StyledInputLabel htmlFor="inputStartMonth">
                           Time Period
                         </StyledInputLabel>
@@ -212,7 +205,7 @@ function Experience() {
                           })}
                         </select>
                       </StyledInputForm>
-                      <StyledInputForm className="form-group col-md-3">
+                      <StyledInputForm className="form-group col-md-6">
                         <StyledInputLabel htmlFor="inputStartYear">
                           .
                         </StyledInputLabel>
@@ -234,8 +227,9 @@ function Experience() {
                           })}
                         </select>
                       </StyledInputForm>
-
-                      <StyledInputForm className="form-group col-md-3">
+                    </div>
+                    <div className="col-6 form-row">
+                      <StyledInputForm className="form-group col-md-6">
                         <StyledInputLabel htmlFor="inputEndMonth">
                           .
                         </StyledInputLabel>
@@ -278,7 +272,7 @@ function Experience() {
                           </select>
                         )}
                       </StyledInputForm>
-                      <StyledInputForm className="form-group col-md-3">
+                      <StyledInputForm className="form-group col-md-6">
                         <StyledInputLabel htmlFor="inputEndYear">
                           .
                         </StyledInputLabel>
@@ -322,62 +316,59 @@ function Experience() {
                         )}
                       </StyledInputForm>
                     </div>
+                  </div>
 
-                    <StyledInputForm className="form-group">
-                      <StyledInputLabel htmlFor="inputDescription">
-                        Description
-                      </StyledInputLabel>
-                      <StyledInputTextarea
-                        className="form-control"
-                        id="inputDescription"
-                        rows="8"
-                        onChange={(e) => handleInputChange(e, i)}
-                      ></StyledInputTextarea>
-                    </StyledInputForm>
-                    <StyledAddItemWrap style={{ marginBottom: "30px" }}>
-                      {exp.length - 1 === i && (
-                        <StyledAddItemText
-                          href="#"
-                          button
-                          onClick={handleAddClick}
-                        >
-                          <span className="plus"> +</span>&nbsp; Add Another
-                        </StyledAddItemText>
-                      )}
-                      {exp.length !== 1 && (
-                        <StyledAddItemText
-                          href="#"
-                          onClick={() => handleRemoveClick(i)}
-                        >
-                          <span className="plus">-</span>&nbsp; Remove
-                        </StyledAddItemText>
-                      )}
-                    </StyledAddItemWrap>
-                  </React.Fragment>
-                );
-              })}
-            </form>
+                  <StyledInputForm className="form-group">
+                    <StyledInputLabel htmlFor="inputDescription">
+                      Description
+                    </StyledInputLabel>
+                    <StyledInputTextarea
+                      className="form-control description-box"
+                      id="inputDescription"
+                      rows="8"
+                      onChange={(e) => handleInputChange(e, i)}
+                    ></StyledInputTextarea>
+                  </StyledInputForm>
+                  <StyledAddItemWrap
+                    className="addnremove-btn-container"
+                    style={{ marginBottom: "30px" }}
+                  >
+                    {exp.length - 1 === i && (
+                      <StyledAddItemText
+                        href="#"
+                        button
+                        onClick={handleAddClick}
+                      >
+                        <span className="plus"> +</span>&nbsp; Add Another
+                      </StyledAddItemText>
+                    )}
+                    {exp.length !== 1 && (
+                      <StyledAddItemText
+                        href="#"
+                        onClick={() => handleRemoveClick(i)}
+                      >
+                        <span className="plus">-</span>&nbsp; Remove
+                      </StyledAddItemText>
+                    )}
+                  </StyledAddItemWrap>
+                </React.Fragment>
+              );
+            })}
+          </form>
 
-            {/* <StyledAddItemWrap>
-              <StyledAddItemText href="#">
-                <span className="plus">+</span>&nbsp; Add Another
-              </StyledAddItemText>
-            </StyledAddItemWrap> */}
-
-            <Buttons>
-              <StyledPrev type="submit" onClick={submitHandler} href="#">
-                <Link to="/new-resume/education">Back</Link>
-              </StyledPrev>
-              <StyledNext type="submit" onClick={submitHandler} href="#">
-                <Link to="/new-resume/languages" className="text-white">
-                  Next Section
-                </Link>
-              </StyledNext>
-            </Buttons>
-          </MainContent>
-        </div>
+          <Buttons className="nextnprev-btn-container">
+            <StyledPrev type="submit" onClick={submitHandler} href="#">
+              <Link to="/new-resume/education">Back</Link>
+            </StyledPrev>
+            <StyledNext type="submit" onClick={submitHandler} href="#">
+              <Link to="/new-resume/languages" className="text-white">
+                Next Section
+              </Link>
+            </StyledNext>
+          </Buttons>
+        </MainContent>
       </div>
-    </div>
+    </>
   );
 }
 
