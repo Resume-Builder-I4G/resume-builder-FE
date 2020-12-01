@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import { Link, NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 
 import ResumeTabs from "./Imports";
@@ -66,20 +66,17 @@ class New_resume extends Component {
               <div className="contain">
                 {arr.map(({ id, image, title, alt, path }) => {
                   return (
-                    <Link key={id} to={`/new-resume/${path}`}>
-                      <Option
-                        style={{
-                          backgroundColor:
-                            selected === id ? "#216DE0" : "#ffffff",
-                        }}
-                        onClick={() => this.changeColor(id)}
-                        key={id}
-                      >
+                    <NavLink
+                      activeClassName="active-tab"
+                      key={id}
+                      to={`/new-resume/${path}`}
+                    >
+                      <Option onClick={() => this.changeColor(id)} key={id}>
                         <Img src={image} alt={alt} />
                         <StyledP>{title}</StyledP>
                       </Option>
                       {}
-                    </Link>
+                    </NavLink>
                   );
                 })}
               </div>

@@ -9,7 +9,7 @@ function Languages({ languageItems }) {
         {languageItems.map((item) => {
           return (
             <StyledLlist key={item}>
-              <span>{item}</span> <span>{item}</span>
+              <span>{item || ""}</span> <span>{item || ""}</span>
             </StyledLlist>
           );
         })}

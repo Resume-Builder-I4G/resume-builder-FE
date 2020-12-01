@@ -59,7 +59,7 @@ function Dashboard(props) {
               </StyledInfo>
             </div>
             <div className="new-resume-btn text-center">
-              <Link to="/new-resume">
+              <Link to="/new-resume/personal-info">
                 <button href="#" className="btn btn-primary">
                   New Resume
                 </button>

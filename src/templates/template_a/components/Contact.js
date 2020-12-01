@@ -13,13 +13,13 @@ function Contact({ contact }) {
       <StyledH2>Contact</StyledH2>
       <ul>
         <ContactItem>
-          <FontAwesomeIcon icon={faMapMarker} /> {contact.address}
+          <FontAwesomeIcon icon={faMapMarker} /> {contact.address || ""}
         </ContactItem>
         <ContactItem>
-          <FontAwesomeIcon icon={faPhone} /> {contact.phone}
+          <FontAwesomeIcon icon={faPhone} /> {contact.phone || ""}
         </ContactItem>
         <ContactItem>
-          <FontAwesomeIcon icon={faEnvelope} /> {contact.email}
+          <FontAwesomeIcon icon={faEnvelope} /> {contact.email || ""}
         </ContactItem>
       </ul>
     </ContactDiv>

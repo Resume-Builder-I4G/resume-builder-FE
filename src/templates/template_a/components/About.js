@@ -5,7 +5,7 @@ function About({ about }) {
   return (
     <div>
       <StyledH2>About</StyledH2>
-      <StyledAboutText>{about}</StyledAboutText>
+      <StyledAboutText>{about || ""}</StyledAboutText>
     </div>
   );
 }

@@ -167,7 +167,7 @@ function Signin(props) {
               <div className="text-left mt-4">
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary sign-in-btn"
                   style={{ background: loader ? "#ccc" : null }}
                   onClick={handleLogin}
                 >
@@ -195,7 +195,7 @@ function Signin(props) {
             </div>
           </div>
         </div>
-        <div className="right-div col-md-5">
+        <div className="hide-right-signin right-div col-md-5">
           <div className="right-nav col-md-5">
             <ul className="menu-items d-flex">
               <li className="already__haveaccount">Don’t have an account?</li>
