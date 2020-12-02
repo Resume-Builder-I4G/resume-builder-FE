@@ -15,12 +15,14 @@ function Education({ educationItems }) {
       {educationItems.map((item) => {
         return (
           <div key={item.course}>
-            <StyledH3>{item.course}</StyledH3>
-            <StyledInstitution>{item.institution}</StyledInstitution>
-            <StyledELocation>{item.country}</StyledELocation>
-            <StyledEInformation>{item.information}</StyledEInformation>
+            <StyledH3>{item.course || ""}</StyledH3>
+            <StyledInstitution>{item.institution || ""}</StyledInstitution>
+            <StyledELocation>{item.country || ""}</StyledELocation>
+            <StyledEInformation>{item.information || ""}</StyledEInformation>
             <StyledEDuration>
-              {`${item.startYear} - ${item.endYear ? item.endYear : "Present"}`}
+              {`${item.startYear} - ${
+                item.endYear ? item.endYear : "Present"
+              }` || ""}
             </StyledEDuration>
           </div>
         );

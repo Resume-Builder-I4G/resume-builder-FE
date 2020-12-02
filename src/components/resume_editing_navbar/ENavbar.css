@@ -3,6 +3,10 @@
     display: none;
 }
 
+/* #e-nav .navbar-nav-mobile {
+    display: none !important;
+} */
+
 .navbar-css {
     color: white;
 }
@@ -30,6 +34,12 @@
 
 .nav-link img {
     padding-right: 10px;
+}
+
+@media screen and (min-width: 500px) {
+    #e-nav .navbar-nav-mobile {
+        display: none !important;
+    }
 }
 
 @media screen and (max-width: 500px) {

@@ -6,13 +6,14 @@ function Languages({ languageItems }) {
     <div>
       <StyledH2>Languages</StyledH2>
       <ul>
-        {languageItems.map((item) => {
-          return (
-            <StyledLlist key={item}>
-              <span>{item}</span> <span>{item}</span>
-            </StyledLlist>
-          );
-        })}
+        {languageItems &&
+          languageItems.map((item) => {
+            return (
+              <StyledLlist key={item}>
+                <span>{item}</span> <span>{item}</span>
+              </StyledLlist>
+            );
+          })}
       </ul>
     </div>
   );

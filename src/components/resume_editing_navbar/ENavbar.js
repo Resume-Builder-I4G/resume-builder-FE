@@ -13,50 +13,54 @@ function ENavbar() {
       className="navbar navbar-css navbar-expand-lg navbar-light bg-primary sticky-top"
     >
       <div className="container">
-        <Link className="navbar-burger-mobile" to="/">
-          <img src={navburger} alt="navburger icon" />
-        </Link>
         <button
-          className="navbar-toggler"
+          className="navbar-burger-mobile navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-target="#navbarSupportedContent2"
+          aria-controls="navbarSupportedContent2"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
-          <img className="img-fluid" src="./assets/images/navicon.png" alt="" />
+          <img src={navburger} alt="navburger icon" />
         </button>
-        <Link className="navbar-brandname-container" to="/">
-          <a className="navbar-brand text-white logo">ResumeBuilder</a>
+        <Link
+          className="navbar-brandname-container navbar-brand text-white logo"
+          to="/"
+        >
+          ResumeBuilder
         </Link>
         <Link to="#" className="text-light profile-nav-mobile">
           <img src={Daniel} alt="" />
         </Link>
+        <div
+          className="collapse navbar-collapse navbar-nav-mobile"
+          id="navbarSupportedContent2"
+        >
+          <ul>
+            <li>Personal Info</li>
+            <li>Education</li>
+            <li>Experience</li>
+          </ul>
+        </div>
+
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link to="/">
-                <a className="nav-link text-light" href="#">
-                  <img src={previewImg} alt="" /> Preview Resume{" "}
-                  <span className="sr-only">(current)</span>
-                </a>
+              <Link className="nav-link text-light" to="/">
+                <img src={previewImg} alt="" /> Preview Resume{" "}
+                <span className="sr-only">(current)</span>
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/about">
-                <a className="nav-link text-light" href="">
-                  <img src={downloadImg} alt="" /> Download
-                </a>
+              <Link className="nav-link text-light" to="/about">
+                <img src={downloadImg} alt="" /> Download
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/contact">
-                <a className="nav-link text-light" href="">
-                  <img src={Daniel} alt="" />
-                  Awojide Daniel
-                </a>
+              <Link className="nav-link text-light" to="/contact">
+                <img src={Daniel} alt="" />
+                Awojide Daniel
               </Link>
             </li>
           </ul>

@@ -48,7 +48,8 @@
     letter-spacing: 0em;
 } */
 
-.contain .active {
+
+.active-tab div:first-child {
     background-color: #216DE0;
 }
 

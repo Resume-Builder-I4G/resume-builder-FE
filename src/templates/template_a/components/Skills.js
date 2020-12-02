@@ -6,9 +6,10 @@ function Skills({ skillItems }) {
     <div>
       <StyledH2>Skills</StyledH2>
       <ul>
-        {skillItems.map((item) => {
-          return <StyledSlist key={item}>{item}</StyledSlist>;
-        })}
+        {skillItems &&
+          skillItems.map((item) => {
+            return <StyledSlist key={item}>{item}</StyledSlist>;
+          })}
       </ul>
     </div>
   );

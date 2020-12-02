@@ -15,9 +15,9 @@ function Certifcates({ certificateItems }) {
           return (
             <li style={{ marginBottom: "5px" }} key={item.certName}>
               <div className="d-flex justify-content-between">
-                <CertText className="name">{item.certName}</CertText>
+                <CertText className="name">{item.certName || ""}</CertText>
                 <CertText className="year">
-                  <i>{item.certYear}</i>
+                  <i>{item.certYear || ""}</i>
                 </CertText>
               </div>
             </li>
