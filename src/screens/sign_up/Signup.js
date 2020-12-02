@@ -18,6 +18,12 @@ const Title = styled.h1`
   font-size: 36px;
   line-height: 48px;
   color: #2e2e2e;
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -55,6 +61,15 @@ const StyledButton = styled.a`
     text-decoration: none !important;
     text-decoration-line: none !important;
   }
+
+  @media (max-width: 500px) {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    padding: 14px 40px;
+    width: auto;
+    border-radius: 6px;
+  }
 `;
 
 function Signup(props) {
@@ -64,6 +79,8 @@ function Signup(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  console.log(props.history);
 
   // handle button click of login form
   const handleSignUp = (event) => {
@@ -100,9 +117,7 @@ function Signup(props) {
         <div className="col-md-7 left-signup">
           <div className="logo">
             <Link to="/">
-              <a className="" href="#">
-                Resume<span className="sub-logo">Builder</span>
-              </a>
+              Resume<span className="sub-logo">Builder</span>
             </Link>
           </div>
           <div className="signup-content">
@@ -154,7 +169,7 @@ function Signup(props) {
                 </Styledlabel>
               </div>
 
-              <div className="text-left">
+              <div className="text-left sign-up-btn-container">
                 <button
                   type="submit"
                   className="btn btn-primary sign-up-btn"
@@ -168,7 +183,7 @@ function Signup(props) {
               {isError && <div>The username or password provided</div>}
             </form>
             <div className="bottom-signup d-flex">
-              <p>Create account with: </p>
+              <p>Create account with </p>
               <div className="other-signup">
                 <a href="">
                   <img src={googleImg} alt="" />
@@ -180,6 +195,14 @@ function Signup(props) {
                   <img src={linkedinImg} alt="" />
                 </a>
               </div>
+            </div>
+            <div className="new-account-now-mobile d-flex">
+              <span>Already have an account?</span>
+              <Link to="/sign-in">
+                <StyledButton href="#" className="btn btn-primary">
+                  Log in
+                </StyledButton>
+              </Link>
             </div>
           </div>
         </div>

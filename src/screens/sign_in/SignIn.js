@@ -19,6 +19,12 @@ const Title = styled.h1`
   font-size: 36px;
   line-height: 48px;
   color: #2e2e2e;
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -55,6 +61,15 @@ const StyledButton = styled.a`
     border: 1px solid#216DE0;
     text-decoration: none !important;
     text-decoration-line: none !important;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    padding: 14px 40px;
+    width: auto;
+    border-radius: 6px;
   }
 `;
 
@@ -109,9 +124,7 @@ function Signin(props) {
         <div className="col-md-7 left-signup">
           <div className="logo">
             <Link to="/">
-              <a className="" href="#">
-                Resume<span className="sub-logo">Builder</span>
-              </a>
+              Resume<span className="sub-logo">Builder</span>
             </Link>
           </div>
           <div className="signup-content">
@@ -164,7 +177,7 @@ function Signin(props) {
                 <a href="#">Forgot Password?</a>
               </div>
 
-              <div className="text-left mt-4">
+              <div className="text-left mt-4 sign-in-btn-container">
                 <button
                   type="submit"
                   className="btn btn-primary sign-in-btn"
@@ -192,6 +205,14 @@ function Signin(props) {
                   <img src={linkedinImg} alt="" />
                 </a>
               </div>
+            </div>
+            <div className="old-account-now-mobile d-flex">
+              <span>Don’t have an account?</span>
+              <Link to="/sign-up">
+                <StyledButton href="#" className="btn btn-primary">
+                  Signup
+                </StyledButton>
+              </Link>
             </div>
           </div>
         </div>
