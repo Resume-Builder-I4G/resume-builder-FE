@@ -12,7 +12,7 @@ import {
 import "./References.css";
 import { Link } from "react-router-dom";
 
-function References({ menu, activeMenu }) {
+function References(props) {
   return (
     <>
       <div id="reference" className="container-fluid content">
