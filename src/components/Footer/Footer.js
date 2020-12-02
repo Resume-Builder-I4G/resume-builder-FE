@@ -58,6 +58,9 @@ function Footer() {
               </div>
             </div>
           </div>
+          <div className="copyright">
+            <p className="text-left">© Aider 2020 - All Rights Reserved</p>
+          </div>
         </div>
       </div>
     </div>
