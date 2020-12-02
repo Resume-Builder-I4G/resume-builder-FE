@@ -12,7 +12,7 @@ const StyledTitle = styled.h1`
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className="footer" id="footer">
       <div className="container">
         <div className="row footer-wrap">
           <div className="col-md-4">

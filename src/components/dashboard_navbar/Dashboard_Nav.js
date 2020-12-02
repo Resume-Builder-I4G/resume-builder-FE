@@ -5,10 +5,13 @@ import "./Dashboard_Nav.css";
 
 function Dashboard_Nav(props) {
   return (
-    <nav className="navbar navbar-css navbar-expand-lg navbar-light bg-primary sticky-top">
+    <nav
+      className="navbar navbar-css navbar-expand-lg navbar-light bg-primary sticky-top"
+      id="dash-nav"
+    >
       <div className="container">
-        <Link to="/">
-          <a className="navbar-brand text-white logo">ResumeBuilder</a>
+        <Link className="navbar-brand text-white logo" to="/dashboard">
+          ResumeBuilder
         </Link>
         <button
           className="navbar-toggler"
@@ -29,25 +32,27 @@ function Dashboard_Nav(props) {
                 <a className="nav-link text-light" href=""></a>
               </Link>
             </li> */}
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link text-light dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
+            <li class="nav-item dropdown btn-group">
+              <button
+                variant="link"
+                type="link"
+                class="nav-link text-light dropdown-toggle profile-toggle"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
                 <img src={Daniel} alt="" />
                 Awojide Daniel
-              </a>
-              <div
-                class="dropdown-menu bg-white text-center px-4 py-3"
-                aria-labelledby="navbarDropdown"
-              >
+              </button>
+              <div class="dropdown-menu dropdown-menu-right bg-white text-center border-1 m-1 px-4 py-3">
                 <p className="name">Awojide Daniel</p>
                 <p className="email">awojidedaniel@gmail.com</p>
+                {/* <button class="dropdown-item" type="button">
+                    Action
+                  </button>
+                  <button class="dropdown-item" type="button">
+                    Another action
+                  </button> */}
                 <div className="btn-wrap w-100 d-flex justify-content-between">
                   <button className="settings-btn px-3 py-2 mr-4">
                     Settings

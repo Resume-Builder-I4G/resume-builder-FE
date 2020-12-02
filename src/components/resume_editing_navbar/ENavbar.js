@@ -26,7 +26,7 @@ function ENavbar() {
         </button>
         <Link
           className="navbar-brandname-container navbar-brand text-white logo"
-          to="/"
+          to="/dashboard"
         >
           ResumeBuilder
         </Link>
@@ -53,12 +53,12 @@ function ENavbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-light" to="/about">
+              <Link className="nav-link text-light" to="/dashboard">
                 <img src={downloadImg} alt="" /> Download
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-light" to="/contact">
+              <Link className="nav-link text-light" to="/dashboard">
                 <img src={Daniel} alt="" />
                 Awojide Daniel
               </Link>

@@ -114,3 +114,112 @@ a[type="button"]:hover {
     border: 1px solid #2E2E2E;
     margin-right: 30px;
 }
+
+@media screen and (min-width: 500px) {
+    #sign-up .new-account-now-mobile {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #sign-up .right-div {
+        display: none;
+    }
+
+    #sign-up .left-signup {
+        padding: 30px 5.5%;
+    }
+
+    #sign-up .logo {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 20px;
+    }
+
+    #sign-up .logo a {
+        font-family: Comic Sans MS;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    #sign-up p.signup__text {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+    }
+
+    #sign-up .row .left-signup {
+        background-position: left;
+        background-position-x: -8px;
+        background-size: 200px;
+    }
+
+    #sign-up form {
+        max-width: 100%;
+    }
+
+    #sign-up label {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+    }
+
+    #sign-up input {
+        height: 50px;
+        border: 1px solid #216DE0;
+        background-color: #fff;
+
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+    }
+
+    #sign-up .sign-up-btn-container {
+        margin-top: 30px;
+    }
+
+    #sign-up .sign-up-btn {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        height: auto;
+        font-size: 18px !important;
+        font-weight: 500;
+        line-height: 22px !important;
+    }
+
+    #sign-up .bottom-signup {
+        display: block !important;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #sign-up .bottom-signup p {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        margin-bottom: 10px;
+    }
+
+    #sign-up .other-signup img {
+        padding: 7px;
+    }
+
+    #sign-up .new-account-now-mobile {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        padding: 0 9%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #sign-up .new-account-now-mobile span {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+    }
+}

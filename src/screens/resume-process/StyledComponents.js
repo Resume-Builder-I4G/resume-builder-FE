@@ -56,7 +56,9 @@ const StyledNext = styled.button`
   color: #fff !important;
   font-size: 1.3rem;
   font-weight: 500;
-  padding: 1% 3%;
+  padding: 1% 1%;
+  display: flex;
+  justify-content: center;
   text-align: center;
   border-radius: 6px;
 
@@ -75,6 +77,8 @@ const StyledPrev = styled.button`
   font-weight: 500;
   padding: 1% 1%;
   text-align: center;
+  display: flex;
+  justify-content: center;
   margin-right: 20px;
   border-radius: 6px;
 
