@@ -75,9 +75,11 @@ function Home() {
           <p className="motto">
             Design and build a unique CV that your dream job will notice.
           </p>
-          <StyledButton className="btn btn-primary">
-            Build your resume
-          </StyledButton>
+          <Link to="/sign-up">
+            <StyledButton className="btn btn-primary">
+              Build your resume
+            </StyledButton>
+          </Link>
         </div>
         <div className="right col-md">
           <img className="bean" src={bean_1} alt="bean-1" />
