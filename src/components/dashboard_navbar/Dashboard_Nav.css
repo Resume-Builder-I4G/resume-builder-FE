@@ -1,3 +1,15 @@
+#dash-nav .profile-toggle {
+    box-shadow: none;
+}
+
+#dash-nav .profile-toggle:hover {
+    color: #fff !important;
+}
+
+#dash-nav .profile-toggle:focus {
+    outline: none;
+}
+
 .dropdown-menu {
     width: 284px;
     background: #FFFFFF;

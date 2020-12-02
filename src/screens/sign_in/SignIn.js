@@ -116,7 +116,7 @@ function Signin(props) {
           </div>
           <div className="signup-content">
             <Title>Welcome back!</Title>
-            <p className="signup__text">Login to continue!</p>
+            <p className="signin__text">Login to continue!</p>
             <form className="form" onSubmit={handleLogin}>
               <div className="form-group">
                 <Styledlabel htmlFor="signup-email">

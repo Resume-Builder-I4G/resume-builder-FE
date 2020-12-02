@@ -11,8 +11,11 @@
         padding: 8px 35px;
     }
 
-    #sign-in p.signup__text {
-        font-size: 1rem;
+    #sign-in p.signin__text {
+        font-size: 18px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        line-height: 22px !important;
     }
 
     #sign-in form {
