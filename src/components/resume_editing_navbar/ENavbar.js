@@ -1,12 +1,15 @@
 import React from "react";
-import "./ENavbar.css";
+import { getUser } from "../../utils/Common";
 import { Link } from "react-router-dom";
+
 import previewImg from "../../assets/svgs/Editing-Navbar-Img-Svg/Eye preview icon.svg";
 import downloadImg from "../../assets/svgs/Editing-Navbar-Img-Svg/Download icon.svg";
-import Daniel from "../../assets/images/Editing-Navbar-Img/Daniel.png";
 import navburger from "../../assets/svgs/Editing-Navbar-Img-Svg/Enav-burger.svg";
+import "./ENavbar.css";
 
 function ENavbar() {
+  const hero = "https://via.placeholder.com/45";
+  const user = getUser();
   return (
     <nav
       id="e-nav"
@@ -31,7 +34,7 @@ function ENavbar() {
           ResumeBuilder
         </Link>
         <Link to="#" className="text-light profile-nav-mobile">
-          <img src={Daniel} alt="" />
+          <img src={user.image ? user.image : hero} alt="" />
         </Link>
         <div
           className="collapse navbar-collapse navbar-nav-mobile"
@@ -59,8 +62,8 @@ function ENavbar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link text-light" to="/dashboard">
-                <img src={Daniel} alt="" />
-                Awojide Daniel
+                <img src={user.image ? user.image : hero} alt="" />
+                {user.name}
               </Link>
             </li>
           </ul>

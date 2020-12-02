@@ -20,6 +20,8 @@ import PrivateRoute from "./PrivateRoutes";
 import PublicRoute from "./utils/PublicRoutes";
 import Personal_info from "./screens/resume-process/personal-info/Personal_info";
 
+import "./App.css";
+
 AOS.init();
 
 function App(props) {
@@ -55,7 +57,17 @@ function App(props) {
   }, []);
 
   if (authLoading && getToken()) {
-    return <div className="content">Checking Authentication...</div>;
+    return (
+      //bouncing balls
+      <div className="bouncer-container">
+        <div class="bouncer">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    );
   }
 
   return (

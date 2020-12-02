@@ -21,6 +21,7 @@ import bottom_background from "../../assets/svgs/background-bottom.svg";
 
 import "./Home.css";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledTitle = styled.h1`
   width: 674px;
@@ -93,9 +94,11 @@ function Home() {
           Design and build a unique CV that your dream job will notice.
         </p>
         <div className="build-resume-btn-mobile-wrap d-flex justify-content-center">
-          <button className="build-resume-btn-mobile text-white px-2 py-3">
-            Build your resume
-          </button>
+          <Link to="/sign-up">
+            <button className="build-resume-btn-mobile text-white px-2 py-3">
+              Build your resume
+            </button>
+          </Link>
         </div>
       </header>
       <section id="section1">
@@ -130,9 +133,11 @@ function Home() {
             </p>
           </div>
         </div>
-        <StyledButton className="btn btn-primary">
-          Build your resume
-        </StyledButton>
+        <Link to="/sign-up">
+          <StyledButton className="btn btn-primary">
+            Build your resume
+          </StyledButton>
+        </Link>
       </section>
       <section id="section2">
         <h2 className="how-it-works-mobile">How it works</h2>
@@ -302,9 +307,11 @@ function Home() {
           })}
         </ul>
         <div className="text-center">
-          <StyledButton className="btn btn-primary">
-            Build your resume
-          </StyledButton>
+          <Link to="/sign-up">
+            <StyledButton className="btn btn-primary">
+              Build your resume
+            </StyledButton>
+          </Link>
         </div>
       </section>
       <Footer />

@@ -1,9 +1,13 @@
 import React from "react";
+import { getUser } from "../../utils/Common";
 import { Link } from "react-router-dom";
 import Daniel from "../../assets/images/user_dashboard/Daniel.png";
 import "./Dashboard_Nav.css";
 
 function Dashboard_Nav(props) {
+  const hero = "https://via.placeholder.com/45";
+  const user = getUser();
+
   return (
     <nav
       className="navbar navbar-css navbar-expand-lg navbar-light bg-primary sticky-top"
@@ -41,19 +45,13 @@ function Dashboard_Nav(props) {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <img src={Daniel} alt="" />
-                Awojide Daniel
+                <img src={user.image ? user.image : hero} alt="" />
+                {user.name}
               </button>
               <div class="dropdown-menu dropdown-menu-right bg-white text-center border-1 m-1 px-4 py-3">
-                <p className="name">Awojide Daniel</p>
-                <p className="email">awojidedaniel@gmail.com</p>
-                {/* <button class="dropdown-item" type="button">
-                    Action
-                  </button>
-                  <button class="dropdown-item" type="button">
-                    Another action
-                  </button> */}
-                <div className="btn-wrap w-100 d-flex justify-content-between">
+                <p className="name">{user.name}</p>
+                <p className="email">{user.email}</p>
+                <div className="btn-wrap w-100 d-flex justify-content-between dropdown-item">
                   <button className="settings-btn px-3 py-2 mr-4">
                     Settings
                   </button>
