@@ -1,0 +1,17 @@
+.pdf-container .pdf-toolbar {
+    position: fixed;
+    right: 15%;
+    bottom: 10%;
+    background-color: #413C3C;
+    color: white;
+}
+
+.pdf-container .pdf-toolbar button {
+    border-radius: 50px;
+    padding: 7px;
+}
+
+.pdf-container .pdf-toolbar button .font-awesome {
+    font-size: 40px;
+    color: white;
+}
