@@ -1,4 +1,5 @@
 import React from "react";
+
 import About from "./components/About";
 import Avatar from "./components/Avatar";
 import Education from "./components/Education";
@@ -15,6 +16,7 @@ import {
   StyledResumeLeft,
   StyledResumeRight,
 } from "./components/StyledComponents";
+import "./Template_A.css";
 
 function Template_A() {
   let languageItems = JSON.parse(localStorage.getItem("Languages"));
@@ -25,28 +27,31 @@ function Template_A() {
   let certificateItems = JSON.parse(localStorage.getItem("Cerifications"));
 
   return (
-    <StyledResume className="d-flex">
-      <StyledResumeLeft>
-        <Avatar />
-        <About about={personalInfo.about} />
-        <Education educationItems={educationItems} />
-        <Language languageItems={languageItems} />
-        <Skills skillItems={skillsItems} />
-      </StyledResumeLeft>
+    <div className="container-fluid" id="template-a">
+      <StyledResume className="d-flex print">
+        <StyledResumeLeft>
+          <Avatar />
+          <About about={personalInfo.about} />
+          <Education educationItems={educationItems} />
+          <Language languageItems={languageItems} />
+          <Skills skillItems={skillsItems} />
+        </StyledResumeLeft>
 
-      <StyledResumeRight>
-        <div className="top d-flex justify-content-between">
-          <div className="right-left">
-            <Header name={personalInfo.name} role={workExperience} />
+        <StyledResumeRight>
+          <div className="top d-flex justify-content-between">
+            <div className="right-left">
+              <Header name={personalInfo.name} role={workExperience} />
+            </div>
+            <div className="right-right">
+              <Contact contact={personalInfo} />
+            </div>
           </div>
-          <div className="right-right">
-            <Contact contact={personalInfo} />
-          </div>
-        </div>
-        <Experience experienceItems={workExperience} />
-        <Certificates certificateItems={certificateItems} />
-      </StyledResumeRight>
-    </StyledResume>
+          <Experience experienceItems={workExperience} />
+          <Certificates certificateItems={certificateItems} />
+        </StyledResumeRight>
+      </StyledResume>
+      <button onClick={() => window.print()}>Print</button>
+    </div>
   );
 }
 
