@@ -51,12 +51,38 @@ const StyledH3 = styled.h3`
 
 const StylePicDiv = styled.div`
   padding-top: 10px;
+  position: relative;
 `;
 
 const StyledProfileImg = styled.img`
   border-radius: 50%;
   margin: 0 auto !important;
   text-align: center;
+`;
+
+const StyledImageInput = styled.input`
+  border-radius: 10px 10px 200px 200px;
+  -moz-border-radius: 10px 10px 200px 200px;
+  -webkit-border-radius: 10px 10px 200px 200px;
+  height: 50px;
+  width: 100px;
+  position: absolute;
+  top: 60px;
+  left: 36px;
+  display: none;
+  transition: 1s;
+
+  &::-webkit-file-upload-button {
+    outline: none;
+    border: none;
+    background-color: #9a9a9a;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px 20px 200px 200px;
+    -moz-border-radius: 20px 20px 200px 200px;
+    -webkit-border-radius: 20px 20px 200px 200px;
+    font-size: 12px;
+  }
 `;
 
 const StyledAboutText = styled.p`
@@ -209,6 +235,7 @@ export {
   StyledResumeRight,
   StyledProfileImg,
   StylePicDiv,
+  StyledImageInput,
   StyledH1,
   StyledH2,
   StyledH3,

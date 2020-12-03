@@ -1,7 +1,6 @@
 import React from "react";
 import { getUser } from "../../utils/Common";
 import { Link } from "react-router-dom";
-import Daniel from "../../assets/images/user_dashboard/Daniel.png";
 import "./Dashboard_Nav.css";
 
 function Dashboard_Nav(props) {
@@ -48,15 +47,21 @@ function Dashboard_Nav(props) {
                 <img src={user.image ? user.image : hero} alt="" />
                 {user.name}
               </button>
-              <div class="dropdown-menu dropdown-menu-right bg-white text-center border-1 m-1 px-4 py-3">
-                <p className="name">{user.name}</p>
-                <p className="email">{user.email}</p>
-                <div className="btn-wrap w-100 d-flex justify-content-between dropdown-item">
-                  <button className="settings-btn px-3 py-2 mr-4">
-                    Settings
-                  </button>
+              <div class="dropdown-menu settingsnlogout-wrap dropdown-menu-right bg-white text-center border-1 m-1 py-3">
+                <div className="d-flex align-items-center imagenemail-wrap">
+                  <div className="nav-image-drop mr-3">
+                    <img src={user.image ? user.image : hero} alt="" />
+                  </div>
+                  <div className="namenemail-nav">
+                    <p className="name text-left">{user.name}</p>
+                    <p className="email mb-0 text-left">{user.email}</p>
+                  </div>
+                </div>
+
+                <div className="btn-wrap w-100 d-flex justify-content-between">
+                  <button className="settings-btn">Settings</button>
                   <button
-                    className="log-out-btn px-1 py-2"
+                    className="log-out-btn ml-4"
                     onClick={props.handleLogout}
                   >
                     Log Out
