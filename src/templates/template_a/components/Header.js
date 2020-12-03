@@ -5,7 +5,7 @@ function Header({ name, role }) {
   return (
     <NameDiv>
       <StyledH1>{name || ""}</StyledH1>
-      <StyledResumeRole>UI/UX Designer</StyledResumeRole>
+      <StyledResumeRole>{role}</StyledResumeRole>
     </NameDiv>
   );
 }
